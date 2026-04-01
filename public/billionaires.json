@@ -1,10 +1,18 @@
 [
     {
+        "name": "LeBron James",
+        "netWorth": 1200000000,
+        "earningsPerSec": 4.57,
+        "source": "Sports",
+        "image": "https://i.imgur.com/2X8p7Xz.jpg",
+        "type": "Celebrity"
+    },
+    {
         "name": "Taylor Swift",
         "netWorth": 1100000000,
         "earningsPerSec": 4.19,
         "source": "Music",
-        "image": "https://img.link/taylor.jpg",
+        "image": "https://i.imgur.com/Qv9X2K3.jpg",
         "type": "Celebrity"
     },
     {
@@ -12,7 +20,7 @@
         "netWorth": 800000000,
         "earningsPerSec": 3.04,
         "source": "Sports",
-        "image": "https://img.link/ronaldo.jpg",
+        "image": "https://i.imgur.com/8K0p3XN.jpg",
         "type": "Celebrity"
     },
     {
@@ -20,7 +28,7 @@
         "netWorth": 800000000,
         "earningsPerSec": 3.04,
         "source": "Movies",
-        "image": "https://img.link/therock.jpg",
+        "image": "https://i.imgur.com/7Lp6m7u.jpg",
         "type": "Celebrity"
     },
     {
@@ -28,7 +36,7 @@
         "netWorth": 600000000,
         "earningsPerSec": 2.28,
         "source": "Sports",
-        "image": "https://img.link/messi.jpg",
+        "image": "https://i.imgur.com/5V3Xz8x.jpg",
         "type": "Celebrity"
     },
     {
@@ -36,7 +44,7 @@
         "netWorth": 500000000,
         "earningsPerSec": 1.9,
         "source": "YouTube",
-        "image": "https://img.link/mrbeast.jpg",
+        "image": "https://i.imgur.com/3Yn8Tz5.jpg",
         "type": "Celebrity"
     }
 ]
