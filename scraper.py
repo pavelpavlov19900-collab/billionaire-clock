@@ -3,7 +3,6 @@ import json
 import os
 
 # Списък с известни личности (Celebrity Seed Data)
-# Можеш да добавяш колкото искаш тук. Нетното състояние е в долари.
 celebrities = [
     {"name": "Cristiano Ronaldo", "netWorth": 800000000, "source": "Sports", "image": "https://img.link/ronaldo.jpg"},
     {"name": "Lionel Messi", "netWorth": 600000000, "source": "Sports", "image": "https://img.link/messi.jpg"},
@@ -39,8 +38,7 @@ def fetch_master_data():
         # 2. Добавяме известните личности към списъка
         for celeb in celebrities:
             c_net_worth = celeb['netWorth']
-            # При спортистите и актьорите често доходът е по-висок спрямо активите им
-            c_earnings_per_sec = (c_net_worth * 0.12) / 31536000 # Примерно 12% доходност
+            c_earnings_per_sec = (c_net_worth * 0.12) / 31536000 
             
             master_list.append({
                 "name": celeb['name'],
@@ -51,14 +49,18 @@ def fetch_master_data():
                 "type": "Celebrity"
             })
             
-        # Сортираме по богатство (от най-богатите надолу)
+        # Сортираме по богатство
         master_list.sort(key=lambda x: x['netWorth'], reverse=True)
 
-        # Вместо просто 'billionaires.json', го насочваме към папката public
-with open('public/billionaires.json', 'w', encoding='utf-8') as f:
-    json.dump(master_list, f, ensure_ascii=False, indent=4)
+        # ПРОВЕРКА: Създаваме папка 'public', ако не съществува
+        if not os.path.exists('public'):
+            os.makedirs('public')
+
+        # ЗАПИСВАНЕ: Важно е да е подравнено точно тук (4 интервала навътре)
+        with open('public/billionaires.json', 'w', encoding='utf-8') as f:
+            json.dump(master_list, f, ensure_ascii=False, indent=4)
             
-        print(f"✅ Успешно генериран списък с {len(master_list)} души!")
+        print(f"✅ Успешно генериран списък с {len(master_list)} души в public/billionaires.json!")
 
     except Exception as e:
         print(f"❌ Грешка: {e}")
