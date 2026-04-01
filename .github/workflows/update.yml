@@ -27,6 +27,7 @@ jobs:
         run: |
           git config --global user.name 'DigitalFactory-Bot'
           git config --global user.email 'bot@digitalfactory.com'
-          git add billionaires.json
+          # Променяме пътя тук, за да добавим файла от папката public
+          git add public/billionaires.json
           git commit -m "Auto-update billionaire data" || exit 0
           git push
