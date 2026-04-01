@@ -1,0 +1,32 @@
+name: Update Billionaire Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Ще се стартира само всяка вечер в 00:00
+  workflow_dispatch: # Позволява ни да го пуснем ръчно, за да тестваме
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Scraper
+        run: python scraper/scraper.py # Провери дали пътят е същият, който си задал
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'DigitalFactory-Bot'
+          git config --global user.email 'bot@digitalfactory.com'
+          git add billionaires.json
+          git commit -m "Auto-update billionaire data" || exit 0
+          git push
