@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Taylor Swift",
+        "netWorth": 1100000000,
+        "earningsPerSec": 4.19,
+        "source": "Music",
+        "image": "https://img.link/taylor.jpg",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Cristiano Ronaldo",
+        "netWorth": 800000000,
+        "earningsPerSec": 3.04,
+        "source": "Sports",
+        "image": "https://img.link/ronaldo.jpg",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Dwayne Johnson",
+        "netWorth": 800000000,
+        "earningsPerSec": 3.04,
+        "source": "Movies",
+        "image": "https://img.link/therock.jpg",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Lionel Messi",
+        "netWorth": 600000000,
+        "earningsPerSec": 2.28,
+        "source": "Sports",
+        "image": "https://img.link/messi.jpg",
+        "type": "Celebrity"
+    },
+    {
+        "name": "MrBeast",
+        "netWorth": 500000000,
+        "earningsPerSec": 1.9,
+        "source": "YouTube",
+        "image": "https://img.link/mrbeast.jpg",
+        "type": "Celebrity"
+    }
+]
