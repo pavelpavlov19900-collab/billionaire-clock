@@ -54,8 +54,9 @@ def fetch_master_data():
         # Сортираме по богатство (от най-богатите надолу)
         master_list.sort(key=lambda x: x['netWorth'], reverse=True)
 
-        with open('billionaires.json', 'w', encoding='utf-8') as f:
-            json.dump(master_list, f, ensure_ascii=False, indent=4)
+        # Вместо просто 'billionaires.json', го насочваме към папката public
+with open('public/billionaires.json', 'w', encoding='utf-8') as f:
+    json.dump(master_list, f, ensure_ascii=False, indent=4)
             
         print(f"✅ Успешно генериран списък с {len(master_list)} души!")
 
