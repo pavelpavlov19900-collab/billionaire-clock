@@ -21,7 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Run Scraper
-        run: python scraper/scraper.py # Провери дали пътят е същият, който си задал
+        run: python scraper.py# Провери дали пътят е същият, който си задал
 
       - name: Commit and Push changes
         run: |
