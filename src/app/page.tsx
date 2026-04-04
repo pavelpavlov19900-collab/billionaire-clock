@@ -1,5 +1,8 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+// ЗАБЕЛЕЖКА: За да работи това в реалния Build, ще трябва да инсталираме 'html-to-image' библиотека.
+// За момента само добавяме логиката в кода, както се разбрахме.
+import * as htmlToImage from 'html-to-image'; 
 
 export default function BillionaireClock() {
   const [data, setData] = useState<any[]>([]);
@@ -7,6 +10,11 @@ export default function BillionaireClock() {
   const [salary, setSalary] = useState<number>(2000);
   const [secondsPassed, setSecondsPassed] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
+  const [generatedReceiptUrl, setGeneratedReceiptUrl] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+  
+  // Референция към скрития елемент на касовата бележка
+  const receiptRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -41,16 +49,43 @@ export default function BillionaireClock() {
 
   // Математиката на шока
   const rawEarnings = selectedHero.earningsPerSec * secondsPassed;
-  // Форматираме числото да изглежда като истински пари (с разделяне на хилядите)
-  const formattedEarnings = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(rawEarnings);
+  const moneyFormatter = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const formattedEarnings = moneyFormatter.format(rawEarnings);
   
   const annualSalary = salary * 12;
   const timeToEarnMonthly = (salary / selectedHero.earningsPerSec).toFixed(2);
   const timeToEarnAnnual = (annualSalary / selectedHero.earningsPerSec).toFixed(1);
 
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-black to-zinc-900 text-white font-sans selection:bg-yellow-500 selection:text-black">
+  // ФУНКЦИЯ ЗА ГЕНЕРИРАНЕ НА "КАСОВАТА БЕЛЕЖКА" (Автоматизиран Маркетинг)
+  const generateReceipt = async () => {
+    if (!receiptRef.current) return;
+    
+    setIsGenerating(true);
+    setGeneratedReceiptUrl(null); // Изчистваме стария, ако има
+
+    try {
+      // Превръщаме HTML елемента в PNG изображение
+      const dataUrl = await htmlToImage.toPng(receiptRef.current, {
+        quality: 1.0,
+        pixelRatio: 2, // По-висока резолюция за ретина дисплеи
+      });
       
+      setGeneratedReceiptUrl(dataUrl);
+    } catch (error) {
+      console.error('❌ Грешка при генериране на изображението:', error);
+      alert('Could not generate the sharing image. Please try again.');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  // URL НА НАШИЯ САЙТ (Трябва да е реален след деплоя)
+  const websiteUrl = "billionaireclock.com";
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-black to-zinc-900 text-white font-sans selection:bg-yellow-500 selection:text-black relative">
+      
+      {/* Header */}
       <header className="w-full p-4 md:p-6 border-b border-white/5 flex justify-between items-center bg-black/40 backdrop-blur-xl fixed top-0 z-50">
         <h1 className="text-2xl md:text-3xl font-black tracking-tighter uppercase bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
           Billionaire Clock
@@ -133,9 +168,14 @@ export default function BillionaireClock() {
 
         {/* Бутони за Монетизация */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 max-w-3xl mx-auto z-10">
-          <button className="group relative w-full flex items-center justify-center gap-3 py-5 px-6 border-2 border-white/10 text-lg font-black rounded-2xl text-white bg-black hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 shadow-2xl">
-            <span className="text-2xl group-hover:animate-bounce">👕</span>
-            ПОРЪЧАЙ НА ТЕНИСКА
+          {/* СМЕНЯМЕ ТЕКСТА НА БУТОНА ЗА ДА СТАРТИРА ГЕНЕРИРАНЕТО */}
+          <button 
+            onClick={generateReceipt}
+            disabled={isGenerating}
+            className={`group relative w-full flex items-center justify-center gap-3 py-5 px-6 border-2 border-white/10 text-lg font-black rounded-2xl text-white bg-black hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 shadow-2xl ${isGenerating ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            <span className="text-2xl group-hover:animate-bounce">📲</span>
+            {isGenerating ? 'GENERATING MY SHOCK...' : 'SHARE MY SHOCK'}
           </button>
           <button className="group relative w-full flex items-center justify-center gap-3 py-5 px-6 border-2 border-transparent text-lg font-black rounded-2xl text-white bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.4)]">
             <span className="text-2xl group-hover:-translate-y-1 transition-transform">🚀</span>
@@ -144,6 +184,82 @@ export default function BillionaireClock() {
         </div>
 
       </div>
+
+      {/* 🛡️ СКРИТИЯТ ЕЛЕМЕНТ НА КАСОВАТА БЕЛЕЖКА (Генерира се само за изображението) */}
+      {/* Този блок е напълно на АНГЛИЙСКИ, за да е готов за вирално споделяне */}
+      <div style={{ position: 'absolute', top: '-2000px', left: '-2000px' }}>
+        <div 
+          ref={receiptRef}
+          className="w-[400px] bg-black p-8 font-sans flex flex-col items-center"
+          style={{ backgroundImage: 'radial-gradient(circle at center, #1a1a1a 0%, #000000 100%)' }}
+        >
+          {/*Header Бележка */}
+          <div className="w-full text-center border-b border-dashed border-white/20 pb-4 mb-4">
+            <h2 className="text-2xl font-black text-white tracking-widest uppercase">REAL-TIME SHOCK B/R</h2>
+            <p className="text-xs text-zinc-500 font-mono">{websiteUrl}</p>
+          </div>
+
+          {/* Данни за потребителя (Grind Info) */}
+          <div className="w-full text-center my-4 bg-zinc-900 px-4 py-3 rounded-xl border border-white/5">
+            <p className="text-sm text-zinc-400 uppercase tracking-widest">TOTAL ANNUAL GRIND (BGN):</p>
+            <p className="text-3xl font-black text-white">{moneyFormatter.format(annualSalary)}</p>
+          </div>
+
+          {/* Arrow Icon */}
+          <div className="my-2 text-white/30 text-2xl">↓</div>
+
+          {/* Данни за Милиардера */}
+          <div className="w-full text-center my-4 bg-white/5 px-4 py-4 rounded-xl border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.1)]">
+            <p className="text-sm text-red-400 uppercase tracking-widest leading-tight">
+              {selectedHero.name} made this in:
+            </p>
+            <p className="text-6xl font-black font-mono tracking-tighter text-red-500 tabular-nums">
+              {timeToEarnAnnual}
+            </p>
+            <p className="text-3xl font-bold text-red-500/90 leading-tight">
+              SECONDS
+            </p>
+          </div>
+
+          {/* The Burn (Пунчлайнът) */}
+          <div className="w-full text-center mt-6 border-t border-dashed border-white/20 pt-6">
+            <p className="text-lg text-zinc-200 leading-tight">
+              I GRINDED ALL YEAR. HE BREATHED.
+            </p>
+            <p className="text-sm text-zinc-400 italic mt-1 mb-6">SEE YOUR TIME:</p>
+            
+            {/* Сайт URL (QR Code placeholder) */}
+            <div className="bg-yellow-500 text-black px-6 py-3 rounded-lg text-xl font-black tracking-tighter inline-block">
+              {websiteUrl.toUpperCase()}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 📲 МОДАЛ ЗА ПРЕГЛЕД И СПОДЕЛЯНЕ НА ГЕНЕРИРАНАТА БЕЛЕЖКА */}
+      {generatedReceiptUrl && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[100] flex flex-col items-center justify-center p-6" onClick={() => setGeneratedReceiptUrl(null)}>
+          <div className="absolute top-6 right-6 text-3xl cursor-pointer text-white/70 hover:text-white">✕</div>
+          
+          <div className="bg-zinc-950 border border-white/10 p-4 rounded-3xl shadow-2xl max-w-sm w-full flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-xl font-bold text-yellow-500 mb-6 uppercase tracking-widest">YOUR PROOF OF PAIN IS READY!</h3>
+            
+            {/* Самата картинка */}
+            <img src={generatedReceiptUrl} alt="Billionaire Clock Sharing Receipt" className="rounded-xl border border-white/10 mb-6 shadow-lg max-h-[70vh]" />
+            
+            {/* Действия за споделяне */}
+            <p className="text-sm text-zinc-400 mb-4 text-center font-mono">Download & Share to Instagram/TikTok/X</p>
+            <a 
+              href={generatedReceiptUrl} 
+              download={`${selectedHero.name}-vs-Me-Shock.png`}
+              className="w-full text-center bg-yellow-500 text-black font-black p-4 rounded-xl hover:bg-yellow-400 transition"
+            >
+              DOWNLOAD SHOCK
+            </a>
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }
