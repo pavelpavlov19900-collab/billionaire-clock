@@ -8,7 +8,6 @@ export default function BillionaireClock() {
   const [secondsPassed, setSecondsPassed] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
 
-  // Зареждане на данните (Client-side hydration)
   useEffect(() => {
     setIsClient(true);
     fetch('/billionaires.json')
@@ -20,7 +19,6 @@ export default function BillionaireClock() {
       .catch(err => console.error("Чакаме първия билд на данните..."));
   }, []);
 
-  // Моторът на таймера
   useEffect(() => {
     const interval = setInterval(() => {
       setSecondsPassed(prev => prev + 0.1);
@@ -28,29 +26,31 @@ export default function BillionaireClock() {
     return () => clearInterval(interval);
   }, [selectedHero]);
 
-  // Предпазваме от грешки при зареждане
   if (!isClient) return null; 
 
-  // Екран за първоначално зареждане
   if (!data.length || !selectedHero) {
     return (
       <div className="min-h-screen bg-black flex flex-col items-center justify-center text-white">
         <div className="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mb-6"></div>
         <div className="text-yellow-500 text-2xl font-black uppercase tracking-widest animate-pulse">
-          Зареждане на данните...
+          Зареждане на империята...
         </div>
       </div>
     );
   }
 
-  // Математиката
-  const earningsSoFar = (selectedHero.earningsPerSec * secondsPassed).toFixed(2);
-  const timeToEarnSalary = (salary / selectedHero.earningsPerSec).toFixed(2);
+  // Математиката на шока
+  const rawEarnings = selectedHero.earningsPerSec * secondsPassed;
+  // Форматираме числото да изглежда като истински пари (с разделяне на хилядите)
+  const formattedEarnings = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(rawEarnings);
+  
+  const annualSalary = salary * 12;
+  const timeToEarnMonthly = (salary / selectedHero.earningsPerSec).toFixed(2);
+  const timeToEarnAnnual = (annualSalary / selectedHero.earningsPerSec).toFixed(1);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-black to-zinc-900 text-white font-sans selection:bg-yellow-500 selection:text-black">
       
-      {/* Навигация / Header */}
       <header className="w-full p-4 md:p-6 border-b border-white/5 flex justify-between items-center bg-black/40 backdrop-blur-xl fixed top-0 z-50">
         <h1 className="text-2xl md:text-3xl font-black tracking-tighter uppercase bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
           Billionaire Clock
@@ -63,11 +63,9 @@ export default function BillionaireClock() {
 
       <div className="max-w-5xl mx-auto pt-32 pb-20 px-4 flex flex-col items-center">
         
-        {/* Контролен Панел (Glassmorphism) */}
+        {/* Контролен Панел */}
         <div className="w-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2rem] p-6 md:p-10 shadow-2xl mb-12 flex flex-col md:flex-row gap-8 relative overflow-hidden">
-          {/* Декоративен светещ ефект */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-500/10 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-green-500/5 rounded-full blur-[80px] -z-10 -translate-x-1/2 translate-y-1/2"></div>
           
           <div className="flex-1 z-10">
             <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-3">Твоята месечна заплата</label>
@@ -98,7 +96,6 @@ export default function BillionaireClock() {
                   </option>
                 ))}
               </select>
-              {/* Custom стрелка за падащото меню */}
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-yellow-500">
                 <svg className="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -108,27 +105,29 @@ export default function BillionaireClock() {
           </div>
         </div>
 
-        {/* Куката (The Hook): Динамичният дисплей */}
+        {/* Живият Брояч */}
         <div className="text-center w-full relative z-10">
           <div className="inline-block bg-zinc-900/50 border border-white/5 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
             <p className="text-lg md:text-xl text-zinc-300 font-medium">
-              Докато си тук, <span className="text-white font-black">{selectedHero.name}</span> изкара:
+              Докато си тук (вече <span className="text-yellow-500 font-mono">{secondsPassed.toFixed(1)} сек</span>), <span className="text-white font-black">{selectedHero.name}</span> изкара:
             </p>
           </div>
           
-          {/* Броячът на парите - ОГРОМЕН и светещ */}
-          <div className="text-6xl md:text-8xl lg:text-[10rem] leading-none font-black font-mono tracking-tighter text-green-400 drop-shadow-[0_0_40px_rgba(74,222,128,0.3)] my-6 tabular-nums">
-            ${earningsSoFar}
+          <div className="text-6xl md:text-8xl lg:text-[9rem] leading-none font-black font-mono tracking-tighter text-green-400 drop-shadow-[0_0_40px_rgba(74,222,128,0.3)] my-6 tabular-nums">
+            ${formattedEarnings}
           </div>
 
-          {/* Психологическият удар */}
-          <div className="inline-block bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-3xl px-8 md:px-12 py-8 mt-8 shadow-2xl">
-            <p className="text-2xl md:text-4xl font-light text-zinc-200 mb-2">
-              Му трябват точно <span className="font-black text-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.6)]">{timeToEarnSalary} секунди</span>
+          {/* АБСУРДНОТО СРАВНЕНИЕ (Куката) */}
+          <div className="inline-block bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-3xl px-8 md:px-12 py-8 mt-8 shadow-2xl max-w-2xl">
+            <p className="text-2xl md:text-3xl font-light text-zinc-200 mb-4 leading-tight">
+              Той току-що изработи твоята <span className="font-black text-red-500 underline decoration-red-500/50">ГОДИШНА</span> заплата за точно <span className="font-black text-white bg-red-600 px-3 py-1 rounded-lg shadow-lg">{timeToEarnAnnual} секунди</span>.
             </p>
-            <p className="text-sm md:text-base text-zinc-400 font-mono uppercase tracking-widest">
-              за да изработи твоята месечна заплата
+            <p className="text-lg text-zinc-400 font-medium italic">
+              Това е приблизително времето, което ти отне да прочетеш това изречение.
             </p>
+            <div className="mt-6 pt-6 border-t border-red-500/20 text-sm md:text-base text-zinc-500 font-mono uppercase tracking-widest">
+              Месечната ти заплата я изкарва за {timeToEarnMonthly} секунди.
+            </div>
           </div>
         </div>
 
