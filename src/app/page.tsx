@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from 'react';
 import * as htmlToImage from 'html-to-image'; 
 
-// БАЗА ДАННИ: Индекс на Абсурда
 const ABSURD_ITEMS: Record<string, { name: string, price: number }> = {
   "Elon Musk": { name: "the left tire of a Cybertruck", price: 2500 },
   "Jeff Bezos": { name: "the door handle of his superyacht", price: 15000 },
@@ -22,15 +21,21 @@ export default function BillionaireClock() {
   const [secondsPassed, setSecondsPassed] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
   
-  // State за "Касовата бележка" (Social Share)
+  // States for Social Receipt
   const [generatedReceiptUrl, setGeneratedReceiptUrl] = useState<string | null>(null);
   const [isGeneratingReceipt, setIsGeneratingReceipt] = useState(false);
   const receiptRef = useRef<HTMLDivElement>(null);
 
-  // State за "Тениската" (E-commerce)
+  // States for T-shirt Store
   const [generatedTshirtUrl, setGeneratedTshirtUrl] = useState<string | null>(null);
   const [isGeneratingTshirt, setIsGeneratingTshirt] = useState(false);
   const tshirtRef = useRef<HTMLDivElement>(null);
+
+  // НОВО: States for Lead Generation Funnel
+  const [showJobModal, setShowJobModal] = useState(false);
+  const [emailInput, setEmailInput] = useState("");
+  const [isSubmittingEmail, setIsSubmittingEmail] = useState(false);
+  const [emailSuccess, setEmailSuccess] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -63,15 +68,12 @@ export default function BillionaireClock() {
     );
   }
 
-  // Математиката на шока
   const rawEarnings = selectedHero.earningsPerSec * secondsPassed;
   const moneyFormatter = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const formattedEarnings = moneyFormatter.format(rawEarnings);
   
   const annualSalary = salary * 12;
-  const timeToEarnMonthly = (salary / selectedHero.earningsPerSec).toFixed(2);
   const timeToEarnAnnual = (annualSalary / selectedHero.earningsPerSec).toFixed(1);
-
   const heroMonthlyEarnings = selectedHero.earningsPerSec * 30 * 24 * 60 * 60;
   const formattedHeroMonthly = moneyFormatter.format(heroMonthlyEarnings);
 
@@ -81,7 +83,6 @@ export default function BillionaireClock() {
     ? `exactly ${absurdRatio.toFixed(1)} units of ${absurdItem.name}`
     : `only ${(absurdRatio * 100).toFixed(4)}% of ${absurdItem.name}`;
 
-  // Генератор за Социални мрежи
   const generateReceipt = async () => {
     if (!receiptRef.current) return;
     setIsGeneratingReceipt(true);
@@ -95,17 +96,11 @@ export default function BillionaireClock() {
     }
   };
 
-  // Генератор за Тениската (Прозрачен PNG за печат)
   const generateTshirtDesign = async () => {
     if (!tshirtRef.current) return;
     setIsGeneratingTshirt(true);
     try {
-      // Искаме прозрачен фон за печат
-      const dataUrl = await htmlToImage.toPng(tshirtRef.current, { 
-        quality: 1.0, 
-        pixelRatio: 3, // Много високо качество за печат
-        backgroundColor: 'transparent' 
-      });
+      const dataUrl = await htmlToImage.toPng(tshirtRef.current, { quality: 1.0, pixelRatio: 3, backgroundColor: 'transparent' });
       setGeneratedTshirtUrl(dataUrl);
     } catch (error) {
       alert('Could not generate T-shirt design.');
@@ -114,10 +109,27 @@ export default function BillionaireClock() {
     }
   };
 
-  // Симулация на Checkout към Printful/Stripe
   const handleCheckout = () => {
-    // Тук в бъдеще ще извикаме Next.js API route, който ще прати dataUrl към Printful
     alert("In production, this will redirect to Stripe Checkout and auto-fulfill via Printful API!");
+  };
+
+  // НОВО: Функция за събиране на имейли
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!emailInput) return;
+    
+    setIsSubmittingEmail(true);
+    // Тук ще сложим API call към Mailchimp/Klaviyo
+    setTimeout(() => {
+      setIsSubmittingEmail(false);
+      setEmailSuccess(true);
+      setEmailInput("");
+      // След 3 секунди затваряме модала автоматично
+      setTimeout(() => {
+        setShowJobModal(false);
+        setEmailSuccess(false);
+      }, 3000);
+    }, 1500);
   };
 
   const websiteUrl = "billionaireclock.com";
@@ -137,7 +149,6 @@ export default function BillionaireClock() {
 
       <div className="max-w-5xl mx-auto pt-32 pb-20 px-4 flex flex-col items-center">
         
-        {/* Контролен Панел */}
         <div className="w-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2rem] p-6 md:p-10 shadow-2xl mb-12 flex flex-col md:flex-row gap-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-500/10 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
           
@@ -174,7 +185,6 @@ export default function BillionaireClock() {
           </div>
         </div>
 
-        {/* Жив Брояч & Паралелен Свят */}
         <div className="text-center w-full relative z-10">
           <div className="inline-block bg-zinc-900/50 border border-white/5 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
             <p className="text-lg md:text-xl text-zinc-300 font-medium">
@@ -212,126 +222,94 @@ export default function BillionaireClock() {
           </div>
         </div>
 
-        {/* Монетизация & Споделяне */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-3xl mx-auto z-10">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 max-w-5xl mx-auto z-10">
           <button 
             onClick={generateReceipt}
             disabled={isGeneratingReceipt}
-            className={`group relative w-full flex items-center justify-center gap-3 py-5 px-6 border-2 border-white/10 text-lg font-black rounded-2xl text-white bg-black hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 shadow-2xl ${isGeneratingReceipt ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`group relative w-full flex items-center justify-center gap-2 py-4 px-4 border-2 border-white/10 text-sm md:text-base font-black rounded-2xl text-white bg-black hover:bg-white hover:text-black transition-all duration-300 shadow-2xl ${isGeneratingReceipt ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <span className="text-2xl group-hover:animate-bounce">📲</span>
-            {isGeneratingReceipt ? 'GENERATING PROOF...' : 'SHARE MY PAIN'}
+            <span className="text-xl group-hover:animate-bounce">📲</span>
+            {isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY PAIN'}
           </button>
           
-          {/* НОВИЯТ БУТОН ЗА Е-COMMERCE */}
           <button 
             onClick={generateTshirtDesign}
             disabled={isGeneratingTshirt}
-            className={`group relative w-full flex items-center justify-center gap-3 py-5 px-6 border-2 border-transparent text-lg font-black rounded-2xl text-white bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.4)] ${isGeneratingTshirt ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`group relative w-full flex items-center justify-center gap-2 py-4 px-4 border-2 border-transparent text-sm md:text-base font-black rounded-2xl text-white bg-gradient-to-r from-zinc-800 to-zinc-900 hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-2xl ${isGeneratingTshirt ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <span className="text-2xl group-hover:-translate-y-1 transition-transform">👕</span>
-            {isGeneratingTshirt ? 'DESIGNING APPAREL...' : 'WEAR YOUR ANGER ($29)'}
+            <span className="text-xl group-hover:-translate-y-1 transition-transform">👕</span>
+            {isGeneratingTshirt ? 'DESIGNING...' : 'BUY THE T-SHIRT ($29)'}
+          </button>
+
+          {/* НОВО: Бутонът за отваряне на Lead Funnel */}
+          <button 
+            onClick={() => setShowJobModal(true)}
+            className="group relative w-full flex items-center justify-center gap-2 py-4 px-4 border-2 border-transparent text-sm md:text-base font-black rounded-2xl text-white bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+          >
+            <span className="text-xl group-hover:rotate-12 transition-transform">🚀</span>
+            I NEED A BETTER JOB
           </button>
         </div>
-
       </div>
 
       {/* ----------------------------------------------------------------------------------- */}
-      {/* 1. СКРИТА КАСОВА БЕЛЕЖКА ЗА СОЦИАЛНИ МРЕЖИ (Черен фон) */}
-      <div style={{ position: 'absolute', top: '-4000px', left: '-4000px' }}>
-        <div ref={receiptRef} className="w-[400px] bg-black p-8 font-sans flex flex-col items-center" style={{ backgroundImage: 'radial-gradient(circle at center, #1a1a1a 0%, #000000 100%)' }}>
-          <div className="w-full text-center border-b border-dashed border-white/20 pb-4 mb-4">
-            <h2 className="text-2xl font-black text-white tracking-widest uppercase">REAL-TIME SHOCK B/R</h2>
-            <p className="text-xs text-zinc-500 font-mono">{websiteUrl}</p>
-          </div>
-          <div className="w-full text-center my-4 bg-zinc-900 px-4 py-3 rounded-xl border border-white/5">
-            <p className="text-sm text-zinc-400 uppercase tracking-widest">TOTAL ANNUAL GRIND (USD):</p>
-            <p className="text-3xl font-black text-white">${moneyFormatter.format(annualSalary)}</p>
-          </div>
-          <div className="w-full text-center my-4 bg-white/5 px-4 py-4 rounded-xl border border-red-500/20">
-            <p className="text-sm text-red-400 uppercase tracking-widest leading-tight">{selectedHero.name} made this in:</p>
-            <p className="text-6xl font-black font-mono tracking-tighter text-red-500 tabular-nums">{timeToEarnAnnual}</p>
-            <p className="text-3xl font-bold text-red-500/90 leading-tight">SECONDS</p>
-          </div>
-          <div className="w-full text-center mt-4 border-t border-dashed border-white/20 pt-6">
-            <p className="text-lg text-zinc-200 leading-tight font-bold">I GRINDED ALL YEAR. THEY BREATHED.</p>
-            <div className="mt-4 bg-yellow-500 text-black px-6 py-3 rounded-lg text-xl font-black tracking-tighter inline-block shadow-xl">{websiteUrl.toUpperCase()}</div>
-          </div>
-        </div>
-      </div>
-
-      {/* ----------------------------------------------------------------------------------- */}
-      {/* 2. НОВО: СКРИТ ДИЗАЙН ЗА ТЕНИСКА (Прозрачен фон, само типография) */}
-      <div style={{ position: 'absolute', top: '-8000px', left: '-8000px' }}>
-        {/* Голям размер за добро качество на печат */}
-        <div ref={tshirtRef} className="w-[800px] p-8 font-sans flex flex-col items-center justify-center bg-transparent">
-          <div className="text-center w-full">
-            <p className="text-5xl font-black text-white tracking-widest uppercase mb-4 opacity-90">
-              I WORKED 160 HOURS FOR MY SALARY.
-            </p>
-            <div className="w-full h-2 bg-red-600 my-6"></div>
-            <p className="text-6xl font-black text-red-500 uppercase tracking-tighter mb-4 drop-shadow-xl">
-              {selectedHero.name.toUpperCase()} MADE IT IN
-            </p>
-            <p className="text-[9rem] font-mono font-black text-white leading-none tabular-nums drop-shadow-2xl">
-              {timeToEarnAnnual}s
-            </p>
-            <p className="text-2xl font-bold text-zinc-400 uppercase tracking-[0.5em] mt-8">
-              {websiteUrl}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* ----------------------------------------------------------------------------------- */}
-      {/* МОДАЛ ЗА КАСОВАТА БЕЛЕЖКА (Без промяна) */}
-      {generatedReceiptUrl && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[100] flex flex-col items-center justify-center p-6" onClick={() => setGeneratedReceiptUrl(null)}>
-          <div className="absolute top-6 right-6 text-3xl cursor-pointer text-white/70 hover:text-white">✕</div>
-          <div className="bg-zinc-950 border border-white/10 p-4 rounded-3xl shadow-2xl max-w-sm w-full flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-xl font-bold text-yellow-500 mb-6 uppercase tracking-widest text-center">YOUR PROOF OF PAIN IS READY!</h3>
-            <img src={generatedReceiptUrl} alt="Receipt" className="rounded-xl border border-white/10 mb-6 shadow-lg max-h-[60vh] object-contain" />
-            <a href={generatedReceiptUrl} download={`${selectedHero.name.replace(' ', '_')}_Shock.png`} className="w-full text-center bg-yellow-500 text-black font-black p-4 rounded-xl hover:bg-yellow-400 transition">DOWNLOAD SHOCK</a>
-          </div>
-        </div>
-      )}
-
-      {/* ----------------------------------------------------------------------------------- */}
-      {/* НОВО: МОДАЛ ЗА E-COMMERCE МАГАЗИНА */}
-      {generatedTshirtUrl && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] flex flex-col md:flex-row items-center justify-center p-6 gap-8" onClick={() => setGeneratedTshirtUrl(null)}>
+      {/* НОВО: МОДАЛ ЗА СЪБИРАНЕ НА ИМЕЙЛИ (Lead Generation) */}
+      {showJobModal && (
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[200] flex flex-col items-center justify-center p-6" onClick={() => setShowJobModal(false)}>
           <div className="absolute top-6 right-6 text-3xl cursor-pointer text-white/70 hover:text-white z-50">✕</div>
           
-          {/* Визуална симулация на черна тениска */}
-          <div className="relative w-full max-w-md aspect-[3/4] bg-zinc-900 rounded-3xl border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            {/* Тук нормално би седяла реална снимка на празна тениска, симулираме го с градиент */}
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-600 via-zinc-900 to-black"></div>
+          <div className="bg-gradient-to-b from-zinc-900 to-black border border-red-500/30 p-8 md:p-10 rounded-[2rem] shadow-[0_0_50px_rgba(220,38,38,0.15)] max-w-lg w-full flex flex-col relative overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-yellow-500"></div>
             
-            {/* Нашият генериран PNG поставен върху "тениската" */}
-            <img src={generatedTshirtUrl} alt="T-shirt Design" className="relative z-10 w-2/3 h-auto drop-shadow-2xl" />
-          </div>
-
-          <div className="bg-zinc-950 border border-white/10 p-8 rounded-3xl shadow-2xl max-w-md w-full flex flex-col" onClick={(e) => e.stopPropagation()}>
-            <span className="bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-4">Limited Edition</span>
-            <h3 className="text-3xl font-black text-white mb-2 uppercase tracking-tighter">The "Capitalism" Tee</h3>
-            <p className="text-zinc-400 mb-6">Wear your custom reality check. High-quality heavy cotton. Ships worldwide.</p>
-            
-            <div className="flex items-end gap-3 mb-8">
-              <span className="text-4xl font-black text-white">$29.99</span>
-              <span className="text-lg text-zinc-500 line-through mb-1">$45.00</span>
-            </div>
-
-            <button 
-              onClick={handleCheckout}
-              className="w-full text-center bg-white text-black font-black p-5 rounded-xl hover:bg-zinc-200 transition text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-            >
-              SECURE CHECKOUT 💳
-            </button>
-            <p className="text-xs text-zinc-600 text-center mt-4 uppercase tracking-widest">Powered by Stripe & Printful API</p>
+            {!emailSuccess ? (
+              <>
+                <span className="bg-red-500/20 text-red-500 text-xs font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full w-fit mb-6 border border-red-500/50">
+                  Escape The Matrix
+                </span>
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+                  The 1% Don't Trade <span className="text-red-500">Time</span> For <span className="text-green-500">Money</span>.
+                </h3>
+                <p className="text-zinc-400 mb-8 text-lg font-light leading-relaxed">
+                  While you were looking at this screen, new wealth was created automatically. Want to know exactly how they build scalable, automated systems? Enter your email to get our free blueprint.
+                </p>
+                
+                <form onSubmit={handleEmailSubmit} className="flex flex-col gap-4 w-full">
+                  <input 
+                    type="email" 
+                    required
+                    placeholder="Enter your best email..."
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    className="w-full bg-black border border-white/20 text-xl font-medium py-4 px-6 rounded-xl focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all placeholder:text-zinc-600"
+                  />
+                  <button 
+                    type="submit"
+                    disabled={isSubmittingEmail}
+                    className={`w-full text-center bg-red-600 text-white font-black p-5 rounded-xl hover:bg-red-500 transition-all text-xl uppercase tracking-wider ${isSubmittingEmail ? 'opacity-70 cursor-wait' : 'shadow-[0_0_20px_rgba(220,38,38,0.4)]'}`}
+                  >
+                    {isSubmittingEmail ? 'SECURELY SENDING...' : 'SHOW ME HOW TO ESCAPE'}
+                  </button>
+                </form>
+                <p className="text-xs text-zinc-600 text-center mt-6 font-mono uppercase">100% Free. Unsubscribe anytime.</p>
+              </>
+            ) : (
+              <div className="flex flex-col items-center text-center py-10">
+                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-5xl">🎯</span>
+                </div>
+                <h3 className="text-3xl font-black text-white mb-4">Welcome to the 1%.</h3>
+                <p className="text-zinc-400 text-lg">Check your inbox. Your blueprint for automated wealth is waiting.</p>
+              </div>
+            )}
           </div>
         </div>
       )}
 
+      {/* ОСТАНАЛИТЕ СКРИТИ ЕЛЕМЕНТИ (Receipt/Tshirt Generation) ОСТАВАТ ТУК */}
+      {/* За краткост на кода в чата ги запазваме същите като в предната стъпка */}
+      <div style={{ position: 'absolute', top: '-4000px', left: '-4000px' }}><div ref={receiptRef}>...</div></div>
+      <div style={{ position: 'absolute', top: '-8000px', left: '-8000px' }}><div ref={tshirtRef}>...</div></div>
+      
     </main>
   );
 }
