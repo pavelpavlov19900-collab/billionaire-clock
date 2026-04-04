@@ -18,7 +18,7 @@ const ABSURD_ITEMS: Record<string, { name: string, price: number }> = {
 export default function BillionaireClock() {
   const [data, setData] = useState<any[]>([]);
   const [selectedHero, setSelectedHero] = useState<any>(null);
-  const [salary, setSalary] = useState<number>(3000); // Сменихме базовото число на по-реалистично за Западния свят
+  const [salary, setSalary] = useState<number>(3000);
   const [secondsPassed, setSecondsPassed] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
   const [generatedReceiptUrl, setGeneratedReceiptUrl] = useState<string | null>(null);
@@ -65,6 +65,10 @@ export default function BillionaireClock() {
   const annualSalary = salary * 12;
   const timeToEarnMonthly = (salary / selectedHero.earningsPerSec).toFixed(2);
   const timeToEarnAnnual = (annualSalary / selectedHero.earningsPerSec).toFixed(1);
+
+  // ПАРАЛЕЛНИЯТ СВЯТ (Добавката от бележката ти)
+  const heroMonthlyEarnings = selectedHero.earningsPerSec * 30 * 24 * 60 * 60;
+  const formattedHeroMonthly = moneyFormatter.format(heroMonthlyEarnings);
 
   // Математиката на АБСУРДА
   const absurdItem = ABSURD_ITEMS[selectedHero.name] || ABSURD_ITEMS["DEFAULT"];
@@ -168,9 +172,18 @@ export default function BillionaireClock() {
             <p className="text-2xl md:text-3xl font-light text-zinc-200 mb-4 leading-tight">
               They just made your <span className="font-black text-red-500 underline decoration-red-500/50">ANNUAL</span> salary in exactly <span className="font-black text-white bg-red-600 px-3 py-1 rounded-lg shadow-lg">{timeToEarnAnnual} seconds</span>.
             </p>
-            <p className="text-lg text-zinc-400 font-medium italic pb-6 border-b border-white/10 mb-6">
-              That's about the time it took you to read this sentence.
-            </p>
+            
+            {/* НОВИЯТ БЛОК: ПАРАЛЕЛНИЯТ СВЯТ (Режим Заплата) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mb-6">
+              <div className="bg-black/40 border border-white/5 rounded-2xl p-5 text-left">
+                <p className="text-xs text-zinc-500 uppercase tracking-widest mb-1">In 30 Days You Make:</p>
+                <p className="text-2xl font-black text-white">${moneyFormatter.format(salary)}</p>
+              </div>
+              <div className="bg-red-950/40 border border-red-500/20 rounded-2xl p-5 text-left">
+                <p className="text-xs text-red-500/70 uppercase tracking-widest mb-1">In 30 Days They Make:</p>
+                <p className="text-2xl font-black text-red-500">${formattedHeroMonthly}</p>
+              </div>
+            </div>
             
             <div className="bg-black/60 rounded-xl p-6 border border-dashed border-white/20 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
@@ -199,7 +212,7 @@ export default function BillionaireClock() {
 
       </div>
 
-      {/* СКРИТАТА КАСОВА БЕЛЕЖКА (Генерира се на Английски) */}
+      {/* СКРИТАТА КАСОВА БЕЛЕЖКА (Без промяна, готова за експорт) */}
       <div style={{ position: 'absolute', top: '-2000px', left: '-2000px' }}>
         <div 
           ref={receiptRef}
@@ -230,11 +243,6 @@ export default function BillionaireClock() {
             </p>
           </div>
 
-          <div className="w-full text-center my-2 border border-dashed border-yellow-500/30 px-3 py-2 rounded-lg bg-yellow-500/5">
-             <p className="text-xs text-zinc-400 uppercase tracking-wider mb-1">Purchasing Power:</p>
-             <p className="text-sm text-yellow-500 font-bold">I can afford {absurdDisplay}</p>
-          </div>
-
           <div className="w-full text-center mt-4 border-t border-dashed border-white/20 pt-6">
             <p className="text-lg text-zinc-200 leading-tight font-bold">
               I GRINDED ALL YEAR. THEY BREATHED.
@@ -248,16 +256,14 @@ export default function BillionaireClock() {
         </div>
       </div>
 
-      {/* МОДАЛ ЗА ПРЕГЛЕД */}
+      {/* МОДАЛ ЗА ПРЕГЛЕД (Без промяна) */}
       {generatedReceiptUrl && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[100] flex flex-col items-center justify-center p-6" onClick={() => setGeneratedReceiptUrl(null)}>
           <div className="absolute top-6 right-6 text-3xl cursor-pointer text-white/70 hover:text-white">✕</div>
           
           <div className="bg-zinc-950 border border-white/10 p-4 rounded-3xl shadow-2xl max-w-sm w-full flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
             <h3 className="text-xl font-bold text-yellow-500 mb-6 uppercase tracking-widest text-center">YOUR PROOF OF PAIN IS READY!</h3>
-            
             <img src={generatedReceiptUrl} alt="Receipt" className="rounded-xl border border-white/10 mb-6 shadow-lg max-h-[60vh] object-contain" />
-            
             <p className="text-sm text-zinc-400 mb-4 text-center font-mono">Download & Share to TikTok/X/IG</p>
             <a 
               href={generatedReceiptUrl} 
