@@ -34,22 +34,25 @@ export default function BillionaireClock() {
   const [isGeneratingTshirt, setIsGeneratingTshirt] = useState(false);
   const [userRank, setUserRank] = useState({ name: "MATRIX CITIZEN", color: "text-zinc-500", level: 1 });
 
-  // 👑 The Vanity Billboard
+  // THE VANITY BILLBOARD
   const [currentVip, setCurrentVip] = useState<string | null>("@YourHandleHere");
   const [showVipModal, setShowVipModal] = useState(false);
 
-  // 🎯 НОВО: STATES ЗА КАЛКУЛАТОРА НА МИЛИОНА (LEAD GEN)
+  // MILLIONAIRE CALCULATOR (LEAD GEN)
   const [showMillionModal, setShowMillionModal] = useState(false);
   const [milSavings, setMilSavings] = useState<number>(0);
   const [milMonthly, setMilMonthly] = useState<number>(200);
-  const [milRoi, setMilRoi] = useState<number>(8); // 8% средна годишна доходност S&P500
+  const [milRoi, setMilRoi] = useState<number>(8); 
   const [yearsToMillion, setYearsToMillion] = useState<string | null>(null);
   const [cutCoffee, setCutCoffee] = useState(false);
+
+  // 🎥 НОВО: TIKTOK STUDIO MODE (Auto-Video Generator)
+  const [isTiktokMode, setIsTiktokMode] = useState(false);
 
   const receiptRef = useRef<HTMLDivElement>(null);
   const tshirtRef = useRef<HTMLDivElement>(null);
 
-  // 📊 Analytics Tracker
+  // Analytics Tracker
   const trackConversion = (eventName: string, dataObj: any = {}) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', eventName, dataObj);
@@ -74,7 +77,14 @@ export default function BillionaireClock() {
       setSecondsPassed(prev => prev + 0.1);
     }, 100);
     return () => clearInterval(interval);
-  }, [selectedHero, opponent]);
+  }, [selectedHero, opponent, isTiktokMode]); // Added isTiktokMode to dependencies
+
+  // Auto-reset timer when entering TikTok mode
+  useEffect(() => {
+    if (isTiktokMode) {
+      setSecondsPassed(0);
+    }
+  }, [isTiktokMode]);
 
   useEffect(() => {
     if (secondsPassed < 15) setUserRank({ name: "MATRIX CITIZEN", color: "text-zinc-500", level: 1 });
@@ -85,7 +95,7 @@ export default function BillionaireClock() {
   }, [secondsPassed]);
 
   useEffect(() => {
-    if (Math.floor(secondsPassed) === 10) {
+    if (Math.floor(secondsPassed) === 10 && !isTiktokMode) {
       const dataPayload = {
         salary_usd: salary,
         age_group: age || "Undisclosed",
@@ -94,7 +104,7 @@ export default function BillionaireClock() {
       };
       trackConversion('data_profile_synced', dataPayload);
     }
-  }, [secondsPassed, salary, age, country, selectedHero]);
+  }, [secondsPassed, salary, age, country, selectedHero, isTiktokMode]);
 
   if (!isClient || !data.length || !selectedHero) return null; 
 
@@ -112,7 +122,6 @@ export default function BillionaireClock() {
 
   const inflationBurn = (annualSalary * 0.05 / 31536000) * secondsPassed;
 
-  // 🎯 НОВО: Математиката за достигане на 1 милион
   const handleCalculateMillion = (e: React.FormEvent) => {
     e.preventDefault();
     trackConversion('calculated_million_path');
@@ -120,14 +129,14 @@ export default function BillionaireClock() {
     let total = Number(milSavings);
     const r = Number(milRoi) / 100 / 12;
     const target = 1000000;
-    const actualMonthly = cutCoffee ? Number(milMonthly) + 150 : Number(milMonthly); // Добавяме $150 ако са спрели кафетата
+    const actualMonthly = cutCoffee ? Number(milMonthly) + 150 : Number(milMonthly); 
 
     if (actualMonthly <= 0 && (r <= 0 || total < target)) {
         setYearsToMillion("NEVER");
         return;
     }
 
-    while (total < target && months < 1200) { // 1200 месеца = 100 години лимит
+    while (total < target && months < 1200) { 
       total = total * (1 + r) + actualMonthly;
       months++;
     }
@@ -165,6 +174,40 @@ export default function BillionaireClock() {
 
   const websiteUrl = "billionaireclock.com";
 
+  // 🎥 TIKTOK STUDIO RENDER MODE
+  // This mode replaces the entire UI with a vertical 9:16 layout for screen recording
+  if (isTiktokMode) {
+    return (
+      <main className="min-h-screen bg-black flex items-center justify-center p-4 font-sans">
+         <div className="w-full max-w-[400px] aspect-[9/16] bg-gradient-to-b from-zinc-950 to-black border border-white/5 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-8 text-center shadow-[0_0_50px_rgba(0,0,0,1)]">
+            
+            {/* Progress bar at the top */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-zinc-900">
+                <div className="h-full bg-green-500 transition-all duration-300" style={{ width: `${Math.min((secondsPassed / 15) * 100, 100)}%` }}></div>
+            </div>
+
+            <div className="absolute top-8 px-4 py-1 bg-red-600/20 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/30 rounded-full animate-pulse">
+              Live Feed
+            </div>
+
+            <h2 className="text-4xl font-black text-white uppercase mt-12 mb-2 leading-none">Don't Scroll.</h2>
+            <p className="text-zinc-400 text-lg mb-10 leading-tight">While you watched this for <span className="text-white font-bold">{secondsPassed.toFixed(1)}s</span>, <br/><span className="text-yellow-500 font-bold">{selectedHero.name}</span> just made:</p>
+            
+            <div className={`text-6xl md:text-7xl font-mono font-black text-green-400 mb-12 tracking-tighter tabular-nums transition-transform ${secondsPassed > 0 ? 'scale-110 drop-shadow-[0_0_20px_rgba(74,222,128,0.3)]' : ''}`}>
+              ${moneyFormatter.format(heroEarnings)}
+            </div>
+
+            <div className="absolute bottom-16 bg-white text-black px-6 py-3 rounded-2xl font-black uppercase tracking-tighter text-lg shadow-xl animate-bounce">
+              Link in bio to calculate yours 👇
+            </div>
+
+            <button onClick={() => setIsTiktokMode(false)} className="absolute bottom-4 text-zinc-600 text-[10px] uppercase font-bold hover:text-white">Exit Studio Mode</button>
+         </div>
+      </main>
+    );
+  }
+
+  // STANDARD RENDER MODE
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`} strategy="afterInteractive" />
@@ -183,9 +226,14 @@ export default function BillionaireClock() {
             <h1 className="text-xl md:text-2xl font-black tracking-tighter uppercase text-yellow-500">BILLIONAIRE CLOCK</h1>
             <span className={`text-[10px] font-black tracking-[0.2em] uppercase ${userRank.color}`}>RANK: {userRank.name}</span>
           </div>
-          <button onClick={() => { setIsBattleMode(!isBattleMode); setSecondsPassed(0); trackConversion('toggle_battle_mode'); }} className="px-4 py-2 rounded-full border border-white/10 font-bold text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
-            {isBattleMode ? '← SINGLE' : '⚔️ BATTLE'}
-          </button>
+          <div className="flex gap-2">
+            <button onClick={() => { setIsTiktokMode(true); trackConversion('enter_tiktok_studio'); }} className="hidden md:block px-4 py-2 rounded-full border border-green-500/50 bg-green-500/10 text-green-400 font-black text-[10px] tracking-widest uppercase hover:bg-green-500 hover:text-black transition-all">
+              🎥 Viral Studio
+            </button>
+            <button onClick={() => { setIsBattleMode(!isBattleMode); setSecondsPassed(0); trackConversion('toggle_battle_mode'); }} className="px-4 py-2 rounded-full border border-white/10 font-bold text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
+              {isBattleMode ? '← SINGLE' : '⚔️ BATTLE'}
+            </button>
+          </div>
         </header>
 
         <div className="max-w-7xl mx-auto pt-32 pb-20 px-4">
@@ -260,18 +308,18 @@ export default function BillionaireClock() {
                     </div>
                   </div>
 
+                  {/* 🔥 FIXED TO ENGLISH: THE ABSURD COMPARISON */}
                   <div className="bg-yellow-950/20 p-5 rounded-xl text-left border border-yellow-500/20 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
                     <p className="text-[10px] text-yellow-500/80 uppercase font-black tracking-widest mb-1">The Reality Check</p>
                     <p className="text-xl font-light text-zinc-300">
-                      С твоята брутна <span className="font-bold text-white">годишна заплата</span> можеш да си позволиш {absurdDisplay}.
+                      With your gross <span className="font-bold text-white">annual salary</span>, you can afford {absurdDisplay}.
                     </p>
                   </div>
                </div>
             </div>
           )}
 
-          {/* 🎯 НОВО: БАНЕР ЗА ЛИЧНИЯ МИЛИОН (Lead Gen Entry) */}
           <div className="max-w-6xl mx-auto mt-12 z-10 relative">
             <button 
                 onClick={() => { trackConversion('click_million_calculator_banner'); setShowMillionModal(true); }}
@@ -300,11 +348,11 @@ export default function BillionaireClock() {
               RAGE TWEET
             </a>
             <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
-            <button onClick={() => setShowJobModal(true)} className="bg-red-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:bg-red-500 hover:scale-105 transition-all">I NEED A BETTER JOB</button>
+            <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
           </div>
         </div>
 
-        {/* 🎯 НОВО: MODAL ЗА ЛИЧНИЯ МИЛИОН (Формата + Lead Gen) */}
+        {/* 🎯 MILLIONAIRE CALCULATOR MODAL */}
         {showMillionModal && (
           <div className="fixed inset-0 bg-black/95 z-[300] flex items-center justify-center p-4 md:p-6 overflow-y-auto" onClick={() => setShowMillionModal(false)}>
              <div className="bg-zinc-900 border border-green-500/30 p-8 md:p-10 rounded-[3rem] max-w-xl w-full relative my-auto" onClick={e => e.stopPropagation()}>
@@ -323,7 +371,6 @@ export default function BillionaireClock() {
                             <input type="number" value={milMonthly || ''} onChange={(e) => setMilMonthly(Number(e.target.value))} className="w-full bg-transparent text-2xl font-black mt-1 outline-none text-white" placeholder="200" required />
                         </div>
                         
-                        {/* THE AVOCADO TOAST EFFECT */}
                         <div className="flex items-center gap-3 p-4 bg-zinc-800/50 rounded-xl border border-zinc-700/50 mt-4 cursor-pointer" onClick={() => setCutCoffee(!cutCoffee)}>
                             <div className={`w-6 h-6 rounded-md flex items-center justify-center border ${cutCoffee ? 'bg-green-500 border-green-500' : 'bg-black border-zinc-600'}`}>
                                 {cutCoffee && <span className="text-black text-xs font-black">✓</span>}
@@ -351,7 +398,6 @@ export default function BillionaireClock() {
                              <p className="text-red-500 mb-8">You are mathematically guaranteed to work until you die. You need leverage.</p>
                         )}
                         
-                        {/* THE LEAD GEN HOOK */}
                         <div className="bg-black/50 border border-green-500/20 p-6 rounded-3xl mt-8">
                             <h4 className="font-black text-white text-lg mb-2 uppercase">Want to speed this up?</h4>
                             <p className="text-sm text-zinc-400 mb-6">Enter your email to save this roadmap and get our free 5-day automated business accelerator.</p>
