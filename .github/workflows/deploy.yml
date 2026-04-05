@@ -30,27 +30,29 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
-
+          
       - name: Install dependencies
         run: npm install
 
       - name: Build with Next.js
-        run: npx next build
+        run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ""
+
+      # ТОВА Е КЛЮЧЪТ: Проверяваме къде са файловете и ги местим, ако трябва
+      - name: Ensure out directory exists
+        run: |
+          if [ -d "out" ]; then
+            echo "Directory 'out' exists."
+          elif [ -d ".next" ]; then
+            echo "Directory 'out' missing, but '.next' found. Forcing export..."
+            npx next export || echo "Manual export failed, checking config..."
+          else
+            echo "Neither 'out' nor '.next' found!"
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
