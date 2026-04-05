@@ -34,9 +34,17 @@ export default function BillionaireClock() {
   const [isGeneratingTshirt, setIsGeneratingTshirt] = useState(false);
   const [userRank, setUserRank] = useState({ name: "MATRIX CITIZEN", color: "text-zinc-500", level: 1 });
 
-  // 👑 НОВО: The Vanity Billboard (Idea #3)
+  // 👑 The Vanity Billboard
   const [currentVip, setCurrentVip] = useState<string | null>("@YourHandleHere");
   const [showVipModal, setShowVipModal] = useState(false);
+
+  // 🎯 НОВО: STATES ЗА КАЛКУЛАТОРА НА МИЛИОНА (LEAD GEN)
+  const [showMillionModal, setShowMillionModal] = useState(false);
+  const [milSavings, setMilSavings] = useState<number>(0);
+  const [milMonthly, setMilMonthly] = useState<number>(200);
+  const [milRoi, setMilRoi] = useState<number>(8); // 8% средна годишна доходност S&P500
+  const [yearsToMillion, setYearsToMillion] = useState<string | null>(null);
+  const [cutCoffee, setCutCoffee] = useState(false);
 
   const receiptRef = useRef<HTMLDivElement>(null);
   const tshirtRef = useRef<HTMLDivElement>(null);
@@ -102,8 +110,29 @@ export default function BillionaireClock() {
     ? `exactly ${absurdRatio.toFixed(1)} units of ${absurdItem.name}`
     : `only ${(absurdRatio * 100).toFixed(4)}% of ${absurdItem.name}`;
 
-  // 🔥 НОВО: Изчисляване на инфлацията
   const inflationBurn = (annualSalary * 0.05 / 31536000) * secondsPassed;
+
+  // 🎯 НОВО: Математиката за достигане на 1 милион
+  const handleCalculateMillion = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackConversion('calculated_million_path');
+    let months = 0;
+    let total = Number(milSavings);
+    const r = Number(milRoi) / 100 / 12;
+    const target = 1000000;
+    const actualMonthly = cutCoffee ? Number(milMonthly) + 150 : Number(milMonthly); // Добавяме $150 ако са спрели кафетата
+
+    if (actualMonthly <= 0 && (r <= 0 || total < target)) {
+        setYearsToMillion("NEVER");
+        return;
+    }
+
+    while (total < target && months < 1200) { // 1200 месеца = 100 години лимит
+      total = total * (1 + r) + actualMonthly;
+      months++;
+    }
+    setYearsToMillion(months >= 1200 ? "NEVER" : (months / 12).toFixed(1));
+  };
 
   const generateReceipt = async () => {
     if (!receiptRef.current) return;
@@ -129,7 +158,6 @@ export default function BillionaireClock() {
     finally { setIsGeneratingTshirt(false); }
   };
 
-  // N O V O: Open VIP Modal & Track
   const openVipModal = () => {
     trackConversion('click_vanity_billboard_claim'); 
     setShowVipModal(true);
@@ -181,8 +209,6 @@ export default function BillionaireClock() {
           ) : (
             <div className="flex flex-col items-center text-center relative z-10">
                
-               {/* 👑 N O V O: The Vanity Billboard (Idea #3) */}
-               {/* Placed at the very top of Single View */}
                 <div className="w-full max-w-xl bg-gradient-to-r from-yellow-900/40 via-yellow-700/50 to-yellow-900/40 border border-yellow-500/30 rounded-2xl p-4 mb-10 shadow-[0_0_30px_rgba(234,179,8,0.2)] backdrop-blur-sm relative flex items-center justify-between gap-4">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-l-2xl"></div>
                     <div className="flex-1 flex flex-col items-start pl-3 text-left">
@@ -203,7 +229,6 @@ export default function BillionaireClock() {
                  LEVEL {userRank.level} • {userRank.name}
                </div>
                
-               {/* 🔥 НОВО: Инфлационният брояч */}
                <div className="text-xs text-red-500/50 font-mono text-center mb-8">
                  Value lost to inflation while here: -${inflationBurn.toFixed(4)}
                </div>
@@ -235,7 +260,6 @@ export default function BillionaireClock() {
                     </div>
                   </div>
 
-                  {/* 🔥 НОВО: АБСУРДНОТО СРАВНЕНИЕ */}
                   <div className="bg-yellow-950/20 p-5 rounded-xl text-left border border-yellow-500/20 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
                     <p className="text-[10px] text-yellow-500/80 uppercase font-black tracking-widest mb-1">The Reality Check</p>
@@ -243,16 +267,28 @@ export default function BillionaireClock() {
                       С твоята брутна <span className="font-bold text-white">годишна заплата</span> можеш да си позволиш {absurdDisplay}.
                     </p>
                   </div>
-
                </div>
             </div>
           )}
 
-          {/* 🔥 ПРОМЕНЕНО: От md:grid-cols-3 на lg:grid-cols-4 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 max-w-6xl mx-auto z-10 relative">
+          {/* 🎯 НОВО: БАНЕР ЗА ЛИЧНИЯ МИЛИОН (Lead Gen Entry) */}
+          <div className="max-w-6xl mx-auto mt-12 z-10 relative">
+            <button 
+                onClick={() => { trackConversion('click_million_calculator_banner'); setShowMillionModal(true); }}
+                className="w-full bg-gradient-to-r from-emerald-900 to-green-900 border border-green-500/50 p-6 rounded-[2rem] flex flex-col md:flex-row items-center justify-between shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:scale-[1.02] transition-transform group"
+            >
+                <div className="text-left mb-4 md:mb-0">
+                    <h3 className="text-2xl font-black text-white uppercase tracking-tight group-hover:text-green-400 transition-colors">When will YOU be a Millionaire?</h3>
+                    <p className="text-green-200/70">Stop watching them. Calculate your exact timeline and roadmap to $1,000,000.</p>
+                </div>
+                <div className="bg-green-500 text-black px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm">
+                    Calculate Path 🚀
+                </div>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 max-w-6xl mx-auto z-10 relative">
             <button onClick={generateReceipt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-white hover:text-black transition-all">{isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY SHOCK'}</button>
-            
-            {/* 🔥 НОВО: RAGE TWEET БУТОН */}
             <a 
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just found out ${selectedHero?.name} makes my ANNUAL salary in ${timeToEarnAnnual} seconds. We are living in the Matrix. 💀 Check your time here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`}
               target="_blank"
@@ -263,13 +299,77 @@ export default function BillionaireClock() {
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               RAGE TWEET
             </a>
-
             <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
             <button onClick={() => setShowJobModal(true)} className="bg-red-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:bg-red-500 hover:scale-105 transition-all">I NEED A BETTER JOB</button>
           </div>
         </div>
 
-        {/* 🧲 LEAD GEN MODAL */}
+        {/* 🎯 НОВО: MODAL ЗА ЛИЧНИЯ МИЛИОН (Формата + Lead Gen) */}
+        {showMillionModal && (
+          <div className="fixed inset-0 bg-black/95 z-[300] flex items-center justify-center p-4 md:p-6 overflow-y-auto" onClick={() => setShowMillionModal(false)}>
+             <div className="bg-zinc-900 border border-green-500/30 p-8 md:p-10 rounded-[3rem] max-w-xl w-full relative my-auto" onClick={e => e.stopPropagation()}>
+                
+                <h3 className="text-3xl font-black mb-2 uppercase text-white">Your Path to $1M.</h3>
+                <p className="text-zinc-400 mb-8 font-light">The math doesn't lie. Enter your current reality.</p>
+                
+                {!yearsToMillion ? (
+                    <form onSubmit={handleCalculateMillion} className="space-y-4">
+                        <div className="bg-black/50 p-4 rounded-2xl border border-white/5">
+                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Current Savings ($)</label>
+                            <input type="number" value={milSavings || ''} onChange={(e) => setMilSavings(Number(e.target.value))} className="w-full bg-transparent text-2xl font-black mt-1 outline-none text-white" placeholder="0" required />
+                        </div>
+                        <div className="bg-black/50 p-4 rounded-2xl border border-white/5">
+                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Monthly Contribution ($)</label>
+                            <input type="number" value={milMonthly || ''} onChange={(e) => setMilMonthly(Number(e.target.value))} className="w-full bg-transparent text-2xl font-black mt-1 outline-none text-white" placeholder="200" required />
+                        </div>
+                        
+                        {/* THE AVOCADO TOAST EFFECT */}
+                        <div className="flex items-center gap-3 p-4 bg-zinc-800/50 rounded-xl border border-zinc-700/50 mt-4 cursor-pointer" onClick={() => setCutCoffee(!cutCoffee)}>
+                            <div className={`w-6 h-6 rounded-md flex items-center justify-center border ${cutCoffee ? 'bg-green-500 border-green-500' : 'bg-black border-zinc-600'}`}>
+                                {cutCoffee && <span className="text-black text-xs font-black">✓</span>}
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-sm font-bold text-white">Cut Starbucks & Netflix</p>
+                                <p className="text-xs text-zinc-400">Adds $150 to your monthly investment.</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" className="w-full bg-green-500 text-black p-5 rounded-2xl font-black text-lg uppercase tracking-widest mt-6 hover:bg-white transition-colors">
+                            Calculate Reality
+                        </button>
+                    </form>
+                ) : (
+                    <div className="text-center animate-fade-in">
+                        <p className="text-sm text-zinc-500 uppercase tracking-widest font-black mb-2">Based on your math:</p>
+                        <h2 className="text-6xl font-black text-white font-mono tracking-tighter mb-4">
+                            {yearsToMillion === "NEVER" ? "NEVER." : `${yearsToMillion} YRS`}
+                        </h2>
+                        {yearsToMillion !== "NEVER" && (
+                             <p className="text-zinc-400 mb-8">You will be a millionaire in <span className="text-white font-bold">{new Date().getFullYear() + Math.ceil(Number(yearsToMillion))}</span>.</p>
+                        )}
+                        {yearsToMillion === "NEVER" && (
+                             <p className="text-red-500 mb-8">You are mathematically guaranteed to work until you die. You need leverage.</p>
+                        )}
+                        
+                        {/* THE LEAD GEN HOOK */}
+                        <div className="bg-black/50 border border-green-500/20 p-6 rounded-3xl mt-8">
+                            <h4 className="font-black text-white text-lg mb-2 uppercase">Want to speed this up?</h4>
+                            <p className="text-sm text-zinc-400 mb-6">Enter your email to save this roadmap and get our free 5-day automated business accelerator.</p>
+                            <form onSubmit={(e) => { e.preventDefault(); trackConversion('million_lead_captured'); alert('Roadmap sent! Sequence Initiated.'); setShowMillionModal(false); }}>
+                                <input type="email" required placeholder="YOUR EMAIL" className="w-full bg-zinc-900 border border-white/10 p-4 rounded-xl mb-3 outline-none focus:border-green-500 text-center text-white" />
+                                <button type="submit" className="w-full bg-white text-black p-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-green-500 transition-colors">Send My Roadmap</button>
+                            </form>
+                        </div>
+                        <button onClick={() => setYearsToMillion(null)} className="mt-6 text-xs text-zinc-600 uppercase font-black hover:text-white">← Recalculate</button>
+                    </div>
+                )}
+                
+                <p className="absolute top-6 right-8 text-zinc-600 font-black cursor-pointer hover:text-white" onClick={() => setShowMillionModal(false)}>✕</p>
+             </div>
+          </div>
+        )}
+
+        {/* 🧲 LEAD GEN MODAL (OLD JOB MODAL) */}
         {showJobModal && (
           <div className="fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-6" onClick={() => setShowJobModal(false)}>
              <div className="bg-zinc-900 border border-red-500/30 p-10 rounded-[3rem] max-w-lg w-full text-center relative" onClick={e => e.stopPropagation()}>
@@ -312,7 +412,7 @@ export default function BillionaireClock() {
           </div>
         )}
 
-        {/* 👑 N O V O: MODAL ЗА ЗАКУПУВАНЕ НА BILLBOARD (Idea #3) */}
+        {/* 👑 THE VANITY BILLBOARD MODAL */}
         {showVipModal && (
           <div className="fixed inset-0 bg-black/95 z-[250] flex items-center justify-center p-6" onClick={() => setShowVipModal(false)}>
              <div className="bg-zinc-900 border border-yellow-500/50 p-10 rounded-[3rem] max-w-lg w-full text-center relative overflow-hidden" onClick={e => e.stopPropagation()}>
@@ -328,7 +428,6 @@ export default function BillionaireClock() {
                         <p className="text-3xl font-black text-white">$10.00 / DAY</p>
                     </div>
                 </div>
-                {/* В бъдеще тук ще отворим Stripe Checkout */}
                 <button 
                     onClick={() => { trackConversion('vip_checkout_initiated'); alert('In production, this opens Stripe Checkout.'); setShowVipModal(false); }}
                     className="w-full bg-yellow-500 text-black p-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-lg hover:bg-white transition"
