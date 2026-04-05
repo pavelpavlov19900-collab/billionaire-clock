@@ -218,7 +218,7 @@ export default function BillionaireClock() {
     setShowVipModal(true);
   };
 
-  const websiteUrl = "billionaireclock.com";
+  const websiteUrl = "richreality.xyz";
 
   // 🎥 TIKTOK STUDIO RENDER MODE
   // This mode replaces the entire UI with a vertical 9:16 layout for screen recording
@@ -354,6 +354,7 @@ export default function BillionaireClock() {
                     </div>
                   </div>
 
+                  {/* 🔥 THE ABSURD COMPARISON */}
                   <div className="bg-yellow-950/20 p-5 rounded-xl text-left border border-yellow-500/20 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
                     <p className="text-[10px] text-yellow-500/80 uppercase font-black tracking-widest mb-1">The Reality Check</p>
@@ -362,6 +363,22 @@ export default function BillionaireClock() {
                     </p>
                   </div>
                </div>
+
+               {/* 🛑 ANTI-SPONSOR BANNER (Copium Deals) */}
+               <div className="max-w-2xl w-full bg-gradient-to-r from-red-950 to-black border border-red-900 p-6 rounded-3xl mt-6 flex flex-col md:flex-row items-center justify-between shadow-[0_0_30px_rgba(220,38,38,0.15)] group relative overflow-hidden cursor-pointer" onClick={() => { trackConversion('click_anti_sponsor'); window.open('#', '_blank'); }}>
+                   <div className="absolute top-0 left-0 w-2 h-full bg-red-600"></div>
+                   <div className="flex-1 pl-4 text-left z-10">
+                       <span className="bg-red-600 text-white text-[9px] font-black uppercase tracking-[0.3em] px-2 py-1 rounded-sm mb-3 inline-block">Reality Check Sponsor</span>
+                       <h4 className="text-xl md:text-2xl font-black text-white uppercase leading-tight group-hover:text-red-400 transition-colors">
+                           You will never own Bezos' Yacht.
+                       </h4>
+                       <p className="text-zinc-400 text-sm mt-1">But at least your flight to Rome is €15. Book the peasant-class ticket now.</p>
+                   </div>
+                   <div className="mt-4 md:mt-0 bg-white text-black px-6 py-3 rounded-xl font-black uppercase tracking-widest text-xs z-10 hover:bg-red-500 hover:text-white transition-all whitespace-nowrap">
+                       Fly for €15 ✈️
+                   </div>
+               </div>
+
             </div>
           )}
 
