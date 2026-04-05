@@ -49,6 +49,24 @@ export default function BillionaireClock() {
   // 🎥 НОВО: TIKTOK STUDIO MODE (Auto-Video Generator)
   const [isTiktokMode, setIsTiktokMode] = useState(false);
 
+  // 🎮 THE SPEND GAME STATES
+  const [showGameModal, setShowGameModal] = useState(false);
+  const [gameBalance, setGameBalance] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
+  const [hasRageQuit, setHasRageQuit] = useState(false);
+
+  // Musk makes roughly $3200 per second (calculated as ~$100B/year)
+  const muskPerSecond = 3200; 
+
+  const GAME_ITEMS = [
+    { name: "Coffee", price: 5, icon: "☕" },
+    { name: "iPhone 15", price: 1500, icon: "📱" },
+    { name: "Rolex", price: 40000, icon: "⌚" },
+    { name: "Lambo", price: 400000, icon: "🏎️" },
+    { name: "Real Estate (Invest)", price: 500, icon: "🏢", isAffiliate: true }, // Троянски кон
+    { name: "Private Jet", price: 25000000, icon: "🛩️" }
+  ];
+
   const receiptRef = useRef<HTMLDivElement>(null);
   const tshirtRef = useRef<HTMLDivElement>(null);
 
@@ -105,6 +123,34 @@ export default function BillionaireClock() {
       trackConversion('data_profile_synced', dataPayload);
     }
   }, [secondsPassed, salary, age, country, selectedHero, isTiktokMode]);
+
+  // 🎮 Game Logic: Musk's money grows relentlessly while playing
+  useEffect(() => {
+    let gameInterval: NodeJS.Timeout;
+    if (showGameModal && !hasRageQuit) {
+      gameInterval = setInterval(() => {
+        setGameBalance(prev => prev + (muskPerSecond / 10)); // Updates every 100ms
+        
+        // Auto Rage-Quit after 100 clicks
+        if (clickCount > 100) {
+            setHasRageQuit(true);
+        }
+      }, 100);
+    }
+    return () => clearInterval(gameInterval);
+  }, [showGameModal, hasRageQuit, clickCount]);
+
+  const handleBuy = (item: any) => {
+    if (item.isAffiliate) {
+         trackConversion('game_affiliate_clicked');
+         alert("You can actually afford this one. Redirecting to Real Estate Investment Platform...");
+         // window.open('YOUR_AFFILIATE_LINK', '_blank');
+         return;
+    }
+    setGameBalance(prev => prev - item.price);
+    setClickCount(prev => prev + 1);
+    trackConversion('game_item_bought', { item_name: item.name, price: item.price });
+  };
 
   if (!isClient || !data.length || !selectedHero) return null; 
 
@@ -308,7 +354,6 @@ export default function BillionaireClock() {
                     </div>
                   </div>
 
-                  {/* 🔥 FIXED TO ENGLISH: THE ABSURD COMPARISON */}
                   <div className="bg-yellow-950/20 p-5 rounded-xl text-left border border-yellow-500/20 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
                     <p className="text-[10px] text-yellow-500/80 uppercase font-black tracking-widest mb-1">The Reality Check</p>
@@ -335,7 +380,7 @@ export default function BillionaireClock() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 max-w-6xl mx-auto z-10 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-6 max-w-6xl mx-auto z-10 relative">
             <button onClick={generateReceipt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-white hover:text-black transition-all">{isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY SHOCK'}</button>
             <a 
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just found out ${selectedHero?.name} makes my ANNUAL salary in ${timeToEarnAnnual} seconds. We are living in the Matrix. 💀 Check your time here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`}
@@ -349,6 +394,13 @@ export default function BillionaireClock() {
             </a>
             <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
             <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
+            {/* 🎮 THE SPEND GAME BUTTON */}
+            <button 
+                onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); }} 
+                className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all"
+            >
+                🎮 SPEND HIS MONEY
+            </button>
           </div>
         </div>
 
@@ -411,6 +463,66 @@ export default function BillionaireClock() {
                 )}
                 
                 <p className="absolute top-6 right-8 text-zinc-600 font-black cursor-pointer hover:text-white" onClick={() => setShowMillionModal(false)}>✕</p>
+             </div>
+          </div>
+        )}
+
+        {/* 🎮 THE SPEND GAME MODAL */}
+        {showGameModal && (
+          <div className="fixed inset-0 bg-black/95 z-[400] flex items-center justify-center p-4 md:p-6" onClick={() => setShowGameModal(false)}>
+             <div className="bg-zinc-950 border border-purple-500/30 p-8 rounded-[3rem] max-w-2xl w-full text-center relative overflow-hidden" onClick={e => e.stopPropagation()}>
+                
+                {!hasRageQuit ? (
+                    <>
+                        <h3 className="text-2xl font-black text-white uppercase mb-2">Try to bankrupt him.</h3>
+                        <p className="text-zinc-500 text-sm mb-6 uppercase tracking-widest font-bold">He makes $3,200 every second.</p>
+                        
+                        <div className="bg-black border border-white/10 p-6 rounded-3xl mb-8">
+                            <p className="text-zinc-500 text-xs font-black uppercase tracking-widest mb-2">Musk's Current Daily Wallet</p>
+                            <div className="text-5xl md:text-6xl font-mono font-black text-green-400 tabular-nums">
+                                ${moneyFormatter.format(gameBalance)}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            {GAME_ITEMS.map((item, idx) => (
+                                <button 
+                                    key={idx} 
+                                    onClick={() => handleBuy(item)}
+                                    className="bg-zinc-900 border border-white/5 p-4 rounded-2xl hover:bg-purple-600 transition-colors flex flex-col items-center justify-center gap-2 active:scale-95"
+                                >
+                                    <span className="text-3xl">{item.icon}</span>
+                                    <span className="text-white font-bold text-sm uppercase">{item.name}</span>
+                                    <span className="text-zinc-400 font-mono text-xs">-${item.price.toLocaleString()}</span>
+                                </button>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    <div className="animate-fade-in py-10">
+                        <span className="text-6xl mb-6 block">🤡</span>
+                        <h3 className="text-4xl font-black text-white uppercase mb-4 leading-tight">You can't out-click passive income.</h3>
+                        <p className="text-zinc-400 text-lg mb-8">You clicked {clickCount} times. You got tired. His money kept growing. Stop playing games and start building leverage.</p>
+                        
+                        <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-3xl">
+                            <h4 className="font-black text-white text-lg mb-4 uppercase">Get the free blueprint.</h4>
+                            <form onSubmit={(e) => { e.preventDefault(); trackConversion('game_rage_quit_lead'); alert('Blueprint sent!'); setShowGameModal(false); }}>
+                                <input type="email" required placeholder="ENTER YOUR EMAIL" className="w-full bg-black border border-white/10 p-4 rounded-xl mb-3 outline-none focus:border-purple-500 text-center text-white font-mono" />
+                                <button type="submit" className="w-full bg-purple-600 text-white p-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Show me how the 1% do it</button>
+                            </form>
+                            <a 
+                                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I clicked ${clickCount} times trying to bankrupt Elon Musk. He made more money while I was playing. Can you beat my score? 🎮💸 Play here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full bg-black text-purple-400 border border-purple-500/50 p-4 rounded-xl font-black text-sm uppercase tracking-widest mt-3 hover:bg-purple-500 hover:text-white transition-colors"
+                            >
+                                Share your defeat
+                            </a>
+                        </div>
+                    </div>
+                )}
+
+                <button onClick={() => setShowGameModal(false)} className="absolute top-6 right-6 text-zinc-600 hover:text-white font-black text-xl">✕</button>
              </div>
           </div>
         )}
