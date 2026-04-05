@@ -222,7 +222,6 @@ export default function BillionaireClock() {
         </div>
 
         <header className="w-full p-4 md:p-6 border-b border-white/5 flex justify-between items-center bg-black/40 backdrop-blur-xl fixed top-0 z-50">
-          <img src="/logo.png" alt="Reality Check Logo" className="w-10 h-10 mr-3 drop-shadow-[0_0_15px_rgba(34,197,94,0.5)]" />
           <div className="flex flex-col">
             <h1 className="text-xl md:text-2xl font-black tracking-tighter uppercase text-yellow-500">BILLIONAIRE CLOCK</h1>
             <span className={`text-[10px] font-black tracking-[0.2em] uppercase ${userRank.color}`}>RANK: {userRank.name}</span>
