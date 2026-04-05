@@ -55,9 +55,10 @@ export default function BillionaireClock() {
   const [clickCount, setClickCount] = useState(0);
   const [hasRageQuit, setHasRageQuit] = useState(false);
 
-  // ⚡ NEW STATES FOR SABOTAGE & CERTIFICATE
+  // ⚡ NEW MACHINE STATES: SABOTAGE, CERTIFICATE, ROAST
   const [isPaused, setIsPaused] = useState(false);
   const [showCertModal, setShowCertModal] = useState(false);
+  const [roastText, setRoastText] = useState<string | null>(null);
 
   // Musk makes roughly $3200 per second (calculated as ~$100B/year)
   const muskPerSecond = 3200; 
@@ -74,12 +75,12 @@ export default function BillionaireClock() {
   const receiptRef = useRef<HTMLDivElement>(null);
   const tshirtRef = useRef<HTMLDivElement>(null);
 
-  // Analytics Tracker
+  // Analytics Tracker & Whale Watch Data Collector
   const trackConversion = (eventName: string, dataObj: any = {}) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', eventName, dataObj);
     }
-    console.log(`📊 [ANALYTICS/WHALE-WATCH] ${eventName}`, dataObj);
+    console.log(`📊 [WHALE-WATCH DATA] ${eventName}`, dataObj);
   };
 
   useEffect(() => {
@@ -91,12 +92,12 @@ export default function BillionaireClock() {
         setSelectedHero(json[0]); 
         setOpponent(json[1]);
       })
-      .catch(err => console.error("Waiting for data..."));
+      .catch(err => console.error("Waiting for build..."));
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Respect the sabotage pause
+      // Logic for the Sabotage Pause
       if (!isPaused) {
         setSecondsPassed(prev => prev + 0.1);
       }
@@ -146,13 +147,13 @@ export default function BillionaireClock() {
   const handleBuy = (item: any) => {
     if (item.isAffiliate) {
          trackConversion('game_affiliate_clicked');
-         alert("You can actually afford this one. Redirecting to Real Estate Investment Platform...");
+         alert("Redirecting to Real Estate Investment Platform...");
          return;
     }
     setGameBalance(prev => prev - item.price);
     setClickCount(prev => prev + 1);
     
-    // NEW: Whale Watch Data Capture (Consumer intent)
+    // WHALE WATCH DATA CAPTURE
     trackConversion('whale_watch_intent', { 
         item: item.name, 
         price: item.price, 
@@ -164,7 +165,20 @@ export default function BillionaireClock() {
     trackConversion('sabotage_triggered');
     alert("In production: This stopping Musk for 1s will cost $0.99 via Stripe!");
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 2000); // Resume after 2s for the feel
+    setTimeout(() => setIsPaused(false), 3000); 
+  };
+
+  const triggerRoast = () => {
+    const roasts = [
+      `You make in a year what Elon makes in ${timeToEarnAnnual} seconds. Even a vending machine has more cash flow than you.`,
+      `At ${age || 'your age'}, Bezos was already dominating retail. You are currently dominating the 'Add to Cart' button for things you can't afford.`,
+      `Your annual salary can buy ${absurdDisplay}. That's not a lifestyle, that's a cry for help.`,
+      `The Matrix doesn't even need to guard your cell. You've built it yourself with that salary.`,
+      `You clicked 'Spend his money' 100 times. If only you clicked 'Build a business' once, we wouldn't be here.`
+    ];
+    const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+    setRoastText(randomRoast);
+    trackConversion('ai_roast_triggered');
   };
 
   if (!isClient || !data.length || !selectedHero) return null; 
@@ -210,7 +224,6 @@ export default function BillionaireClock() {
     try {
       const dataUrl = await htmlToImage.toPng(receiptRef.current, { quality: 1.0, pixelRatio: 2 });
       setGeneratedReceiptUrl(dataUrl);
-      trackConversion('generated_share_shock_success');
     } catch (e) { alert('Receipt failed.'); }
     finally { setIsGeneratingReceipt(false); }
   };
@@ -222,7 +235,6 @@ export default function BillionaireClock() {
     try {
       const dataUrl = await htmlToImage.toPng(tshirtRef.current, { quality: 1.0, pixelRatio: 3, backgroundColor: 'transparent' });
       setGeneratedTshirtUrl(dataUrl);
-      trackConversion('generated_tshirt_success');
     } catch (e) { alert('T-shirt failed.'); }
     finally { setIsGeneratingTshirt(false); }
   };
@@ -244,10 +256,10 @@ export default function BillionaireClock() {
             <div className="absolute top-8 px-4 py-1 bg-red-600/20 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/30 rounded-full animate-pulse">Live Feed</div>
             <h2 className="text-4xl font-black text-white uppercase mt-12 mb-2 leading-none">Don't Scroll.</h2>
             <p className="text-zinc-400 text-lg mb-10 leading-tight">While you watched this for <span className="text-white font-bold">{secondsPassed.toFixed(1)}s</span>, <br/><span className="text-yellow-500 font-bold">{selectedHero.name}</span> just made:</p>
-            <div className={`text-6xl md:text-7xl font-mono font-black text-green-400 mb-12 tracking-tighter tabular-nums transition-transform ${secondsPassed > 0 ? 'scale-110 drop-shadow-[0_0_20px_rgba(74,222,128,0.3)]' : ''}`}>
+            <div className={`text-6xl md:text-7xl font-mono font-black text-green-400 mb-12 tracking-tighter tabular-nums transition-transform ${secondsPassed > 0 ? 'scale-110' : ''}`}>
               ${moneyFormatter.format(heroEarnings)}
             </div>
-            <div className="absolute bottom-16 bg-white text-black px-6 py-3 rounded-2xl font-black uppercase tracking-tighter text-lg shadow-xl animate-bounce">Link in bio to calculate yours 👇</div>
+            <div className="absolute bottom-16 bg-white text-black px-6 py-3 rounded-2xl font-black uppercase tracking-tighter text-lg shadow-xl animate-bounce">Link in bio 👇</div>
             <button onClick={() => setIsTiktokMode(false)} className="absolute bottom-4 text-zinc-600 text-[10px] uppercase font-bold hover:text-white">Exit Studio Mode</button>
          </div>
       </main>
@@ -320,6 +332,19 @@ export default function BillionaireClock() {
                  {isPaused && <div className="text-red-500 font-black uppercase tracking-widest text-sm animate-pulse mt-4">⚠️ SYSTEM SABOTAGE ACTIVE: CLOCK PAUSED ⚠️</div>}
                </div>
 
+               {/* 🔥 NEW: AI ROAST COMPONENT */}
+               <div className="mb-8 w-full max-w-2xl">
+                    {!roastText ? (
+                        <button onClick={triggerRoast} className="w-full py-3 border border-red-500/50 bg-red-500/10 text-red-500 font-black uppercase text-[10px] tracking-[0.2em] rounded-xl hover:bg-red-500 hover:text-white transition-all">🔥 ROAST MY FINANCIAL REALITY</button>
+                    ) : (
+                        <div className="p-5 bg-zinc-900 border border-red-600 rounded-2xl animate-bounce-short text-left relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+                            <p className="text-red-500 font-mono text-sm italic mb-2 leading-relaxed">" {roastText} "</p>
+                            <button onClick={() => setRoastText(null)} className="text-[9px] text-zinc-600 uppercase font-black hover:text-white tracking-widest">Close Matrix Oracle</button>
+                        </div>
+                    )}
+               </div>
+
                <div className="max-w-2xl w-full bg-gradient-to-b from-zinc-900/50 to-black border border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl relative">
                   <div className="bg-black/60 border border-white/5 rounded-2xl p-6 mb-8 flex flex-col gap-4">
                     <div className="flex flex-col text-left relative">
@@ -369,7 +394,7 @@ export default function BillionaireClock() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 max-w-6xl mx-auto z-10 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 max-w-6xl mx-auto z-10 relative text-center">
             <button onClick={generateReceipt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase border border-white/10 hover:bg-white hover:text-black transition-all">{isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY SHOCK'}</button>
             <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just found out ${selectedHero?.name} makes my ANNUAL salary in ${timeToEarnAnnual} seconds. 💀 Check your time here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion('click_twitter_share')} className="bg-black text-white p-5 rounded-2xl font-black text-sm uppercase border border-[#1DA1F2]/50 hover:bg-[#1DA1F2] transition-all flex items-center justify-center gap-2">
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> RAGE TWEET
@@ -378,7 +403,7 @@ export default function BillionaireClock() {
             <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
             <button onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); }} className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all">🎮 SPEND HIS MONEY</button>
             
-            {/* ⚡ NEW: THE SABOTAGE BUTTON */}
+            {/* ⚡ NEW: SABOTAGE BUTTON */}
             <button onClick={handleSabotage} className="relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]">
                 <span className="relative z-10">Stop Elon for 1s ($1)</span>
                 <div className="absolute inset-0 bg-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -495,7 +520,7 @@ export default function BillionaireClock() {
                 <p className="text-zinc-400 mb-8 text-lg font-light">The 1% automated their wealth while you watched this clock. Get the free blueprint.</p>
                 <form onSubmit={(e) => { e.preventDefault(); trackConversion('lead_captured_success'); alert('Sequence Activated!'); setShowJobModal(false); }}>
                   <input type="email" required placeholder="YOUR BEST EMAIL" className="w-full bg-black border border-white/10 p-5 rounded-2xl mb-4 outline-none focus:border-red-500 text-center text-white" />
-                  <button type="submit" className="w-full bg-red-600 p-5 rounded-2xl font-black text-lg uppercase tracking-widest">SHOW ME THE WAY</button>
+                  <button type="submit" className="w-full bg-red-600 p-5 rounded-2xl font-black text-lg uppercase tracking-widest text-white">SHOW ME THE WAY</button>
                 </form>
              </div>
           </div>
@@ -515,7 +540,7 @@ export default function BillionaireClock() {
                         <p className="text-3xl font-black text-white">$10.00 / DAY</p>
                     </div>
                 </div>
-                <button onClick={() => alert('Stripe Checkout...')} className="w-full bg-yellow-500 text-black p-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-lg hover:bg-white transition">SECURE SLOT NOW 💳</button>
+                <button onClick={() => alert('Stripe Checkout...')} className="w-full bg-yellow-500 text-black p-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-lg hover:bg-white transition text-black">SECURE SLOT NOW 💳</button>
              </div>
           </div>
         )}
