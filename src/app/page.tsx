@@ -102,6 +102,9 @@ export default function BillionaireClock() {
     ? `exactly ${absurdRatio.toFixed(1)} units of ${absurdItem.name}`
     : `only ${(absurdRatio * 100).toFixed(4)}% of ${absurdItem.name}`;
 
+  // 🔥 НОВО: Изчисляване на инфлацията
+  const inflationBurn = (annualSalary * 0.05 / 31536000) * secondsPassed;
+
   const generateReceipt = async () => {
     if (!receiptRef.current) return;
     setIsGeneratingReceipt(true);
@@ -196,10 +199,15 @@ export default function BillionaireClock() {
                     </button>
                 </div>
 
-               <div className={`mb-4 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-black uppercase tracking-widest ${userRank.color}`}>
-                  LEVEL {userRank.level} • {userRank.name}
+               <div className={`mb-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-black uppercase tracking-widest ${userRank.color}`}>
+                 LEVEL {userRank.level} • {userRank.name}
                </div>
                
+               {/* 🔥 НОВО: Инфлационният брояч */}
+               <div className="text-xs text-red-500/50 font-mono text-center mb-8">
+                 Value lost to inflation while here: -${inflationBurn.toFixed(4)}
+               </div>
+
                <div className="mb-10">
                  <p className="text-lg text-zinc-400 mb-4">While you've been here, <span className="text-white font-bold">{selectedHero.name}</span> made:</p>
                  <h2 className={`text-6xl md:text-9xl font-black text-green-400 font-mono tracking-tighter tabular-nums transition-all ${secondsPassed > 60 ? 'scale-110 drop-shadow-[0_0_30px_rgba(74,222,128,0.4)]' : ''}`}>
@@ -226,12 +234,36 @@ export default function BillionaireClock() {
                       <p className="text-xl font-black text-red-500">${moneyFormatter.format(heroMonthlyEarnings)}</p>
                     </div>
                   </div>
+
+                  {/* 🔥 НОВО: АБСУРДНОТО СРАВНЕНИЕ */}
+                  <div className="bg-yellow-950/20 p-5 rounded-xl text-left border border-yellow-500/20 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
+                    <p className="text-[10px] text-yellow-500/80 uppercase font-black tracking-widest mb-1">The Reality Check</p>
+                    <p className="text-xl font-light text-zinc-300">
+                      С твоята брутна <span className="font-bold text-white">годишна заплата</span> можеш да си позволиш {absurdDisplay}.
+                    </p>
+                  </div>
+
                </div>
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 max-w-5xl mx-auto z-10 relative">
+          {/* 🔥 ПРОМЕНЕНО: От md:grid-cols-3 на lg:grid-cols-4 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 max-w-6xl mx-auto z-10 relative">
             <button onClick={generateReceipt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-white hover:text-black transition-all">{isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY SHOCK'}</button>
+            
+            {/* 🔥 НОВО: RAGE TWEET БУТОН */}
+            <a 
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just found out ${selectedHero?.name} makes my ANNUAL salary in ${timeToEarnAnnual} seconds. We are living in the Matrix. 💀 Check your time here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackConversion('click_twitter_share')}
+              className="bg-black text-white p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-[#1DA1F2]/50 hover:bg-[#1DA1F2] transition-all flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              RAGE TWEET
+            </a>
+
             <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase tracking-widest border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
             <button onClick={() => setShowJobModal(true)} className="bg-red-600 p-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:bg-red-500 hover:scale-105 transition-all">I NEED A BETTER JOB</button>
           </div>
