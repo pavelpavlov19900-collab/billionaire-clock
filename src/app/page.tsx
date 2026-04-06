@@ -3,17 +3,45 @@ import { useState, useEffect, useRef } from 'react';
 import * as htmlToImage from 'html-to-image'; 
 import Script from 'next/script'; 
 
-const ABSURD_ITEMS: Record<string, { name: string, price: number }> = {
-  "Elon Musk": { name: "the left tire of a Cybertruck", price: 2500 },
-  "Jeff Bezos": { name: "the door handle of his superyacht", price: 15000 },
-  "Bernard Arnault": { name: "one strap of a limited edition Louis Vuitton bag", price: 8500 },
-  "Mark Zuckerberg": { name: "1 square meter of his Hawaii bunker", price: 12000 },
-  "Bill Gates": { name: "an acre of the farmland he secretly buys", price: 15000 },
-  "Cristiano Ronaldo": { name: "a golden thread from his left boot", price: 3000 },
-  "Taylor Swift": { name: "3 seconds of fuel for her private jet", price: 1200 },
-  "LeBron James": { name: "one session in his cryochamber", price: 1500 },
-  "DEFAULT": { name: "a gold-plated toothpick", price: 800 }
-};
+const REALITY_ITEMS = [
+  { name: "avocado toasts with organic micro-greens", price: 18 },
+  { name: "months of Netflix Premium you barely watch", price: 23 },
+  { name: "therapy sessions to cope with capitalism", price: 150 },
+  { name: "designer paper clips from Prada", price: 185 },
+  { name: "Louis Vuitton yoga mats you'll never sweat on", price: 2400 },
+  { name: "Uber rides during a light drizzle (Surge Pricing)", price: 45 },
+  { name: "gallons of printer ink (the most expensive liquid on Earth)", price: 12000 },
+  { name: "Erewhon smoothies endorsed by Hailey Bieber", price: 20 },
+  { name: "Balenciaga trash bags (literally just trash bags)", price: 1790 },
+  { name: "Apple Mac Pro wheels (just the four wheels)", price: 699 },
+  { name: "seconds of Mark Zuckerberg's personal security detail", price: 700 },
+  { name: "Supreme branded bricks", price: 150 },
+  { name: "bites of a gold-leaf Wagyu steak at Nusr-Et", price: 100 },
+  { name: "Airbnb cleaning fees for a one-night stay", price: 150 },
+  { name: "Gucci dog collars for a pet you can't afford", price: 350 },
+  { name: "overpriced coffees that ruined your chance to buy a house", price: 7 },
+  { name: "square inches of a Manhattan parking spot", price: 200 },
+  { name: "hours of private jet parking at Teterboro", price: 500 },
+  { name: "Tesla 'Full Self-Driving' subscriptions that still hit cones", price: 199 },
+  { name: "Gwyneth Paltrow's 'This Smells Like My Vagina' candles", price: 75 },
+  { name: "VIP tickets to a seminar telling you to wake up at 4 AM", price: 5000 },
+  { name: "days of survival food kits for the apocalypse", price: 120 },
+  { name: "pairs of shoes that look deliberately dirty", price: 600 },
+  { name: "limited edition pastel Stanley cups", price: 45 },
+  { name: "drops of La Mer anti-aging moisturizer", price: 10 },
+  { name: "months of the gym membership you pay but never use", price: 80 },
+  { name: "gallons of premium gas in California", price: 6 },
+  { name: "vintage Tamagotchis on eBay", price: 120 },
+  { name: "bottles of generic hand sanitizer from 2020", price: 20 },
+  { name: "minutes of consultation with a top Wall Street lawyer", price: 1500 },
+  { name: "single organic strawberries imported from Japan", price: 25 },
+  { name: "golden toothpicks used by hedge fund managers", price: 50 },
+  { name: "bottles of 'raw' unfiltered alkaline water", price: 12 },
+  { name: "tickets to the F1 Paddock Club (practice session only)", price: 8000 },
+  { name: "business class flights to a city you don't even want to visit", price: 4500 },
+  { name: "Cyberquads for Kids", price: 1900 },
+  { name: "bites of a $1,000 golden bagel in NYC", price: 250 }
+];
 
 export default function BillionaireClock() {
   const [data, setData] = useState<any[]>([]);
@@ -33,6 +61,8 @@ export default function BillionaireClock() {
   const [generatedTshirtUrl, setGeneratedTshirtUrl] = useState<string | null>(null);
   const [isGeneratingTshirt, setIsGeneratingTshirt] = useState(false);
   const [userRank, setUserRank] = useState({ name: "MATRIX CITIZEN", color: "text-zinc-500", level: 1 });
+  // 🤯 THE REALITY CHECK STATE
+  const [currentAbsurdItem, setCurrentAbsurdItem] = useState(REALITY_ITEMS[0]);
 
   // THE VANITY BILLBOARD
   const [currentVip, setCurrentVip] = useState<string | null>("@YourHandleHere");
@@ -119,6 +149,13 @@ export default function BillionaireClock() {
     else setUserRank({ name: "0.0001% ENLIGHTENED", color: "text-purple-500 animate-pulse", level: 5 });
   }, [secondsPassed]);
 
+  // 👇 НОВИЯТ БЛОК ЗА АБСУРДИТЕ ИДВА ТУК 👇
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * REALITY_ITEMS.length);
+    setCurrentAbsurdItem(REALITY_ITEMS[randomIndex]);
+  }, [salary]);
+  // 👆 КРАЙ НА НОВИЯ БЛОК 👆
+  
   useEffect(() => {
     if (Math.floor(secondsPassed) === 10 && !isTiktokMode) {
       const dataPayload = {
