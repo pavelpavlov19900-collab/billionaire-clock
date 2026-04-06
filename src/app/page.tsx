@@ -230,11 +230,8 @@ export default function BillionaireClock() {
       });
       setGeneratedReceiptUrl(dataUrl);
       trackConversion('generated_share_shock_success');
-    } catch (e) { 
-      alert('Snapshot failed. Try again.'); 
-    } finally { 
-      setIsGeneratingReceipt(false); 
-    }
+    } catch (e) { alert('Snapshot failed. Try again.'); }
+    finally { setIsGeneratingReceipt(false); }
   };
 
   const generateTshirt = async () => {
@@ -250,11 +247,8 @@ export default function BillionaireClock() {
       });
       setGeneratedTshirtUrl(dataUrl);
       trackConversion('generated_tshirt_success');
-    } catch (e) { 
-      alert('Design failed.'); 
-    } finally { 
-      setIsGeneratingTshirt(false); 
-    }
+    } catch (e) { alert('Design failed.'); }
+    finally { setIsGeneratingTshirt(false); }
   };
 
   const openVipModal = () => {
