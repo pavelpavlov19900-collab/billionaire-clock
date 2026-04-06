@@ -226,11 +226,12 @@ export default function BillionaireClock() {
   const timeToEarnAnnual = (annualSalary / selectedHero.earningsPerSec).toFixed(1);
   const heroMonthlyEarnings = selectedHero.earningsPerSec * 30 * 24 * 60 * 60;
   const opponentEarnings = opponent ? opponent.earningsPerSec * secondsPassed : 0;
-  const absurdItem = ABSURD_ITEMS[selectedHero.name] || ABSURD_ITEMS["DEFAULT"];
-  const absurdRatio = annualSalary / absurdItem.price;
+
+  // 🔥 НОВАТА СЛОТ МАШИНА ЗА АБСУРДИ
+  const absurdRatio = annualSalary / currentAbsurdItem.price;
   let absurdDisplay = absurdRatio >= 1 
-    ? `exactly ${absurdRatio.toFixed(1)} units of ${absurdItem.name}`
-    : `only ${(absurdRatio * 100).toFixed(4)}% of ${absurdItem.name}`;
+    ? `exactly ${absurdRatio.toFixed(1)} ${currentAbsurdItem.name}`
+    : `only ${(absurdRatio * 100).toFixed(2)}% of ${currentAbsurdItem.name}`;
 
   const inflationBurn = (annualSalary * 0.05 / 31536000) * secondsPassed;
 
