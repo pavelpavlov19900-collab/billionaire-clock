@@ -563,11 +563,11 @@ export default function BillionaireClock() {
           </div>
         )}
 
-        {/* 🛠️ FIXED INVISIBLE GENERATORS (For Share & T-Shirt) */}
-        <div className="fixed opacity-0 pointer-events-none left-0 top-0 z-[-100]">
+      {/* 🛠️ ФИКСИРАНИ НЕВИДИМИ ШАБЛОНИ ЗА СНИМКИ */}
+        <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
           
-          {/* 🧾 Receipt Template */}
-          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20">
+          {/* 🧾 Шаблон за SHARE MY SHOCK */}
+          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white">
             <h2 className="text-2xl font-black text-yellow-500 mb-4 uppercase tracking-tighter">SHOCK REPORT</h2>
             <div className="w-full border-t border-dashed border-white/20 pt-6 text-center">
               <p className="text-red-500 font-black text-[10px] uppercase mb-2">{selectedHero?.name || "THEY"} MADE IT IN:</p>
@@ -577,12 +577,14 @@ export default function BillionaireClock() {
             <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl uppercase tracking-tighter">{websiteUrl}</div>
           </div>
 
-          {/* 👕 T-Shirt Template */}
-          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-zinc-950">
+          {/* 👕 Шаблон за WEAR THE ANGER */}
+          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-zinc-950 text-white">
             <p className="text-[20rem] font-black text-white leading-none tracking-tighter">{timeToEarnAnnual}s</p>
             <p className="text-5xl font-black text-white uppercase tracking-widest mt-10">AND ALL I GOT WAS THIS T-SHIRT.</p>
             <p className="text-3xl font-black text-zinc-700 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
           </div>
+          
+        </div>
           
         </div>
       </main>
