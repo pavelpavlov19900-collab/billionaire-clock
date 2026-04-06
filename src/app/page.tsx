@@ -844,7 +844,7 @@ export default function BillionaireClock() {
                     </div>
                 </div>
 
-                {/* 3. CTA BLOCK */}
+             {/* 3. CTA BLOCK */}
                 <div className="bg-zinc-900 border-t border-white/5 p-8 md:p-10 rounded-b-3xl text-center">
                     <p className="text-zinc-400 mb-8 leading-relaxed max-w-xl mx-auto italic">This digital certificate will be generated as a high-resolution, shareable PNG file. Perfect for posting on LinkedIn to flex your financial awareness.</p>
                     <button onClick={() => { trackConversion('click_cert_stripe_claim'); alert('Redirecting to Stripe for secure $4.99 payment...'); }} className="w-full bg-yellow-500 text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_30px_rgba(234,179,8,0.4)]">
@@ -858,10 +858,24 @@ export default function BillionaireClock() {
              </div>
           </div>
         )}
-      </main>
-    </>
-  );
-}
+
+        {/* 👻 Invisible Generators (Keep them inside main) */}
+        <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
+          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white">
+            <h2 className="text-2xl font-black text-yellow-500 mb-4 uppercase tracking-tighter">SHOCK REPORT</h2>
+            <div className="w-full border-t border-dashed border-white/20 pt-6 text-center">
+              <p className="text-red-500 font-black text-2xl uppercase leading-none mb-1">{selectedHero.name}</p>
+              <p className="text-7xl font-black font-mono text-white mb-2 leading-none">{timeToEarnAnnual}s</p>
+            </div>
+            <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl uppercase">{websiteUrl}</div>
+          </div>
+          
+          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-transparent text-white">
+            <p className="text-[20rem] font-black text-white leading-none">{timeToEarnAnnual}s</p>
+            <p className="text-5xl font-black text-white uppercase mt-10">AND ALL I GOT WAS THIS T-SHIRT. #RAGETWEET</p>
+          </div>
+        </div>
+
       </main>
     </>
   );
