@@ -587,19 +587,27 @@ export default function BillionaireClock() {
         )}
         {/* Invisible Generators */}
         <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
-          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white">
+          
+          {/* 🧾 New Shock Report 2.0 (Improved Design) */}
+          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white selection:bg-yellow-500 selection:text-black">
             <h2 className="text-2xl font-black text-yellow-500 mb-4 uppercase tracking-tighter">SHOCK REPORT</h2>
             <div className="w-full border-t border-dashed border-white/20 pt-6 text-center">
-              <p className="text-red-500 font-black text-xs uppercase mb-2">{selectedHero?.name || "THEY"} MADE IT IN:</p>
-              <p className="text-7xl font-black font-mono text-white mb-2">{timeToEarnAnnual}s</p>
+              <p className="text-zinc-400 text-[10px] mb-1 font-bold">Did you know?</p>
+              <p className="text-red-500 font-black text-2xl uppercase leading-none mb-1">{selectedHero.name}</p>
+              <p className="text-zinc-200 text-sm mb-3">just earned your</p>
+              <p className="text-white font-black text-2xl uppercase leading-none mb-4 underline">ENTIRE YEARLY SALARY</p>
+              <p className="text-zinc-200 text-sm mb-2">in:</p>
+              <p className="text-7xl font-black font-mono text-white mb-2 leading-none tabular-nums drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">{timeToEarnAnnual}s</p>
+              <p className="text-zinc-600 text-[10px] uppercase tracking-widest mt-2">(While you were reading this)</p>
             </div>
-            <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl tracking-tighter">{websiteUrl.toUpperCase()}</div>
+            <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl tracking-tighter uppercase">{websiteUrl}</div>
           </div>
           
-          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-transparent text-white">
-            <p className="text-[15rem] font-black text-white leading-none tracking-tighter">{timeToEarnAnnual}s</p>
-            <p className="text-4xl font-black text-white uppercase tracking-widest mt-6">AND ALL I GOT WAS THIS T-SHIRT. #GRIND</p>
-            <p className="text-3xl font-black text-zinc-500 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
+          {/* 👕 T-shirt shop template */}
+          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-zinc-950 text-white">
+            <p className="text-[20rem] font-black text-white leading-none tracking-tighter">{timeToEarnAnnual}s</p>
+            <p className="text-5xl font-black text-white uppercase tracking-widest mt-10">AND ALL I GOT WAS THIS T-SHIRT.</p>
+            <p className="text-3xl font-black text-zinc-700 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
           </div>
         </div>
       </main>
