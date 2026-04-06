@@ -704,7 +704,23 @@ export default function BillionaireClock() {
                       <p className="text-zinc-400 text-xs mb-4">The Matrix works hard, but our printing press broke. Join the VIP restock list.</p>
                       <div className="flex gap-2">
                         <input type="email" placeholder="ENTER EMAIL..." className="w-full bg-black border border-white/10 p-3 rounded-xl text-sm outline-none focus:border-red-500 text-white" />
-                        <button onClick={() => alert('Email saved to waiting list! (Backend connection pending)')} className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm hover:bg-white hover:text-black transition-all">
+                        <button 
+  onClick={() => {
+    // 1. Тракваме конверсията в аналитиките
+    trackConversion('lead_captured_tshirt_waitlist');
+    
+    // 2. Показваме по-сериозно съобщение (вместо alert)
+    setTshirtSoldOut(false); // Затваряме съобщението за успех
+    setGeneratedTshirtUrl(null); // Затваряме целия модал
+    
+    // 3. АВТОМАТИЗАЦИЯ: Отваряме веднага калкулатора за милионери
+    setTimeout(() => {
+       setShowMillionModal(true);
+       alert("Welcome to the inner circle. While we restock, find out exactly when you'll hit your first $1,000,000.");
+    }, 500);
+  }} 
+  className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm hover:bg-white hover:text-black transition-all"
+>
                           NOTIFY
                         </button>
                       </div>
