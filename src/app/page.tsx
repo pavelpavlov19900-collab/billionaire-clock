@@ -455,8 +455,15 @@ export default function BillionaireClock() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 max-w-6xl mx-auto z-10 relative text-center">
             <button onClick={generateReceipt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase border border-white/10 hover:bg-white hover:text-black transition-all">{isGeneratingReceipt ? 'GENERATING...' : 'SHARE MY SHOCK'}</button>
-            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just found out ${selectedHero?.name} makes my ANNUAL salary in ${timeToEarnAnnual} seconds. 💀 Check your time here:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion('click_twitter_share')} className="bg-black text-white p-5 rounded-2xl font-black text-sm uppercase border border-[#1DA1F2]/50 hover:bg-[#1DA1F2] transition-all flex items-center justify-center gap-2">
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> RAGE TWEET
+            <a 
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just found out ${selectedHero?.name} makes my ENTIRE annual salary in ${timeToEarnAnnual} seconds. 💀\n\nThat means I can only afford ${absurdDisplay}.\n\nReality check your salary:`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}&hashtags=BillionaireClock,RealityCheck`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => trackConversion('click_rage_tweet')}
+              className="bg-black text-white p-5 rounded-2xl font-black text-sm uppercase border border-[#1DA1F2]/50 flex items-center justify-center gap-2 hover:bg-[#1DA1F2] hover:text-white transition-all shadow-[0_0_15px_rgba(29,161,242,0.3)]"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.95H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+              RAGE TWEET
             </a>
             <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
             <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
