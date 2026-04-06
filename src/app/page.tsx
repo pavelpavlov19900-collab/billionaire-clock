@@ -63,6 +63,9 @@ export default function BillionaireClock() {
   const [userRank, setUserRank] = useState({ name: "MATRIX CITIZEN", color: "text-zinc-500", level: 1 });
   // 🤯 THE REALITY CHECK STATE
   const [currentAbsurdItem, setCurrentAbsurdItem] = useState(REALITY_ITEMS[0]);
+  
+  // 👕 T-SHIRT DECOY STATE
+  const [tshirtSoldOut, setTshirtSoldOut] = useState(false);
 
   // THE VANITY BILLBOARD
   const [currentVip, setCurrentVip] = useState<string | null>("@YourHandleHere");
@@ -687,12 +690,27 @@ export default function BillionaireClock() {
                   <p className="text-zinc-500 mb-8 leading-relaxed">High-quality 100% heavy cotton. Featuring your real-time stats versus {selectedHero?.name || "Them"}. Ships worldwide.</p>
                   <div className="text-4xl font-black mb-8 text-white">$29.99</div>
                   
-                  {/* Stripe / Checkout button */}
-                  <button onClick={() => alert('POD Integration Plan: 1. Stripe Checkout, 2. Webhook triggers Printful API.')} className="bg-white text-black p-5 rounded-xl font-black text-xl hover:bg-yellow-500 transition-all uppercase tracking-tighter">SECURE CHECKOUT</button>
-                </div>
-             </div>
-          </div>
-        )}
+                  {/* Fake Checkout / Sold Out Decoy */}
+                  {!tshirtSoldOut ? (
+                    <button onClick={() => setTshirtSoldOut(true)} className="bg-white text-black p-5 rounded-xl font-black text-xl hover:bg-yellow-500 transition-all uppercase tracking-tighter shadow-xl">
+                      SECURE CHECKOUT
+                    </button>
+                  ) : (
+                    <div className="bg-red-950/20 border border-red-500/50 p-5 rounded-2xl animate-fade-in">
+                      <p className="text-red-500 font-black uppercase text-sm mb-3 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        SOLD OUT DUE TO VIRAL DEMAND
+                      </p>
+                      <p className="text-zinc-400 text-xs mb-4">The Matrix works hard, but our printing press broke. Join the VIP restock list.</p>
+                      <div className="flex gap-2">
+                        <input type="email" placeholder="ENTER EMAIL..." className="w-full bg-black border border-white/10 p-3 rounded-xl text-sm outline-none focus:border-red-500 text-white" />
+                        <button onClick={() => alert('Email saved to waiting list! (Backend connection pending)')} className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm hover:bg-white hover:text-black transition-all">
+                          NOTIFY
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
         {/* Invisible Generators */}
         <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
           
