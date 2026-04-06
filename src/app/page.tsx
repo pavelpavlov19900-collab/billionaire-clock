@@ -296,21 +296,50 @@ export default function BillionaireClock() {
 
   const websiteUrl = "richreality.xyz";
 
-  if (isTiktokMode) {
+ if (isTiktokMode) {
     return (
-      <main className="min-h-screen bg-black flex items-center justify-center p-4 font-sans">
-         <div className="w-full max-w-[400px] aspect-[9/16] bg-gradient-to-b from-zinc-950 to-black border border-white/5 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-8 text-center shadow-[0_0_50px_rgba(0,0,0,1)]">
-            <div className="absolute top-0 left-0 w-full h-2 bg-zinc-900">
+      <main className="min-h-screen bg-zinc-950 flex items-center justify-center p-4 font-sans selection:bg-yellow-500 selection:text-black">
+         <div className="w-full max-w-[400px] aspect-[9/16] bg-black border border-zinc-800 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl">
+            
+            {/* 🟩 Top Progress Bar */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-zinc-900">
                 <div className="h-full bg-green-500 transition-all duration-300" style={{ width: `${Math.min((secondsPassed / 15) * 100, 100)}%` }}></div>
             </div>
-            <div className="absolute top-8 px-4 py-1 bg-red-600/20 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/30 rounded-full animate-pulse">Live Feed</div>
-            <h2 className="text-4xl font-black text-white uppercase mt-12 mb-2 leading-none">Don't Scroll.</h2>
-            <p className="text-zinc-400 text-lg mb-10 leading-tight">While you watched this for <span className="text-white font-bold">{secondsPassed.toFixed(1)}s</span>, <br/><span className="text-yellow-500 font-bold">{selectedHero.name}</span> just made:</p>
-            <div className={`text-6xl md:text-7xl font-mono font-black text-green-400 mb-12 tracking-tighter tabular-nums transition-transform ${secondsPassed > 0 ? 'scale-110' : ''}`}>
+
+            {/* 🔴 Live REC Indicator */}
+            <div className="absolute top-6 left-6 flex items-center gap-2">
+                <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                <span className="text-red-600 font-black text-xs tracking-widest uppercase">REC</span>
+            </div>
+
+            {/* 🎯 The Main Hook */}
+            <h2 className="text-5xl font-black text-white uppercase mt-10 mb-2 leading-none tracking-tighter">DON'T SCROLL.</h2>
+            
+            <p className="text-zinc-400 text-lg mb-8 leading-tight">
+              In the last <span className="text-white font-bold">{secondsPassed.toFixed(1)}s</span>,<br/>
+              <span className="text-yellow-500 font-black">{selectedHero.name}</span> just made:
+            </p>
+            
+            {/* 💰 The Money Printer */}
+            <div className="text-6xl md:text-7xl font-mono font-black text-green-400 mb-8 tracking-tighter tabular-nums drop-shadow-[0_0_15px_rgba(74,222,128,0.4)]">
               ${moneyFormatter.format(heroEarnings)}
             </div>
-            <div className="absolute bottom-16 bg-white text-black px-6 py-3 rounded-2xl font-black uppercase tracking-tighter text-lg shadow-xl animate-bounce">Link in bio 👇</div>
-            <button onClick={() => setIsTiktokMode(false)} className="absolute bottom-4 text-zinc-600 text-[10px] uppercase font-bold hover:text-white">Exit Studio Mode</button>
+
+            {/* 🤯 The Reality Check (Added inside the video!) */}
+            <div className="bg-red-950/40 border border-red-500/30 p-4 rounded-2xl w-full mb-10 text-left">
+               <p className="text-red-500 text-[10px] font-black uppercase mb-1 tracking-widest">Your Reality Check</p>
+               <p className="text-white text-sm font-light">That buys <span className="font-bold underline">{absurdDisplay}</span>.</p>
+            </div>
+
+            {/* 👇 The Call to Action */}
+            <div className="absolute bottom-20 bg-white text-black px-8 py-4 rounded-full font-black uppercase text-xl animate-bounce shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+              LINK IN BIO 👇
+            </div>
+
+            {/* 🚪 Exit Button */}
+            <button onClick={() => setIsTiktokMode(false)} className="absolute bottom-6 text-zinc-600 text-[10px] uppercase font-black hover:text-white transition-colors tracking-widest">
+              ✕ EXIT STUDIO
+            </button>
          </div>
       </main>
     );
