@@ -496,7 +496,16 @@ export default function BillionaireClock() {
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.95H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
               RAGE TWEET
             </a>
-            <button onClick={generateTshirt} className="bg-zinc-900 p-5 rounded-2xl font-black text-sm uppercase border border-white/10 hover:bg-yellow-500 hover:text-black transition-all">{isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}</button>
+          {/* WEAR THE ANGER BUTTON (Modernized) */}
+          <button 
+            onClick={generateTshirt} 
+            className="bg-gradient-to-r from-yellow-700 to-yellow-500 text-black p-5 rounded-2xl font-black text-sm uppercase border border-black group relative overflow-hidden shadow-lg transform hover:scale-[1.03] transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-yellow-400 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              👕 {isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}
+            </span>
+          </button>
             <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
             <button onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); }} className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all">🎮 SPEND HIS MONEY</button>
             
@@ -652,20 +661,34 @@ export default function BillionaireClock() {
           </div>
         )}
 
-        {/* 👕 T-SHIRT SHOP MODAL */}
+     {/* 👕 T-SHIRT SHOP MODAL - IMPROVED UI */}
         {generatedTshirtUrl && (
           <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-6" onClick={() => setGeneratedTshirtUrl(null)}>
              <div className="bg-zinc-950 p-8 rounded-[3rem] border border-white/10 max-w-4xl w-full flex flex-col md:flex-row gap-10" onClick={e => e.stopPropagation()}>
+                
+                {/* Real T-Shirt Mockup Area */}
                 <div className="flex-1 bg-zinc-900 rounded-2xl p-10 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#333_0%,_#000_100%)] opacity-30"></div>
-                  <img src={generatedTshirtUrl} className="w-2/3 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative z-10" alt="T-Shirt" />
+                  
+                  {/* Fallback до истинска интеграция на мокапи */}
+                  <div className="relative w-full h-[400px] flex items-center justify-center">
+                      <div className="absolute inset-0 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center text-zinc-600 text-sm font-light">
+                          [ Real Mockup will go here ]
+                      </div>
+                      {/* Dynamic design overlay */}
+                      <img src={generatedTshirtUrl} className="w-2/3 h-auto drop-shadow-2xl relative z-10" alt="Generated T-shirt" />
+                  </div>
+                  
                 </div>
+                
                 <div className="flex-1 flex flex-col justify-center text-left">
                   <span className="text-red-500 font-black text-xs tracking-widest mb-2 uppercase">Custom Capitalism Apparel</span>
                   <h3 className="text-4xl font-black mb-6 uppercase text-white">OWN YOUR PAIN</h3>
-                  <p className="text-zinc-500 mb-8 leading-relaxed">High-quality 100% heavy cotton. Featuring your real-time stats versus {selectedHero.name}. Ships worldwide.</p>
+                  <p className="text-zinc-500 mb-8 leading-relaxed">High-quality 100% heavy cotton. Featuring your real-time stats versus {selectedHero?.name || "Them"}. Ships worldwide.</p>
                   <div className="text-4xl font-black mb-8 text-white">$29.99</div>
-                  <button onClick={() => { trackConversion('checkout_initiated_tshirt'); alert('Redirecting to Stripe/Printful...'); }} className="bg-white text-black p-5 rounded-xl font-black text-xl hover:bg-yellow-500 transition-all uppercase tracking-tighter">SECURE CHECKOUT</button>
+                  
+                  {/* Stripe / Checkout button */}
+                  <button onClick={() => alert('POD Integration Plan: 1. Stripe Checkout, 2. Webhook triggers Printful API.')} className="bg-white text-black p-5 rounded-xl font-black text-xl hover:bg-yellow-500 transition-all uppercase tracking-tighter">SECURE CHECKOUT</button>
                 </div>
              </div>
           </div>
@@ -688,12 +711,15 @@ export default function BillionaireClock() {
             <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl tracking-tighter uppercase">{websiteUrl}</div>
           </div>
           
-          {/* 👕 T-shirt shop template */}
-          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-zinc-950 text-white">
-            <p className="text-[20rem] font-black text-white leading-none tracking-tighter">{timeToEarnAnnual}s</p>
-            <p className="text-5xl font-black text-white uppercase tracking-widest mt-10">AND ALL I GOT WAS THIS T-SHIRT.</p>
-            <p className="text-3xl font-black text-zinc-700 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
-          </div>
+         {/* 👕 T-Shirt Template (Invisible for generation) */}
+        <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-transparent text-white">
+          {/* Dynamic number */}
+          <p className="text-[20rem] font-black text-white leading-none tracking-tighter">{timeToEarnAnnual}s</p>
+          {/* Slogan */}
+          <p className="text-5xl font-black text-white uppercase tracking-widest mt-10 leading-tight">AND ALL I GOT WAS THIS T-SHIRT. #RAGETWEET</p>
+          {/* URL */}
+          <p className="text-3xl font-black text-zinc-700 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
+        </div>
         </div>
       </main>
     </>
