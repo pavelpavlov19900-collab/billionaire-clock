@@ -710,7 +710,10 @@ export default function BillionaireClock() {
                       </div>
                     </div>
                   )}
-                  
+                 </div>
+             </div>
+          </div>
+        )} 
         {/* Invisible Generators */}
         <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
           
