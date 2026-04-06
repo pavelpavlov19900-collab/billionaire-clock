@@ -93,6 +93,11 @@ export default function BillionaireClock() {
   const [showCertModal, setShowCertModal] = useState(false);
   const [roastText, setRoastText] = useState<string | null>(null);
 
+  // 📜 НОВИТЕ ЗА ПРЕМИУМ СЕРТИФИКАТА:
+  const [showCertPreview, setShowCertPreview] = useState(false); 
+  const [certRecipientName, setCertRecipientName] = useState(""); 
+  const [currentCertDate] = useState(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+
   // Musk makes roughly $3200 per second (calculated as ~$100B/year)
   const muskPerSecond = 3200; 
 
@@ -546,8 +551,18 @@ export default function BillionaireClock() {
                     <div className="text-center animate-fade-in">
                         <h2 className="text-6xl font-black text-white font-mono tracking-tighter mb-4">{yearsToMillion === "NEVER" ? "NEVER." : `${yearsToMillion} YRS`}</h2>
                         <div className="flex flex-col gap-3 mt-8">
-                            {/* 📜 NEW: REALITY PROOF UPSELL */}
-                            <button onClick={() => { setShowCertModal(true); trackConversion('click_cert_upsell'); }} className="w-full bg-yellow-500 text-black p-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-white transition-colors">Claim Reality Certificate ($5) 📜</button>
+
+                          {/* 📜 NEW: REALITY PROOF UPSELL (Opens Professional Preview) */}
+          <button 
+            onClick={() => { 
+                trackConversion('click_cert_upsell_banner'); 
+                setShowCertPreview(true); // Отваря новия прозорец за преглед
+                setShowMillionModal(false); // Затваря стария калкулатор
+            }} 
+            className="w-full bg-gradient-to-r from-yellow-700 to-yellow-500 text-black p-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-white hover:scale-[1.03] transition-all duration-300 shadow-xl"
+          >
+            Claim Reality Certificate ($5) 📜
+          </button>
                             <div className="bg-black/50 border border-green-500/20 p-6 rounded-3xl">
                                 <h4 className="font-black text-white text-lg mb-2 uppercase">Want to speed this up?</h4>
                                 <input type="email" placeholder="YOUR EMAIL" className="w-full bg-zinc-900 border border-white/10 p-4 rounded-xl mb-3 outline-none text-center text-white" />
@@ -758,6 +773,95 @@ export default function BillionaireClock() {
           <p className="text-3xl font-black text-zinc-700 mt-10 tracking-[0.5em] uppercase">{websiteUrl}</p>
         </div>
         </div>
+       {/* 📜 THE MATRIX ESCAPE CERTIFICATE - PROFESSIONAL PREVIEW MODAL */}
+        {showCertPreview && (
+          <div className="fixed inset-0 bg-black/98 z-[1000] flex items-center justify-center p-4 md:p-8 overflow-y-auto" onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }}>
+             <div className="bg-zinc-950 border-4 border-yellow-500 rounded-3xl p-1 md:p-2 max-w-5xl w-full relative my-auto shadow-[0_0_60px_rgba(234,179,8,0.3)] animate-pop-in" onClick={e => e.stopPropagation()}>
+                
+                {/* 1. PERSONALIZATION HEADER */}
+                <div className="bg-zinc-900 border-b border-white/5 p-6 rounded-t-3xl flex flex-col md:flex-row items-center gap-4">
+                    <div className="flex-1 text-left">
+                        <h4 className="text-xl font-black text-white uppercase tracking-tighter">Personalize Your Escape Proof</h4>
+                        <p className="text-zinc-500 text-sm">Enter the exact name you want printed on your official document.</p>
+                    </div>
+                    <input 
+                      type="text" 
+                      value={certRecipientName}
+                      maxLength={30}
+                      onChange={(e) => setCertRecipientName(e.target.value)}
+                      placeholder="YOUR FULL NAME (e.g., John Anderson)" 
+                      className="w-full md:w-auto flex-1 bg-black border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500 text-white font-serif italic text-lg shadow-inner" 
+                    />
+                </div>
+
+                {/* 2. LIVE PREVIEW AREA */}
+                <div className="p-4 md:p-10 relative overflow-hidden bg-black rounded-b-3xl">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] rotate-[-20deg] pointer-events-none">
+                        <p className="text-[12rem] font-serif italic text-white leading-none whitespace-nowrap uppercase">MATRIX ESCAPER • RICHREALITY.XYZ</p>
+                    </div>
+
+                    {/* ✅ THE ACTUAL CERTIFICATE ✅ */}
+                    <div className="aspect-[4/5] bg-zinc-950 border-8 border-yellow-500 p-8 md:p-12 relative flex flex-col items-center justify-center text-center rounded-lg shadow-2xl overflow-hidden font-serif selection:bg-yellow-500 selection:text-black">
+                        
+                        <div className="absolute top-6 right-6 w-24 h-24 bg-yellow-500 rounded-full flex items-center justify-center border-4 border-yellow-700 rotate-[10deg] shadow-lg">
+                           <span className="text-7xl">📜</span>
+                           <span className="absolute text-[8px] font-black font-sans text-yellow-900 uppercase tracking-widest leading-none text-center">OFFICIAL<br/>ESCAPER<br/>SEAL</span>
+                        </div>
+                        
+                        <h2 className="text-5xl md:text-6xl font-black text-yellow-500 mb-2 uppercase tracking-tight leading-none">CERTIFICATE<br/>OF MATRIX ESCAPE</h2>
+                        <p className="text-zinc-600 text-xs font-sans font-black uppercase tracking-[0.4em] mb-12">RichReality Internal Sovereignty Office • Verified Document #RR-{secondsPassed.toFixed(0)}-{annualSalary / 1000}K</p>
+                        
+                        <p className="text-xl font-light text-white mb-3">This hereby certifies that</p>
+                        <div className="border-b-2 border-yellow-500 min-w-[300px] md:min-w-[500px] mb-3">
+                           <p className="text-5xl md:text-6xl font-bold text-yellow-400 py-3 leading-none italic drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]">
+                             {certRecipientName || "[ YOUR NAME HERE ]"}
+                           </p>
+                        </div>
+                        <p className="text-zinc-400 text-sm italic mb-12 leading-relaxed max-w-lg mx-auto">Has successfully calculated the required timeline to achieve financial sovereignty and has been granted the official title of "Matrix Escaper" by RichReality.</p>
+                        
+                        <div className="bg-zinc-900/50 border border-white/5 p-8 rounded-3xl w-full mb-16 relative">
+                           <p className="text-[10px] text-zinc-500 font-sans font-black uppercase tracking-widest mb-1">CONFIRMED TIMELINE TO FIRST $1,000,000</p>
+                           <h3 className="text-8xl font-black font-mono text-white tracking-tighter tabular-nums leading-none">
+                              {yearsToMillion === "NEVER" ? "NEVER." : `${yearsToMillion} YRS`}
+                           </h3>
+                           
+                           {/* 🔴 RED STAMP */}
+                           <div className="absolute inset-0 flex items-center justify-center rotate-[-15deg] scale-150 pointer-events-none">
+                               <p className="font-sans font-black text-red-600 text-[100px] leading-none uppercase border-[15px] border-red-600 p-6 opacity-60">MATRIX ESCAPER</p>
+                           </div>
+                        </div>
+
+                        <div className="w-full grid grid-cols-2 gap-10 mt-6 text-left border-t border-white/5 pt-8">
+                           <div>
+                                <p className="text-[10px] text-zinc-500 font-sans font-black uppercase tracking-widest">ISSUED ON:</p>
+                                <p className="text-lg font-light text-white italic">{currentCertDate}</p>
+                           </div>
+                           <div className="text-right">
+                                <p className="text-[10px] text-zinc-500 font-sans font-black uppercase tracking-widest">VERIFIED BY:</p>
+                                <p className="text-4xl font-black text-white font-serif italic leading-none drop-shadow-[0_0_5px_rgba(255,255,255,0.4)]">The Oracle</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 3. CTA BLOCK */}
+                <div className="bg-zinc-900 border-t border-white/5 p-8 md:p-10 rounded-b-3xl text-center">
+                    <p className="text-zinc-400 mb-8 leading-relaxed max-w-xl mx-auto italic">This digital certificate will be generated as a high-resolution, shareable PNG file. Perfect for posting on LinkedIn to flex your financial awareness.</p>
+                    <button onClick={() => { trackConversion('click_cert_stripe_claim'); alert('Redirecting to Stripe for secure $4.99 payment...'); }} className="w-full bg-yellow-500 text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_30px_rgba(234,179,8,0.4)]">
+                        Claim High-Res Certificate ($5) 💳📜
+                    </button>
+                    <p className="mt-5 text-zinc-600 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-red-500 transition-colors" onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }}>I'D RATHER REMAIN A PEASANT</p>
+                </div>
+                
+                {/* Close Button */}
+                <button onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }} className="absolute -top-6 -right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-black text-xl shadow-xl hover:bg-yellow-500 transition-all z-[1100]">✕</button>
+             </div>
+          </div>
+        )}
+      </main>
+    </>
+  );
+}
       </main>
     </>
   );
