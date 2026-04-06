@@ -222,10 +222,19 @@ export default function BillionaireClock() {
     setIsGeneratingReceipt(true);
     trackConversion('click_share_shock');
     try {
-      const dataUrl = await htmlToImage.toPng(receiptRef.current, { quality: 1.0, pixelRatio: 2 });
+      const dataUrl = await htmlToImage.toPng(receiptRef.current, { 
+        quality: 1.0, 
+        pixelRatio: 2, 
+        cacheBust: true, 
+        backgroundColor: '#000000' 
+      });
       setGeneratedReceiptUrl(dataUrl);
-    } catch (e) { alert('Receipt failed.'); }
-    finally { setIsGeneratingReceipt(false); }
+      trackConversion('generated_share_shock_success');
+    } catch (e) { 
+      alert('Snapshot failed. Try again.'); 
+    } finally { 
+      setIsGeneratingReceipt(false); 
+    }
   };
 
   const generateTshirt = async () => {
@@ -233,10 +242,19 @@ export default function BillionaireClock() {
     setIsGeneratingTshirt(true);
     trackConversion('click_wear_anger_tshirt');
     try {
-      const dataUrl = await htmlToImage.toPng(tshirtRef.current, { quality: 1.0, pixelRatio: 3, backgroundColor: 'transparent' });
+      const dataUrl = await htmlToImage.toPng(tshirtRef.current, { 
+        quality: 1.0, 
+        pixelRatio: 3, 
+        cacheBust: true, 
+        backgroundColor: '#09090b' 
+      });
       setGeneratedTshirtUrl(dataUrl);
-    } catch (e) { alert('T-shirt failed.'); }
-    finally { setIsGeneratingTshirt(false); }
+      trackConversion('generated_tshirt_success');
+    } catch (e) { 
+      alert('Design failed.'); 
+    } finally { 
+      setIsGeneratingTshirt(false); 
+    }
   };
 
   const openVipModal = () => {
