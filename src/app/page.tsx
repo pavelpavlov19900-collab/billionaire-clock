@@ -362,7 +362,16 @@ export default function BillionaireClock() {
                     <div className="flex flex-col text-left relative">
                       <label className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2 font-bold">Your Monthly Salary (USD)</label>
                       <span className="absolute left-4 top-[38px] text-yellow-500 font-black">$</span>
-                      <input type="number" value={salary} onChange={(e) => setSalary(Number(e.target.value) || 0)} className="w-full bg-black border border-white/10 text-xl font-black py-3 pl-10 pr-4 rounded-xl focus:border-yellow-500 outline-none" />
+                      <input 
+    type="number" 
+    value={salary === 0 ? '' : salary} 
+    placeholder="0"
+    onChange={(e) => {
+        const val = e.target.value;
+        setSalary(val === '' ? 0 : Number(val));
+    }} 
+    className="w-full bg-black border border-white/10 text-xl font-black py-3 pl-10 pr-4 rounded-xl focus:border-yellow-500 outline-none" 
+/>
                     </div>
                   </div>
                   <p className="text-xl md:text-2xl font-light mb-6">They just made your <span className="text-red-500 font-black underline">ANNUAL</span> salary in <span className="text-white font-black">{timeToEarnAnnual} seconds</span>.</p>
