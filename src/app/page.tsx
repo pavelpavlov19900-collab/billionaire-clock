@@ -364,8 +364,10 @@ export default function BillionaireClock() {
             <span className={`text-[10px] font-black tracking-[0.2em] uppercase ${userRank.color}`}>RANK: {userRank.name}</span>
           </div>
           <div className="flex gap-2">
-            <button onClick={() => { setIsTiktokMode(true); trackConversion('enter_tiktok_studio'); }} className="hidden md:block px-4 py-2 rounded-full border border-green-500/50 bg-green-500/10 text-green-400 font-black text-[10px] tracking-widest uppercase hover:bg-green-500 hover:text-black transition-all">🎥 Viral Studio</button>
-            <button onClick={() => { setIsBattleMode(!isBattleMode); setSecondsPassed(0); trackConversion('toggle_battle_mode'); }} className="px-4 py-2 rounded-full border border-white/10 font-bold text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
+            <button onClick={() => { setIsTiktokMode(true); trackConversion('enter_tiktok_studio'); }} className="px-3 md:px-4 py-2 rounded-full border border-green-500/50 bg-green-500/10 text-green-400 font-black text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-green-500 hover:text-black transition-all">
+              🎥 STUDIO
+            </button>
+            <button onClick={() => { setIsBattleMode(!isBattleMode); setSecondsPassed(0); trackConversion('toggle_battle_mode'); }} className="px-3 md:px-4 py-2 rounded-full border border-white/10 font-bold text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
               {isBattleMode ? '← SINGLE' : '⚔️ BATTLE'}
             </button>
           </div>
