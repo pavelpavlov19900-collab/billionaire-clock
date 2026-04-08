@@ -106,13 +106,13 @@ export default function BillionaireClock() {
   const muskPerSecond = 3200; 
 
   const GAME_ITEMS = [
-    { name: "Coffee", price: 5, icon: "☕" },
-    { name: "iPhone 15", price: 1500, icon: "📱" },
-    { name: "Rolex", price: 40000, icon: "⌚" },
-    { name: "Lambo", price: 400000, icon: "🏎️" },
-    { name: "Real Estate (Invest)", price: 500, icon: "🏢", isAffiliate: true },
-    { name: "Private Jet", price: 25000000, icon: "🛩️" }
-  ];
+  { name: "Starbucks Coffee", price: 5, icon: "☕", type: "trash" },
+  { name: "iPhone 15 Pro", price: 1500, icon: "📱", type: "trash" },
+  { name: "Rolex Daytona", price: 40000, icon: "⌚", type: "flex" },
+  { name: "Lamborghini Revuelto", price: 600000, icon: "🏎️", type: "flex" },
+  { name: "Private Jet (Flight)", price: 25000, icon: "🛩️", type: "flex" },
+  { name: "Real Estate Asset", price: 500000, icon: "🏢", type: "asset", isPremium: true },
+];
 
   const receiptRef = useRef<HTMLDivElement>(null);
   const tshirtRef = useRef<HTMLDivElement>(null);
