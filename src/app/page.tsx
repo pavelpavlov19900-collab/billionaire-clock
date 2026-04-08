@@ -627,28 +627,40 @@ const handleBuy = (item: any) => {
         )}
 
         {/* 🎮 THE SPEND GAME MODAL */}
-        {showGameModal && (
-          <div className="fixed inset-0 bg-black/95 z-[400] flex items-center justify-center p-4 md:p-6" onClick={() => setShowGameModal(false)}>
-             <div className="bg-zinc-950 border border-purple-500/30 p-8 rounded-[3rem] max-w-2xl w-full text-center relative overflow-hidden" onClick={e => e.stopPropagation()}>
-                {!hasRageQuit ? (
-                    <>
-                        <h3 className="text-2xl font-black text-white uppercase mb-2">Try to bankrupt him.</h3>
-                        <p className="text-zinc-500 text-sm mb-6 uppercase tracking-widest font-bold">He makes $3,200 every second.</p>
-                        <div className="bg-black border border-white/10 p-6 rounded-3xl mb-8">
-                            <p className="text-zinc-500 text-xs font-black uppercase mb-2">Musk's Current Daily Wallet</p>
-                            <div className="text-5xl md:text-6xl font-mono font-black text-green-400 tabular-nums">${moneyFormatter.format(gameBalance)}</div>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                            {GAME_ITEMS.map((item, idx) => (
-                                <button key={idx} onClick={() => handleBuy(item)} className="bg-zinc-900 border border-white/5 p-4 rounded-2xl hover:bg-purple-600 transition-colors flex flex-col items-center justify-center gap-2 active:scale-95">
-                                    <span className="text-3xl">{item.icon}</span>
-                                    <span className="text-white font-bold text-sm uppercase">{item.name}</span>
-                                    <span className="text-zinc-400 font-mono text-xs">-${item.price.toLocaleString()}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </>
-                ) : (
+       {hasRageQuit ? (
+    <div className="animate-fade-in py-10 text-center flex flex-col items-center">
+        {/* Всичко тук е на английски за потребителя */}
+        <span className="text-8xl mb-6">📉</span>
+        <h3 className="text-5xl font-black text-white uppercase mb-4 leading-tight tracking-tighter">
+            CONGRATULATIONS. <br/> <span className="text-red-600">YOU ARE BROKE.</span>
+        </h3>
+        
+        <div className="max-w-md bg-zinc-900/50 border border-white/10 p-8 rounded-3xl mb-10 backdrop-blur-md">
+            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+                You just spent <span className="text-white font-bold">${moneyFormatter.format(270000000)}</span> (Elon's daily income). 
+                It took you <span className="text-white font-bold">{clickCount} clicks</span>.
+            </p>
+            <p className="text-yellow-500 font-serif italic text-xl">
+                "The difference between you and him? He built the machine. You just clicked the buttons."
+            </p>
+        </div>
+
+        <div className="flex flex-col gap-4 w-full max-w-sm">
+            <button 
+                onClick={() => { setShowGameModal(false); setShowMillionModal(true); }}
+                className="w-full bg-white text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+            >
+                START BUILDING REAL WEALTH 🚀
+            </button>
+            <button 
+                onClick={() => setShowGameModal(false)}
+                className="w-full bg-zinc-900 text-zinc-400 p-4 rounded-2xl font-black text-sm uppercase border border-white/5"
+            >
+                I prefer to stay a slave (Exit)
+            </button>
+        </div>
+    </div>
+) : (
                     <div className="animate-fade-in py-10">
                         <span className="text-6xl mb-6 block">🤡</span>
                         <h3 className="text-4xl font-black text-white uppercase mb-4 leading-tight">You can't out-click passive income.</h3>
