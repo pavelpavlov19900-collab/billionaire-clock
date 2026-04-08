@@ -193,21 +193,37 @@ export default function BillionaireClock() {
     return () => clearInterval(gameInterval);
   }, [showGameModal, hasRageQuit, clickCount]);
 
-  const handleBuy = (item: any) => {
-    if (item.isAffiliate) {
-         trackConversion('game_affiliate_clicked');
-         alert("Redirecting to Real Estate Investment Platform...");
-         return;
+const handleBuy = (item: any) => {
+    // 🏦 Check if user has enough of Elon's daily money left
+    if (gameBalance >= item.price) {
+      setGameBalance(prev => prev - item.price);
+      setClickCount(prev => prev + 1);
+      
+      // 🧠 REALITY ROASTS: Dropping truth bombs while they play
+      if (clickCount === 5) {
+        setRoastText("Elon just earned all of this back in 4 seconds. Keep clicking.");
+      }
+      
+      if (clickCount === 15) {
+        setRoastText("You're spending his pocket change. Your annual salary is his heartbeat. Feel that?");
+      }
+
+      // Special logic for the "Asset" button
+      if (item.type === "asset") {
+        setRoastText("Finally, an asset. But it's virtual. Your real bank account is still at $0. Reality hurts, right?");
+      }
+
+      // Keep tracking the data for our analytics
+      trackConversion('whale_watch_intent', { 
+          item: item.name, 
+          price: item.price, 
+          user_income: salary 
+      });
+    } else {
+      // 🚨 BANKRUPTCY: Trigger the Epiphany Screen
+      setHasRageQuit(true);
+      trackConversion('game_bankruptcy_epiphany');
     }
-    setGameBalance(prev => prev - item.price);
-    setClickCount(prev => prev + 1);
-    
-    // WHALE WATCH DATA CAPTURE
-    trackConversion('whale_watch_intent', { 
-        item: item.name, 
-        price: item.price, 
-        user_income: salary 
-    });
   };
 
   const handleSabotage = () => {
