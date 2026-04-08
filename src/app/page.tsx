@@ -343,10 +343,10 @@ const handleBuy = (item: any) => {
 
   const websiteUrl = "richreality.xyz";
 
- if (isTiktokMode) {
+  // 🎥 TIKTOK STUDIO MODE (Early Return)
+  if (isTiktokMode) {
     return (
       <>
-        {/* 🎥 TIKTOK STUDIO (RECORDING OVERLAY) */}
         <main className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8 font-sans selection:bg-yellow-500 selection:text-black">
           <div className="w-full max-w-[400px] aspect-[9/16] bg-black border border-white/5 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl animate-pop-in">
               
@@ -364,14 +364,15 @@ const handleBuy = (item: any) => {
               {/* 🎯 The Main Hook */}
               <h2 className="text-6xl md:text-7xl font-black text-white uppercase mt-10 mb-2 leading-none tracking-tighter text-center">DON'T SCROLL.</h2>
               
-              <p className="text-zinc-400 text-lg mb-8 leading-tight">
+              <p className="text-zinc-400 text-lg mb-8 leading-tight text-center">
                 In the last <span className="text-white font-bold">{secondsPassed.toFixed(1)}s</span>,<br/>
                 <span className="text-yellow-500 font-black">{selectedHero.name}</span> just made:
               </p>
               
               {/* 💰 The Money Printer */}
-              <div className="text-7xl md:text-8xl font-mono font-black text-green-400 mb-8 tracking-tighter tabular-nums drop-shadow-[0_0_30px_rgba(74,222,128,0.5)]">
-                ${moneyFormatter.format(heroEarnings)}
+              <div className="text-6xl md:text-7xl font-mono font-black text-green-400 mb-8 tracking-tighter tabular-nums drop-shadow-[0_0_30px_rgba(74,222,128,0.5)] text-center">
+                {/* Премахнахме излишното $, защото moneyFormatter вече го включва */}
+                {moneyFormatter.format(heroEarnings)}
               </div>
 
               {/* 🤯 The Reality Check */}
@@ -380,7 +381,11 @@ const handleBuy = (item: any) => {
                   <div className="text-4xl">🐕</div>
                   <div>
                     <p className="text-red-500 text-[10px] font-black uppercase mb-1 tracking-widest">Your Reality Check</p>
-                    <p className="text-white text-sm font-light">That buys <span className="font-bold underline text-white">exactly {(heroEarnings / REALITY_ITEMS.find(item => item.name.includes("Gucci dog collar"))!.price).toFixed(0)} Gucci dog collar</span>.</p>
+                    <p className="text-white text-sm font-light leading-snug">
+                      That buys <span className="font-bold underline text-white">
+                        exactly {(heroEarnings / (REALITY_ITEMS.find(item => item.name.includes("Gucci dog collar"))?.price || 1)).toFixed(0)} 
+                      </span> Gucci dog collars.
+                    </p>
                   </div>
               </div>
 
