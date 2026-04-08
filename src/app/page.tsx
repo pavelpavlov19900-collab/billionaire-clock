@@ -79,6 +79,10 @@ export default function BillionaireClock() {
   const [yearsToMillion, setYearsToMillion] = useState<string | null>(null);
   const [cutCoffee, setCutCoffee] = useState(false);
 
+  // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
+  const [isCertPaid, setIsCertPaid] = useState(false);
+  const certRef = useRef<HTMLDivElement>(null);
+
   // 🎥 TIKTOK STUDIO MODE
   const [isTiktokMode, setIsTiktokMode] = useState(false);
 
