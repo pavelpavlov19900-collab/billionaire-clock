@@ -343,22 +343,25 @@ const handleBuy = (item: any) => {
 
   const websiteUrl = "richreality.xyz";
 
-  // 🎥 TIKTOK STUDIO MODE (Early Return)
+ // 🎥 TIKTOK STUDIO MODE (Early Return)
   if (isTiktokMode) {
     return (
       <>
         <main className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8 font-sans selection:bg-yellow-500 selection:text-black">
           <div className="w-full max-w-[400px] aspect-[9/16] bg-black border border-white/5 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl animate-pop-in">
               
+              {/* 🟩 Top Progress Bar */}
               <div className="absolute top-0 left-0 w-full h-1.5 bg-zinc-900">
                   <div className="h-full bg-green-500 transition-all duration-300" style={{ width: `${Math.min((secondsPassed / 15) * 100, 100)}%` }}></div>
               </div>
 
+              {/* 🔴 Live REC Indicator */}
               <div className="absolute top-6 left-6 flex items-center gap-2">
                   <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
                   <span className="text-red-600 font-black text-xs tracking-widest uppercase">REC</span>
               </div>
 
+              {/* 🎯 The Main Hook */}
               <h2 className="text-6xl md:text-7xl font-black text-white uppercase mt-10 mb-2 leading-none tracking-tighter text-center">DON'T SCROLL.</h2>
               
               <p className="text-zinc-400 text-lg mb-8 leading-tight text-center">
@@ -366,10 +369,12 @@ const handleBuy = (item: any) => {
                 <span className="text-yellow-500 font-black">{selectedHero.name}</span> just made:
               </p>
               
+              {/* 💰 The Money Printer */}
               <div className="text-6xl md:text-7xl font-mono font-black text-green-400 mb-8 tracking-tighter tabular-nums drop-shadow-[0_0_30px_rgba(74,222,128,0.5)] text-center">
-                {moneyFormatter.format(heroEarnings)}
+                ${moneyFormatter.format(heroEarnings)}
               </div>
 
+              {/* 🤯 The Reality Check */}
               <div className="bg-red-950/40 border border-red-500/30 p-4 md:p-6 rounded-2xl w-full mb-10 text-left relative overflow-hidden flex items-center gap-4">
                   <div className="absolute top-0 left-0 w-1 h-full bg-red-600 rounded-l-2xl"></div>
                   <div className="text-4xl">🐕</div>
@@ -383,6 +388,7 @@ const handleBuy = (item: any) => {
                   </div>
               </div>
 
+              {/* 👇 The Call to Action */}
               <button 
                 onClick={openVipModal}
                 className="absolute bottom-20 bg-white text-black px-10 py-5 rounded-full font-black uppercase text-xl animate-bounce shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:scale-105 hover:bg-yellow-500 transition-all"
@@ -390,6 +396,7 @@ const handleBuy = (item: any) => {
                 LINK IN BIO 👇
               </button>
 
+              {/* 🚪 Exit Button */}
               <button onClick={() => { setIsTiktokMode(false); trackConversion('close_studio'); }} className="absolute bottom-6 text-zinc-600 text-[10px] uppercase font-black hover:text-red-500 transition-colors tracking-widest">
                 ✕ CLOSE STUDIO
               </button>
@@ -397,6 +404,7 @@ const handleBuy = (item: any) => {
         </main>
       </>
     );
+  }
 
   return (
     <>
