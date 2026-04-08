@@ -339,6 +339,7 @@ const handleBuy = (item: any) => {
   const openVipModal = () => {
     trackConversion('click_vanity_billboard_claim'); 
     setShowVipModal(true);
+  }
   };
 
   const websiteUrl = "richreality.xyz";
