@@ -805,7 +805,7 @@ export default function BillionaireClock() {
                     </div>
 
                     {/* ✅ THE ACTUAL CERTIFICATE ✅ */}
-                    <div className="aspect-[4/5] bg-zinc-950 border-8 border-yellow-500 p-8 md:p-12 relative flex flex-col items-center justify-center text-center rounded-lg shadow-2xl overflow-hidden font-serif selection:bg-yellow-500 selection:text-black">
+                    <div ref={certRef} className="aspect-[4/5] bg-zinc-950 border-8 border-yellow-500 p-8 md:p-12 relative flex flex-col items-center justify-center text-center rounded-lg shadow-2xl overflow-hidden font-serif selection:bg-yellow-500 selection:text-black">
                         
                         <div className="absolute top-6 right-6 w-24 h-24 bg-yellow-500 rounded-full flex items-center justify-center border-4 border-yellow-700 rotate-[10deg] shadow-lg">
                            <span className="text-7xl">📜</span>
