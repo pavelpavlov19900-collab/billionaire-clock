@@ -397,7 +397,6 @@ const handleBuy = (item: any) => {
         </main>
       </>
     );
-  }
 
   return (
     <>
