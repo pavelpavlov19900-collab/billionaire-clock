@@ -301,6 +301,25 @@ export default function BillionaireClock() {
     finally { setIsGeneratingTshirt(false); }
   };
 
+  // ✅ ТУК СЛАГАМЕ НОВАТА ФУНКЦИЯ ЗА СВАЛЯНЕ НА СЕРТИФИКАТА
+  const downloadCertificate = async () => {
+    if (!certRef.current) return;
+    trackConversion('download_certificate_final');
+    try {
+      const dataUrl = await htmlToImage.toPng(certRef.current, { 
+        quality: 1.0, 
+        pixelRatio: 3, // Максимално качество за LinkedIn flex
+        cacheBust: true, 
+      });
+      const link = document.createElement('a');
+      link.download = `Matrix-Escape-${certRecipientName || 'Proof'}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (e) { 
+      alert('Download failed. Try taking a screenshot!'); 
+    }
+  };
+  
   const openVipModal = () => {
     trackConversion('click_vanity_billboard_claim'); 
     setShowVipModal(true);
