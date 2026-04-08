@@ -867,21 +867,44 @@ export default function BillionaireClock() {
                     </div>
                 </div>
 
-             {/* 3. CTA BLOCK */}
+           {/* 3. CTA BLOCK (Dynamic: Pay or Download) */}
                 <div className="bg-zinc-900 border-t border-white/5 p-8 md:p-10 rounded-b-3xl text-center">
-                    <p className="text-zinc-400 mb-8 leading-relaxed max-w-xl mx-auto italic">This digital certificate will be generated as a high-resolution, shareable PNG file. Perfect for posting on LinkedIn to flex your financial awareness.</p>
-                    <button onClick={() => { trackConversion('click_cert_stripe_claim'); alert('Redirecting to Stripe for secure $4.99 payment...'); }} className="w-full bg-yellow-500 text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_30px_rgba(234,179,8,0.4)]">
-                        Claim High-Res Certificate ($5) 💳📜
-                    </button>
-                    <p className="mt-5 text-zinc-600 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-red-500 transition-colors" onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }}>I'D RATHER REMAIN A PEASANT</p>
+                    {!isCertPaid ? (
+                        <>
+                            <p className="text-zinc-400 mb-8 leading-relaxed max-w-xl mx-auto italic text-sm">This digital certificate will be generated as a high-resolution, shareable PNG file. Perfect for posting on LinkedIn to flex your financial awareness.</p>
+                            <button 
+                                onClick={() => {
+                                    trackConversion('click_cert_stripe_claim');
+                                    alert('Redirecting to Stripe for secure $4.99 payment...');
+                                    setIsCertPaid(true); // СИМУЛАЦИЯ НА ПЛАЩАНЕ: Отключваме бутона за сваляне
+                                }} 
+                                className="w-full bg-yellow-500 text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_30px_rgba(234,179,8,0.4)]"
+                            >
+                                Claim High-Res Certificate ($5) 💳📜
+                            </button>
+                        </>
+                    ) : (
+                        <div className="animate-fade-in">
+                            <p className="text-green-500 font-black uppercase text-sm mb-4 flex items-center justify-center gap-2">
+                                <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                                PAYMENT VERIFIED • DOCUMENT UNLOCKED
+                            </p>
+                            <button 
+                                onClick={downloadCertificate}
+                                className="w-full bg-green-600 text-white p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(34,197,94,0.4)]"
+                            >
+                                DOWNLOAD OFFICIAL PNG 📥
+                            </button>
+                            <p className="mt-4 text-zinc-500 text-xs">High-resolution file ready for LinkedIn/Instagram.</p>
+                        </div>
+                    )}
+                    
+                    {!isCertPaid && (
+                        <p className="mt-5 text-zinc-600 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-red-500 transition-colors" onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }}>
+                            I'D RATHER REMAIN A PEASANT
+                        </p>
+                    )}
                 </div>
-                
-                {/* Close Button */}
-                <button onClick={() => { setShowCertPreview(false); setShowMillionModal(true); }} className="absolute -top-6 -right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-black text-xl shadow-xl hover:bg-yellow-500 transition-all z-[1100]">✕</button>
-             </div>
-          </div>
-        )}
-
         {/* 👻 Invisible Generators (Keep them inside main) */}
         <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
           <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white">
