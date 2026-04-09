@@ -457,16 +457,16 @@ const handleBuy = (item: any) => {
     return (
       <>
         <main className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8 font-sans selection:bg-yellow-500 selection:text-black">
-          {/* 👇 ПЕЙСТНИ ПАРЧЕ 3 ТОЧНО ТУК 👇 */}
-        <div className="absolute top-0 left-0 w-full bg-red-950/40 border-b border-red-600/30 text-xs font-mono py-2 px-4 flex justify-between items-center z-50 backdrop-blur-sm">
+          {/* 👇 ОБНОВЕН: ГЛОБАЛЕН LIVE БАНЕР (FIXED ВЕРСИЯ) 👇 */}
+        <div className="fixed top-0 left-0 w-full bg-red-950/60 border-b border-red-600/40 text-[10px] md:text-xs font-mono py-2 px-4 flex justify-between items-center z-[999] backdrop-blur-md">
            <div className="flex items-center gap-2 text-red-500">
-              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-              <span className="hidden md:inline font-bold tracking-widest text-[10px]">SYSTEM ALERTS</span>
-              <span className="md:hidden font-bold">LIVE</span>
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(220,38,38,0.8)]"></div>
+              <span className="font-black tracking-[0.2em]">SYSTEM ALERTS</span>
            </div>
-           <div className="text-zinc-300 truncate max-w-[250px] md:max-w-md animate-fade-in text-[10px]" key={currentFeedIndex}>
-             <span className="text-red-500 font-bold">LATEST SABOTAGE:</span> {liveFeedNames[currentFeedIndex]} stopped the Matrix.
+           <div className="text-zinc-200 truncate max-w-[200px] md:max-w-md animate-fade-in" key={currentFeedIndex}>
+             <span className="text-red-500 font-bold uppercase">Latest Sabotage:</span> {liveFeedNames[currentFeedIndex]} stopped the Matrix.
            </div>
+           <div className="hidden sm:block text-red-600/50 font-black">STRIKE_CONFIRMED</div>
         </div>
         {/* 👆 КРАЙ НА БАНЕРА 👆 */}
           
