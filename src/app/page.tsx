@@ -176,13 +176,15 @@ export default function BillionaireClock() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Logic for the Sabotage Pause
-      if (!isPaused) {
-        setSecondsPassed(prev => prev + 0.1);
-      }
+      // 🛑 Ако сайтът е саботиран (нашият глич) ИЛИ паузиран, спираме времето!
+      if (isSabotaged || isPaused) return; 
+
+      // Иначе времето и парите си текат нормално
+      setSecondsPassed(prev => prev + 0.1);
+      
     }, 100);
     return () => clearInterval(interval);
-  }, [selectedHero, opponent, isTiktokMode, isPaused]);
+  }, [selectedHero, opponent, isTiktokMode, isPaused, isSabotaged]); // 💡 ВАЖНО: Добавихме isSabotaged тук в скобите
 
   useEffect(() => {
     if (isTiktokMode) {
