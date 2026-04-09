@@ -724,6 +724,8 @@ const handleBuy = (item: any) => {
                 System stopped <span className="text-red-500">{sabotageCount.toLocaleString()}</span> times today
               </p>
             </div>
+            </div>
+          </div>
 
         {/* 🎯 MILLIONAIRE CALCULATOR MODAL */}
         {showMillionModal && (
