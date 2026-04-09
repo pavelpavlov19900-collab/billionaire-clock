@@ -87,6 +87,24 @@ export default function BillionaireClock() {
   const [sabotageCountdown, setSabotageCountdown] = useState(6); // Броячът от 6 до 1
   const [showFinalRoast, setShowFinalRoast] = useState(false); // Финалното съобщение след саботажа
 
+  // 🔥 НОВИТЕ СТЕЙТОВЕ ЗА СОЦИАЛНО ДОКАЗАТЕЛСТВО
+  const [sabotageCount, setSabotageCount] = useState(0);
+  const [liveFeedNames, setLiveFeedNames] = useState(["@CryptoWhale", "Matrix_Glitch", "@Tate_Escape", "Broke_CEO", "Neo_99"]);
+  const [currentFeedIndex, setCurrentFeedIndex] = useState(0);
+
+  // 🎲 Генерираме рандом число при зареждане (между 4000 и 6000)
+  useEffect(() => {
+    setSabotageCount(Math.floor(Math.random() * (6000 - 4000 + 1)) + 4000);
+  }, []);
+
+  // 🔄 Въртим имената в Live Банера на всеки 3 секунди
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeedIndex((prev) => (prev + 1) % liveFeedNames.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [liveFeedNames.length]);
+
   // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
   const [isCertPaid, setIsCertPaid] = useState(false);
   const certRef = useRef<HTMLDivElement>(null);
@@ -282,6 +300,11 @@ const handleBuy = (item: any) => {
     setIsSabotaged(true); // Активираме черния екран
     setSabotageCountdown(6); // Рестартираме брояча на 6
     toggleMusic('none'); // Спираме Phonk музиката за драма
+
+     // 👇 ДОБАВЯМЕ ТЕЗИ 3 РЕДА ТУК:
+    setSabotageCount(prev => prev + 1); // Вдигаме общия брой саботажи
+    setLiveFeedNames(prev => [saboteurName, ...prev]); // Слагаме потребителя най-отпред в списъка
+    setCurrentFeedIndex(0); // Веднага показваме неговото име в банера горе
     
     // Пускаме звук на "краш"
     const glitchSfx = new Audio('/sounds/glass.mp3'); 
