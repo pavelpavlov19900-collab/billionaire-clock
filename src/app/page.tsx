@@ -226,7 +226,7 @@ const handleBuy = (item: any) => {
     }
   };
 
-  const handleSabotage = () => {
+const handleSabotage = () => {
     trackConversion('sabotage_triggered');
     alert("In production: This stopping Musk for 1s will cost $0.99 via Stripe!");
     setIsPaused(true);
