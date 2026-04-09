@@ -426,7 +426,7 @@ const handleBuy = (item: any) => {
               </button>
 
               {/* 🚪 Exit Button */}
-              <button onClick={() => { setIsTiktokMode(false); trackConversion('close_studio'); }} className="absolute bottom-6 text-zinc-600 text-[10px] uppercase font-black hover:text-red-500 transition-colors tracking-widest">
+              <button onClick={() => { setIsTiktokMode(false); toggleMusic('none'); trackConversion('close_studio'); }} className="absolute bottom-6 text-zinc-600 text-[10px] uppercase font-black hover:text-red-500 transition-colors tracking-widest">
                 ✕ CLOSE STUDIO
               </button>
           </div>
@@ -454,7 +454,7 @@ const handleBuy = (item: any) => {
             <span className={`text-[10px] font-black tracking-[0.2em] uppercase ${userRank.color}`}>RANK: {userRank.name}</span>
           </div>
           <div className="flex gap-2">
-            <button onClick={() => { setIsTiktokMode(true); trackConversion('enter_tiktok_studio'); }} className="px-3 md:px-4 py-2 rounded-full border border-green-500/50 bg-green-500/10 text-green-400 font-black text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-green-500 hover:text-black transition-all">
+            <button onClick={() => { setIsTiktokMode(true); trackConversion('enter_tiktok_studio'); toggleMusic('studio'); }} className="px-3 md:px-4 py-2 rounded-full border border-green-500/50 bg-green-500/10 text-green-400 font-black text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-green-500 hover:text-black transition-all">
               🎥 STUDIO
             </button>
             <button onClick={() => { setIsBattleMode(!isBattleMode); setSecondsPassed(0); trackConversion('toggle_battle_mode'); }} className="px-3 md:px-4 py-2 rounded-full border border-white/10 font-bold text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
@@ -596,8 +596,8 @@ const handleBuy = (item: any) => {
               👕 {isGeneratingTshirt ? 'DESIGNING...' : 'WEAR THE ANGER ($29)'}
             </span>
           </button>
-            <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
-            <button onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); }} className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all">🎮 SPEND HIS MONEY</button>
+            <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); toggleMusic('studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
+            <button onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); toggleMusic('game'); }} className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all">🎮 SPEND HIS MONEY</button>
             
             {/* ⚡ NEW: SABOTAGE BUTTON */}
             <button onClick={handleSabotage} className="relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]">
@@ -661,7 +661,7 @@ const handleBuy = (item: any) => {
 
         {/* 🎮 THE SPEND GAME MODAL */}
         {showGameModal && (
-          <div className="fixed inset-0 bg-black/95 z-[400] flex items-center justify-center p-4 overflow-y-auto" onClick={() => { setShowGameModal(false); toggleMusic(false); }}>
+          <div className="fixed inset-0 bg-black/95 z-[400] flex items-center justify-center p-4 overflow-y-auto" onClick={() => { setShowGameModal(false); toggleMusic('none'); }}>
             <div className="bg-zinc-950 border border-white/10 p-8 rounded-[3rem] max-w-2xl w-full relative" onClick={e => e.stopPropagation()}>
                 {hasRageQuit ? (
                     <div className="animate-fade-in py-10 text-center flex flex-col items-center">
@@ -672,8 +672,8 @@ const handleBuy = (item: any) => {
                             <p className="text-yellow-500 font-serif italic text-xl">"The difference between you and him? He built the machine. You just clicked the buttons."</p>
                         </div>
                         <div className="flex flex-col gap-4 w-full max-w-sm">
-                            <button onClick={() => { setShowGameModal(false); toggleMusic(false); setShowMillionModal(true); }} className="w-full bg-white text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]">START BUILDING REAL WEALTH 🚀</button>
-                            <button onClick={() => { setShowGameModal(false); toggleMusic(false); }} className="w-full bg-zinc-900 text-zinc-400 p-4 rounded-2xl font-black text-sm uppercase border border-white/5">I prefer to stay a slave (Exit)</button>
+                            <button onClick={() => { setShowGameModal(false); toggleMusic('none'); setShowMillionModal(true); }} className="w-full bg-white text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]">START BUILDING REAL WEALTH 🚀</button>
+                            <button onClick={() => { setShowGameModal(false); toggleMusic('none'); }} className="w-full bg-zinc-900 text-zinc-400 p-4 rounded-2xl font-black text-sm uppercase border border-white/5">I prefer to stay a slave (Exit)</button>
                         </div>
                     </div>
                 ) : (
@@ -690,7 +690,7 @@ const handleBuy = (item: any) => {
                         {roastText && <p className="mt-6 text-red-500 font-black uppercase text-xs animate-pulse text-center">{roastText}</p>}
                     </div>
                 )}
-                <button onClick={() => { setShowGameModal(false); toggleMusic(false); }} className="absolute top-6 right-6 text-zinc-600 hover:text-white font-black text-xl">✕</button>
+                <button onClick={() => { setShowGameModal(false); toggleMusic('none'); }} className="absolute top-6 right-6 text-zinc-600 hover:text-white font-black text-xl">✕</button>
             </div>
           </div>
         )}
