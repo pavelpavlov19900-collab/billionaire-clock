@@ -82,6 +82,34 @@ export default function BillionaireClock() {
   // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
   const [isCertPaid, setIsCertPaid] = useState(false);
   const certRef = useRef<HTMLDivElement>(null);
+  // 🔊 AUDIO ENGINE
+  const bgMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  const playSfx = (type: 'click' | 'bankruptcy') => {
+    const sfx = {
+      click: 'https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3', 
+      bankruptcy: 'https://assets.mixkit.co/active_storage/sfx/123/123-preview.mp3'
+    };
+    const audio = new Audio(sfx[type]);
+    audio.volume = 0.3;
+    audio.play().catch(() => {});
+  };
+
+  const toggleMusic = (play: boolean) => {
+    if (play) {
+      if (!bgMusicRef.current) {
+        bgMusicRef.current = new Audio('https://cdn.pixabay.com/audio/2022/10/25/audio_226768a356.mp3');
+        bgMusicRef.current.loop = true;
+        bgMusicRef.current.volume = 0.15;
+      }
+      bgMusicRef.current.play().catch(() => {});
+    } else {
+      if (bgMusicRef.current) {
+        bgMusicRef.current.pause();
+        bgMusicRef.current.currentTime = 0;
+      }
+    }
+  };
 
   // 🎥 TIKTOK STUDIO MODE
   const [isTiktokMode, setIsTiktokMode] = useState(false);
