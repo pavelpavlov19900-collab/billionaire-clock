@@ -78,6 +78,7 @@ export default function BillionaireClock() {
   const [milRoi, setMilRoi] = useState<number>(8); 
   const [yearsToMillion, setYearsToMillion] = useState<string | null>(null);
   const [cutCoffee, setCutCoffee] = useState(false);
+  const [totalSpent, setTotalSpent] = useState(0);
 
   // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
   const [isCertPaid, setIsCertPaid] = useState(false);
@@ -223,12 +224,20 @@ export default function BillionaireClock() {
   }, [showGameModal, hasRageQuit, clickCount]);
 
 const handleBuy = (item: any) => {
-    // 🏦 Check if user has enough of Elon's daily money left
+    // 🏦 Проверяваме дали Илън има достатъчно джобни за това
     if (gameBalance >= item.price) {
+      
+      // 🔊 SFX FIX: Пускаме звука веднага при клик
+      const clickSfx = new Audio('/sounds/click.mp3');
+      clickSfx.volume = 0.4;
+      clickSfx.play().catch(() => {});
+
+      // 💸 Актуализираме баланса и броячите
       setGameBalance(prev => prev - item.price);
+      setTotalSpent(prev => prev + item.price); // ТОВА ТРАКВА ОБЩАТА СУМА
       setClickCount(prev => prev + 1);
       
-      // 🧠 REALITY ROASTS: Dropping truth bombs while they play
+      // 🧠 REALITY ROASTS
       if (clickCount === 5) {
         setRoastText("Elon just earned all of this back in 4 seconds. Keep clicking.");
       }
@@ -237,19 +246,21 @@ const handleBuy = (item: any) => {
         setRoastText("You're spending his pocket change. Your annual salary is his heartbeat. Feel that?");
       }
 
-      // Special logic for the "Asset" button
       if (item.type === "asset") {
         setRoastText("Finally, an asset. But it's virtual. Your real bank account is still at $0. Reality hurts, right?");
       }
 
-      // Keep tracking the data for our analytics
       trackConversion('whale_watch_intent', { 
           item: item.name, 
           price: item.price, 
           user_income: salary 
       });
     } else {
-      // 🚨 BANKRUPTCY: Trigger the Epiphany Screen
+      // 🚨 BANKRUPTCY: Край на парите, начало на истината
+      const crashSfx = new Audio('/sounds/glass.mp3');
+      crashSfx.volume = 0.5;
+      crashSfx.play().catch(() => {});
+      
       setHasRageQuit(true);
       trackConversion('game_bankruptcy_epiphany');
     }
@@ -597,7 +608,20 @@ const handleBuy = (item: any) => {
             </span>
           </button>
             <button onClick={() => { setIsTiktokMode(true); trackConversion('click_viral_studio'); toggleMusic('studio'); }} className="bg-green-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:bg-green-500 hover:scale-105 transition-all">🎥 RECORD VIRAL REEL</button>
-            <button onClick={() => { trackConversion('start_spend_game'); setShowGameModal(true); setGameBalance(10000); setClickCount(0); setHasRageQuit(false); toggleMusic('game'); }} className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all">🎮 SPEND HIS MONEY</button>
+           <button 
+  onClick={() => { 
+    trackConversion('start_spend_game'); 
+    setShowGameModal(true); 
+    setGameBalance(50000000); // Вече има 50 милиона начален капитал 💰
+    setClickCount(0); 
+    setTotalSpent(0); // Рестартираме брояча на изхарченото
+    setHasRageQuit(false); 
+    toggleMusic('game'); 
+  }} 
+  className="bg-purple-600 p-5 rounded-2xl font-black text-sm uppercase shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:bg-purple-500 hover:scale-105 transition-all"
+>
+  🎮 SPEND HIS MONEY
+</button>
             
             {/* ⚡ NEW: SABOTAGE BUTTON */}
             <button onClick={handleSabotage} className="relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]">
@@ -668,7 +692,10 @@ const handleBuy = (item: any) => {
                         <span className="text-8xl mb-6">📉</span>
                         <h3 className="text-5xl font-black text-white uppercase mb-4 leading-tight tracking-tighter text-center">CONGRATULATIONS. <br/> <span className="text-red-600">YOU ARE BROKE.</span></h3>
                         <div className="max-w-md bg-zinc-900/50 border border-white/10 p-8 rounded-3xl mb-10 backdrop-blur-md">
-                            <p className="text-zinc-400 text-lg leading-relaxed mb-6">You just spent <span className="text-white font-bold">{moneyFormatter.format(270000000)}</span>. It took you <span className="text-white font-bold">{clickCount} clicks</span>.</p>
+                           <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+  You just spent <span className="text-white font-bold">{moneyFormatter.format(totalSpent)}</span>. 
+  It took you <span className="text-white font-bold">{clickCount} clicks</span>.
+</p>
                             <p className="text-yellow-500 font-serif italic text-xl">"The difference between you and him? He built the machine. You just clicked the buttons."</p>
                         </div>
                         <div className="flex flex-col gap-4 w-full max-w-sm">
