@@ -457,6 +457,19 @@ const handleBuy = (item: any) => {
     return (
       <>
         <main className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8 font-sans selection:bg-yellow-500 selection:text-black">
+          {/* 👇 ПЕЙСТНИ ПАРЧЕ 3 ТОЧНО ТУК 👇 */}
+        <div className="absolute top-0 left-0 w-full bg-red-950/40 border-b border-red-600/30 text-xs font-mono py-2 px-4 flex justify-between items-center z-50 backdrop-blur-sm">
+           <div className="flex items-center gap-2 text-red-500">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              <span className="hidden md:inline font-bold tracking-widest text-[10px]">SYSTEM ALERTS</span>
+              <span className="md:hidden font-bold">LIVE</span>
+           </div>
+           <div className="text-zinc-300 truncate max-w-[250px] md:max-w-md animate-fade-in text-[10px]" key={currentFeedIndex}>
+             <span className="text-red-500 font-bold">LATEST SABOTAGE:</span> {liveFeedNames[currentFeedIndex]} stopped the Matrix.
+           </div>
+        </div>
+        {/* 👆 КРАЙ НА БАНЕРА 👆 */}
+          
           <div className="w-full max-w-[400px] aspect-[9/16] bg-black border border-white/5 rounded-[2.5rem] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl animate-pop-in">
               
               {/* 🟩 Top Progress Bar */}
