@@ -406,9 +406,10 @@ const handleSabotage = () => {
     );
   }
 
-  return (
-    <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`} strategy="afterInteractive" />
+ return (
+    <main className="min-h-screen bg-black text-white font-sans selection:bg-yellow-500 selection:text-black relative overflow-x-hidden">
+      
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`}
       </Script>
@@ -965,6 +966,5 @@ const handleSabotage = () => {
         </div>
 
       </main>
-    </>
   );
 }
