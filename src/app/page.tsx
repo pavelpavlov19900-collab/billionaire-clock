@@ -275,11 +275,48 @@ const handleBuy = (item: any) => {
     }
   };
 
-  const handleSabotage = () => {
-    trackConversion('sabotage_triggered');
-    alert("In production: This stopping Musk for 1s will cost $0.99 via Stripe!");
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 3000); 
+  // ⚡️ Функция за стартиране на 6-секундния глич (след симулирано плащане)
+  const startSabotageSequence = () => {
+    trackConversion('sabotage_payment_success', { name: saboteurName });
+    setShowSabotageModal(false); // Затваряме прозореца за плащане
+    setIsSabotaged(true); // Активираме черния екран
+    setSabotageCountdown(6); // Рестартираме брояча на 6
+    toggleMusic('off'); // Спираме Phonk музиката за драма
+    
+    // Пускаме звук на "краш"
+    const glitchSfx = new Audio('/sounds/glass.mp3'); 
+    glitchSfx.volume = 0.5;
+    glitchSfx.play().catch(() => {});
+  };
+
+  // 🧠 Ефект, който управлява отброяването от 6 до 0
+  useEffect(() => {
+    if (!isSabotaged) return;
+
+    const countdownInterval = setInterval(() => {
+      setSabotageCountdown(prev => {
+        if (prev <= 1) {
+          // Отброяването свърши! Преминаваме към финалния шамар.
+          clearInterval(countdownInterval);
+          finishSabotage();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000); // Намаляваме с 1 всяка секунда
+
+    return () => clearInterval(countdownInterval);
+  }, [isSabotaged]);
+
+  // 🏁 Функция за финализиране: Връщаме нормалното състояние и показваме Роуста
+  const finishSabotage = () => {
+    setIsSabotaged(false); // Спираме черния екран, часовникът тръгва
+    setShowFinalRoast(true); // Показваме финалното съобщение
+    toggleMusic('game'); // Пускаме Phonk-а пак
+    
+    const crashSfx = new Audio('/sounds/glass.mp3'); 
+    crashSfx.volume = 0.5;
+    crashSfx.play().catch(() => {});
   };
 
   const triggerRoast = () => {
