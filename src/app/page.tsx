@@ -712,7 +712,7 @@ const handleBuy = (item: any) => {
                   if (isSabotaged) return; 
                   trackConversion('sabotage_triggered');
                   setShowSabotageModal(true); 
-                }} 
+                }}
                 className="w-full relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]"
               >
                   <span className="relative z-10">STOP ELON FOR 6s ($1)</span>
