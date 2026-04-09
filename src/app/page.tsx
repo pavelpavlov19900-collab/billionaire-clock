@@ -669,9 +669,16 @@ const handleBuy = (item: any) => {
   🎮 SPEND HIS MONEY
 </button>
             
-            {/* ⚡ NEW: SABOTAGE BUTTON */}
-            <button onClick={handleSabotage} className="relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]">
-                <span className="relative z-10">Stop Elon for 1s ($1)</span>
+            {/* ⚡ NEW: SABOTAGE BUTTON (6 SECONDS VERSION) */}
+            <button 
+              onClick={() => {
+                if (isSabotaged) return; 
+                trackConversion('sabotage_triggered');
+                setShowSabotageModal(true); // Това отваря новия ни модал за името!
+              }} 
+              className="relative group bg-white text-black p-5 rounded-2xl font-black text-sm uppercase tracking-tighter border-4 border-red-600 hover:bg-red-600 hover:text-white transition-all overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.2)]"
+            >
+                <span className="relative z-10">STOP ELON FOR 6s ($1)</span>
                 <div className="absolute inset-0 bg-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
             </button>
           </div>
@@ -1034,6 +1041,93 @@ const handleBuy = (item: any) => {
                         </p>
                     )}
                 </div>
+             </div>
+          </div>
+        )}
+        {/* ========================================================== */}
+        {/* 1️⃣ МОДАЛ ЗА НАСТРОЙКА НА САБОТАЖА (Въвеждане на име)       */}
+        {/* ========================================================== */}
+        {showSabotageModal && (
+          <div className="fixed inset-0 bg-black/95 z-[600] flex items-center justify-center p-6" onClick={() => setShowSabotageModal(false)}>
+             <div className="bg-red-950/20 border border-red-600 p-10 rounded-[2rem] max-w-md w-full text-center relative overflow-hidden animate-pop-in" onClick={e => e.stopPropagation()}>
+                <div className="absolute top-0 left-0 w-full h-1 bg-red-600 animate-pulse"></div>
+                <h3 className="text-4xl font-black mb-4 uppercase text-red-500">SYSTEM OVERRIDE</h3>
+                <p className="text-zinc-300 mb-6 text-lg font-light leading-relaxed">
+                  Freeze the billionaire's wealth generation for exactly <span className="font-bold text-white">6.00 seconds</span>. Enter your Matrix ID to claim glory.
+                </p>
+
+                {/* ⌨️ Полето на Суетата (The Vanity Input) */}
+                <input 
+                  type="text" 
+                  maxLength={15}
+                  placeholder="@YourHandle or Name"
+                  value={saboteurName}
+                  onChange={(e) => setSaboteurName(e.target.value)}
+                  className="w-full bg-black/50 border border-red-600/50 text-white text-center p-4 rounded-xl mb-6 font-mono focus:outline-none focus:border-red-500 placeholder:text-zinc-700"
+                />
+
+                <button 
+                  onClick={() => {
+                    if(!saboteurName) {
+                      alert("Enter a name to claim your glory!");
+                      return;
+                    }
+                    // 💰 СИМУЛИРАМЕ УСПЕШНО ПЛАЩАНЕ
+                    startSabotageSequence();
+                  }} 
+                  className="w-full bg-red-600 text-white p-5 rounded-xl font-black text-xl uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+                >
+                  INITIATE SABOTAGE ($0.99) 💳
+                </button>
+
+                <p className="mt-6 text-zinc-600 text-xs font-black uppercase tracking-widest cursor-pointer hover:text-white transition-colors" onClick={() => setShowSabotageModal(false)}>
+                  CANCEL PROTOCOL
+                </p>
+             </div>
+          </div>
+        )}
+
+        {/* ========================================================== */}
+        {/* 2️⃣ ЧЕРНИЯТ ЕКРАН НА САБОТАЖА (6-секундния Глич)            */}
+        {/* ========================================================== */}
+        {isSabotaged && (
+          <div className="fixed inset-0 bg-black z-[700] flex flex-col items-center justify-center p-6 animate-fade-in">
+            {/* The Big Countdown */}
+            <div className="text-[200px] md:text-[300px] font-black font-mono text-red-600 leading-none mb-8 animate-pulse">
+              0:{sabotageCountdown.toString().padStart(2, '0')}
+            </div>
+
+            <p className="text-red-500 text-3xl font-black uppercase tracking-widest mb-2">SYSTEM HALT ACTIVE</p>
+            
+            {/* Банерът на Суетата */}
+            <div className="bg-red-600 text-black px-6 py-2 rounded-full font-extrabold text-xl uppercase tracking-tight">
+              {saboteurName || "UNKNOWN SABOTEUR"} JUST SHUT DOWN THE MATRIX
+            </div>
+            
+            <p className="absolute bottom-10 text-zinc-800 text-sm font-mono tracking-wider">Sabotage Protocol v1.0 | Clearance Level: OMEGA</p>
+          </div>
+        )}
+
+        {/* ========================================================== */}
+        {/* 3️⃣ ФИНАЛНИЯТ РОУСТ (След 6-те секунди)                    */}
+        {/* ========================================================== */}
+        {showFinalRoast && (
+          <div className="fixed inset-0 bg-black/95 z-[600] flex items-center justify-center p-6" onClick={() => setShowFinalRoast(false)}>
+             <div className="bg-zinc-900 border border-zinc-700 p-10 rounded-[2rem] max-w-md w-full text-center relative overflow-hidden animate-pop-in" onClick={e => e.stopPropagation()}>
+                <h3 className="text-3xl font-black mb-4 uppercase text-white">PROTOCOL OVER</h3>
+                <p className="text-zinc-400 mb-8 text-lg font-light leading-relaxed">
+                  You spent <span className="font-bold text-white">$0.99</span>. <br/>
+                  While you watched the countdown for 6 seconds, <span className="text-red-500 font-bold">Elon made approximately $20,000</span>.
+                </p>
+                <button 
+                  onClick={() => {
+                    setShowFinalRoast(false);
+                    setSaboteurName(""); // Рестартираме името за следващия път
+                  }} 
+                  className="w-full bg-white text-black p-5 rounded-xl font-black text-xl uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                >
+                  I FEEL BROKE (CLOSE)
+                </button>
              </div>
           </div>
         )}
