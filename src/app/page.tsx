@@ -226,7 +226,7 @@ const handleBuy = (item: any) => {
     }
   };
 
-const handleSabotage = () => {
+  const handleSabotage = () => {
     trackConversion('sabotage_triggered');
     alert("In production: This stopping Musk for 1s will cost $0.99 via Stripe!");
     setIsPaused(true);
@@ -406,9 +406,8 @@ const handleSabotage = () => {
     );
   }
 
- return (
-    <main className="min-h-screen bg-black text-white font-sans selection:bg-yellow-500 selection:text-black relative overflow-x-hidden">
-      
+  return (
+    <>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`}
@@ -632,53 +631,38 @@ const handleSabotage = () => {
         )}
 
         {/* 🎮 THE SPEND GAME MODAL */}
-       {hasRageQuit ? (
-    <div className="animate-fade-in py-10 text-center flex flex-col items-center">
-        {/* Всичко тук е на английски за потребителя */}
-        <span className="text-8xl mb-6">📉</span>
-        <h3 className="text-5xl font-black text-white uppercase mb-4 leading-tight tracking-tighter">
-            CONGRATULATIONS. <br/> <span className="text-red-600">YOU ARE BROKE.</span>
-        </h3>
-        
-        <div className="max-w-md bg-zinc-900/50 border border-white/10 p-8 rounded-3xl mb-10 backdrop-blur-md">
-            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                You just spent <span className="text-white font-bold">${moneyFormatter.format(270000000)}</span> (Elon's daily income). 
-                It took you <span className="text-white font-bold">{clickCount} clicks</span>.
-            </p>
-            <p className="text-yellow-500 font-serif italic text-xl">
-                "The difference between you and him? He built the machine. You just clicked the buttons."
-            </p>
-        </div>
-
-        <div className="flex flex-col gap-4 w-full max-w-sm">
-            <button 
-                onClick={() => { setShowGameModal(false); setShowMillionModal(true); }}
-                className="w-full bg-white text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
-            >
-                START BUILDING REAL WEALTH 🚀
-            </button>
-            <button 
-                onClick={() => setShowGameModal(false)}
-                className="w-full bg-zinc-900 text-zinc-400 p-4 rounded-2xl font-black text-sm uppercase border border-white/5"
-            >
-                I prefer to stay a slave (Exit)
-            </button>
-        </div>
-    </div>
-) : (
-                    <div className="animate-fade-in py-10">
-                        <span className="text-6xl mb-6 block">🤡</span>
-                        <h3 className="text-4xl font-black text-white uppercase mb-4 leading-tight">You can't out-click passive income.</h3>
-                        <p className="text-zinc-400 text-lg mb-8">Stop playing games and start building leverage.</p>
-                        <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-3xl">
-                            <input type="email" placeholder="ENTER YOUR EMAIL" className="w-full bg-black border border-white/10 p-4 rounded-xl mb-3 outline-none focus:border-purple-500 text-center text-white font-mono" />
-                            <button className="w-full bg-purple-600 text-white p-4 rounded-xl font-black text-sm uppercase hover:bg-white hover:text-black transition-colors">Show me how the 1% do it</button>
-                            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I clicked ${clickCount} times trying to bankrupt Elon Musk. He made more money while I was playing. Can you beat my score?`)}&url=${encodeURIComponent(`https://${websiteUrl}`)}`} target="_blank" className="block w-full bg-black text-purple-400 border border-purple-500/50 p-4 rounded-xl font-black text-sm uppercase mt-3 hover:bg-purple-500 hover:text-white transition-colors">Share your defeat</a>
+        {showGameModal && (
+          <div className="fixed inset-0 bg-black/95 z-[400] flex items-center justify-center p-4 overflow-y-auto" onClick={() => { setShowGameModal(false); toggleMusic(false); }}>
+            <div className="bg-zinc-950 border border-white/10 p-8 rounded-[3rem] max-w-2xl w-full relative" onClick={e => e.stopPropagation()}>
+                {hasRageQuit ? (
+                    <div className="animate-fade-in py-10 text-center flex flex-col items-center">
+                        <span className="text-8xl mb-6">📉</span>
+                        <h3 className="text-5xl font-black text-white uppercase mb-4 leading-tight tracking-tighter text-center">CONGRATULATIONS. <br/> <span className="text-red-600">YOU ARE BROKE.</span></h3>
+                        <div className="max-w-md bg-zinc-900/50 border border-white/10 p-8 rounded-3xl mb-10 backdrop-blur-md">
+                            <p className="text-zinc-400 text-lg leading-relaxed mb-6">You just spent <span className="text-white font-bold">{moneyFormatter.format(270000000)}</span>. It took you <span className="text-white font-bold">{clickCount} clicks</span>.</p>
+                            <p className="text-yellow-500 font-serif italic text-xl">"The difference between you and him? He built the machine. You just clicked the buttons."</p>
+                        </div>
+                        <div className="flex flex-col gap-4 w-full max-w-sm">
+                            <button onClick={() => { setShowGameModal(false); toggleMusic(false); setShowMillionModal(true); }} className="w-full bg-white text-black p-6 rounded-2xl font-black text-xl uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]">START BUILDING REAL WEALTH 🚀</button>
+                            <button onClick={() => { setShowGameModal(false); toggleMusic(false); }} className="w-full bg-zinc-900 text-zinc-400 p-4 rounded-2xl font-black text-sm uppercase border border-white/5">I prefer to stay a slave (Exit)</button>
                         </div>
                     </div>
+                ) : (
+                    <div className="text-center py-6">
+                        <div className="mb-8">
+                            <p className="text-zinc-500 text-xs uppercase font-black mb-2 tracking-widest text-center">Elon's Daily Wallet</p>
+                            <h4 className="text-5xl font-mono font-black text-green-400 tabular-nums text-center">{moneyFormatter.format(gameBalance)}</h4>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {GAME_ITEMS.map((item, idx) => (
+                                <button key={idx} onClick={() => handleBuy(item)} className={`p-4 rounded-2xl border-2 transition-all active:scale-95 flex flex-col items-center justify-center gap-2 ${item.isPremium ? 'border-yellow-500 bg-yellow-500/10 shadow-[0_0_20px_rgba(234,179,8,0.2)]' : 'bg-zinc-900 border-white/5 hover:bg-zinc-800'}`}><span className="text-3xl">{item.icon}</span><span className={`font-black text-[10px] uppercase tracking-widest ${item.isPremium ? 'text-yellow-500' : 'text-zinc-400'}`}>{item.name}</span><span className="text-white font-mono text-xs font-bold">-${item.price.toLocaleString()}</span></button>
+                            ))}
+                        </div>
+                        {roastText && <p className="mt-6 text-red-500 font-black uppercase text-xs animate-pulse text-center">{roastText}</p>}
+                    </div>
                 )}
-                <button onClick={() => setShowGameModal(false)} className="absolute top-6 right-6 text-zinc-600 hover:text-white font-black text-xl">✕</button>
-             </div>
+                <button onClick={() => { setShowGameModal(false); toggleMusic(false); }} className="absolute top-6 right-6 text-zinc-600 hover:text-white font-black text-xl">✕</button>
+            </div>
           </div>
         )}
 
@@ -735,7 +719,7 @@ const handleSabotage = () => {
           </div>
         )}
 
-     {/* 📲 RECEIPT PREVIEW */}
+        {/* 📲 RECEIPT PREVIEW */}
         {generatedReceiptUrl && (
           <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-6" onClick={() => setGeneratedReceiptUrl(null)}>
              <div className="bg-zinc-900 p-4 rounded-[2rem] border border-white/10 max-w-sm w-full flex flex-col" onClick={e => e.stopPropagation()}>
@@ -745,7 +729,7 @@ const handleSabotage = () => {
           </div>
         )}
 
-     {/* 👕 T-SHIRT SHOP MODAL - IMPROVED UI */}
+        {/* 👕 T-SHIRT SHOP MODAL - IMPROVED UI */}
         {generatedTshirtUrl && (
           <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-6" onClick={() => setGeneratedTshirtUrl(null)}>
              <div className="bg-zinc-950 p-8 rounded-[3rem] border border-white/10 max-w-4xl w-full flex flex-col md:flex-row gap-10" onClick={e => e.stopPropagation()}>
@@ -948,23 +932,10 @@ const handleSabotage = () => {
                         </p>
                     )}
                 </div>
-        {/* 👻 Invisible Generators (Keep them inside main) */}
-        <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
-          <div ref={receiptRef} className="w-[400px] bg-black p-10 flex flex-col items-center border border-yellow-500/20 text-white">
-            <h2 className="text-2xl font-black text-yellow-500 mb-4 uppercase tracking-tighter">SHOCK REPORT</h2>
-            <div className="w-full border-t border-dashed border-white/20 pt-6 text-center">
-              <p className="text-red-500 font-black text-2xl uppercase leading-none mb-1">{selectedHero.name}</p>
-              <p className="text-7xl font-black font-mono text-white mb-2 leading-none">{timeToEarnAnnual}s</p>
-            </div>
-            <div className="mt-10 bg-yellow-500 text-black px-6 py-2 font-black text-xl uppercase">{websiteUrl}</div>
+             </div>
           </div>
-          
-          <div ref={tshirtRef} className="w-[1000px] h-[1000px] p-20 flex flex-col items-center justify-center bg-transparent text-white">
-            <p className="text-[20rem] font-black text-white leading-none">{timeToEarnAnnual}s</p>
-            <p className="text-5xl font-black text-white uppercase mt-10">AND ALL I GOT WAS THIS T-SHIRT. #RAGETWEET</p>
-          </div>
-        </div>
-
+        )}
       </main>
+    </>
   );
 }
