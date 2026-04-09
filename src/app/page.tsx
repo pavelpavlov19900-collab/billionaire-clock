@@ -281,7 +281,7 @@ const handleBuy = (item: any) => {
     setShowSabotageModal(false); // Затваряме прозореца за плащане
     setIsSabotaged(true); // Активираме черния екран
     setSabotageCountdown(6); // Рестартираме брояча на 6
-    toggleMusic('off'); // Спираме Phonk музиката за драма
+    toggleMusic('none'); // Спираме Phonk музиката за драма
     
     // Пускаме звук на "краш"
     const glitchSfx = new Audio('/sounds/glass.mp3'); 
