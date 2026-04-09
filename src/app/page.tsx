@@ -82,32 +82,33 @@ export default function BillionaireClock() {
   // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
   const [isCertPaid, setIsCertPaid] = useState(false);
   const certRef = useRef<HTMLDivElement>(null);
-  // 🔊 AUDIO ENGINE
-  const bgMusicRef = useRef<HTMLAudioElement | null>(null);
+  // 🔊 AUDIO ENGINE (Двоен за Игра и Студио)
+  const gameMusicRef = useRef<HTMLAudioElement | null>(null);
+  const studioMusicRef = useRef<HTMLAudioElement | null>(null);
 
   const playSfx = (type: 'click' | 'bankruptcy') => {
-    const sfx = {
-      click: 'https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3', 
-      bankruptcy: 'https://assets.mixkit.co/active_storage/sfx/123/123-preview.mp3'
-    };
-    const audio = new Audio(sfx[type]);
-    audio.volume = 0.3;
+    const audio = new Audio(type === 'click' ? '/sounds/click.mp3' : '/sounds/glass.mp3');
+    audio.volume = 0.4;
     audio.play().catch(() => {});
   };
 
-  const toggleMusic = (play: boolean) => {
-    if (play) {
-      if (!bgMusicRef.current) {
-        bgMusicRef.current = new Audio('https://cdn.pixabay.com/audio/2022/10/25/audio_226768a356.mp3');
-        bgMusicRef.current.loop = true;
-        bgMusicRef.current.volume = 0.15;
+  const toggleMusic = (mode: 'game' | 'studio' | 'none') => {
+    // Спираме всичко текущо
+    if (gameMusicRef.current) { gameMusicRef.current.pause(); gameMusicRef.current.currentTime = 0; }
+    if (studioMusicRef.current) { studioMusicRef.current.pause(); studioMusicRef.current.currentTime = 0; }
+
+    if (mode === 'game') {
+      if (!gameMusicRef.current) {
+        gameMusicRef.current = new Audio('/sounds/game_track.mp3');
+        gameMusicRef.current.loop = true;
       }
-      bgMusicRef.current.play().catch(() => {});
-    } else {
-      if (bgMusicRef.current) {
-        bgMusicRef.current.pause();
-        bgMusicRef.current.currentTime = 0;
+      gameMusicRef.current.play().catch(() => {});
+    } else if (mode === 'studio') {
+      if (!studioMusicRef.current) {
+        studioMusicRef.current = new Audio('/sounds/studio_track.mp3');
+        studioMusicRef.current.loop = true;
       }
+      studioMusicRef.current.play().catch(() => {});
     }
   };
 
