@@ -80,6 +80,13 @@ export default function BillionaireClock() {
   const [cutCoffee, setCutCoffee] = useState(false);
   const [totalSpent, setTotalSpent] = useState(0);
 
+  // 🔥 НОВИТЕ СТЕЙТОВЕ ЗА САБОТАЖА (Добави тези 5 реда тук):
+  const [showSabotageModal, setShowSabotageModal] = useState(false); // Отваря прозореца за име/плащане
+  const [saboteurName, setSaboteurName] = useState(""); // Запазва въведеното име
+  const [isSabotaged, setIsSabotaged] = useState(false); // Активира 6-секундния черен екран
+  const [sabotageCountdown, setSabotageCountdown] = useState(6); // Броячът от 6 до 1
+  const [showFinalRoast, setShowFinalRoast] = useState(false); // Финалното съобщение след саботажа
+
   // 📜 REALITY CERTIFICATE DOWNLOAD LOGIC
   const [isCertPaid, setIsCertPaid] = useState(false);
   const certRef = useRef<HTMLDivElement>(null);
