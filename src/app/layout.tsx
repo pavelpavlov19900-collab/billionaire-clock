@@ -1,12 +1,12 @@
 import './globals.css'
+import Script from 'next/script' // 👈 Внасяме Script компонента
 
 export const metadata = {
   title: 'Billionaire Clock',
   description: 'Виж колко бързо милиардерите изкарват твоята заплата.',
-  // 👇 ТОВА ДОБАВЯМЕ:
   icons: {
-    icon: '/favicon.png', // Пътят към твоята нова прозрачна икона в папката /public
-    apple: '/favicon.png', // За иконата на началния екран на iPhone
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
@@ -18,8 +18,19 @@ export default function RootLayout({
   return (
     <html lang="bg">
       <head>
-        {/* Добавяме и този ред за всеки случай, за да сме 100% сигурни */}
         <link rel="icon" href="/favicon.png" />
+        
+        {/* 🚀 TRAVELPAYOUTS VERIFICATION SCRIPT */}
+        <Script id="travelpayouts-verification" strategy="afterInteractive">
+          {`
+            (function () {
+                var script = document.createElement("script");
+                script.async = 1;
+                script.src = 'https://emrldco.com/NTE3NTk0.js?t=517594';
+                document.head.appendChild(script);
+            })();
+          `}
+        </Script>
       </head>
       <body>{children}</body>
     </html>
