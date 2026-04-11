@@ -622,11 +622,14 @@ const handleBuy = (item: any) => {
       </div>
     </div>
 
-    {/* 🏚️ YOUR REALITY (Бруталният контраст под битката) */}
-    <div className="mt-8 bg-zinc-950 border border-white/10 px-8 py-3 rounded-full flex items-center gap-4 animate-bounce-short shadow-2xl">
-       <span className="text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-widest">Your Reality:</span>
-       <span className="text-red-500 font-black font-mono text-sm md:text-base">-$10.00</span>
-    </div>
+    {/* 👇 ЗАМЕНИ СТАРИЯ DIV YOUR REALITY С ТОЗИ 👇 */}
+        <div className="mt-8 bg-zinc-950 border border-white/10 px-8 py-3 rounded-full flex items-center gap-4 shadow-2xl">
+           <span className="text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-widest">Your Reality:</span>
+           {/* Ключът (key) е важен, за да се рестартира анимацията всеки път, когато текстът се смени */}
+           <span key={realityIndex} className="text-red-500 font-black font-mono text-sm md:text-base animate-fade-in">
+             {realities[realityIndex]}
+           </span>
+        </div>
   </div>
 ) : (
             <div className="flex flex-col items-center text-center relative z-10">
