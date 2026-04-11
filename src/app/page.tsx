@@ -722,17 +722,38 @@ const handleBuy = (item: any) => {
                   </div>
                </div>
 
-               {/* 🛑 ANTI-SPONSOR BANNER (Copium Deals) */}
-               <div className="max-w-2xl w-full bg-gradient-to-r from-red-950 to-black border border-red-900 p-6 rounded-3xl mt-6 flex flex-col md:flex-row items-center justify-between shadow-[0_0_30px_rgba(220,38,38,0.15)] group relative overflow-hidden cursor-pointer" onClick={() => { trackConversion('click_anti_sponsor'); window.open('https://ryanair.com', '_blank'); }}>
+              {/* 🛑 ANTI-SPONSOR BANNER (Upgraded for Max CTR) */}
+               <div 
+                 className="max-w-2xl w-full bg-gradient-to-r from-red-950 to-black border border-red-900 p-6 md:p-8 rounded-3xl mt-6 flex flex-col md:flex-row items-center justify-between shadow-[0_0_30px_rgba(220,38,38,0.15)] group relative overflow-hidden cursor-pointer hover:shadow-[0_0_40px_rgba(220,38,38,0.3)] transition-all duration-300" 
+                 onClick={() => { trackConversion('click_anti_sponsor'); window.open('https://ryanair.com', '_blank'); }}
+               >
+                   {/* Дебелата червена линия отляво */}
                    <div className="absolute top-0 left-0 w-2 h-full bg-red-600"></div>
-                   <div className="flex-1 pl-4 text-left z-10">
-                       <span className="bg-red-600 text-white text-[9px] font-black uppercase tracking-[0.3em] px-2 py-1 rounded-sm mb-3 inline-block">Reality Check Sponsor</span>
-                       <h4 className="text-xl md:text-2xl font-black text-white uppercase leading-tight group-hover:text-red-400 transition-colors">You will never own Bezos' Yacht.</h4>
-                       <p className="text-zinc-400 text-sm mt-1">But at least your flight to Rome is €15. Book the peasant-class ticket now.</p>
+                   
+                   {/* ✈️ Едва забележимият самолет във фона (Подсъзнателен маркетинг) */}
+                   <div className="absolute -right-10 -top-10 text-[150px] opacity-5 rotate-45 pointer-events-none group-hover:scale-110 transition-transform duration-700">
+                     ✈️
                    </div>
-                   <div className="mt-4 md:mt-0 bg-white text-black px-6 py-3 rounded-xl font-black uppercase tracking-widest text-xs z-10 hover:bg-red-500 hover:text-white transition-all whitespace-nowrap">Fly for €15 ✈️</div>
+
+                   <div className="flex-1 pl-4 text-left z-10 relative border-l-2 border-dashed border-red-900/50 ml-2 pl-6">
+                       <span className="bg-red-600 text-white text-[9px] font-black uppercase tracking-[0.3em] px-3 py-1 rounded-sm mb-4 inline-block shadow-md">
+                         Reality Check Sponsor
+                       </span>
+                       <h4 className="text-xl md:text-3xl font-black text-white uppercase leading-tight transition-colors mb-2">
+                         You will <span className="text-red-500">never</span> own <br/> Bezos' Yacht.
+                       </h4>
+                       <p className="text-zinc-400 text-xs md:text-sm">
+                         But at least your flight to Rome is €15. Book the peasant-class ticket now.
+                       </p>
+                   </div>
+                   
+                   {/* 🔘 Пулсиращият бутон */}
+                   <div className="mt-6 md:mt-0 z-10">
+                     <div className="bg-white text-black px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-red-500 hover:text-white transition-all whitespace-nowrap shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] animate-bounce-short">
+                       Fly for €15 ✈️
+                     </div>
+                   </div>
                </div>
-            </div>
           )}
 
           <div className="max-w-6xl mx-auto mt-12 z-10 relative">
