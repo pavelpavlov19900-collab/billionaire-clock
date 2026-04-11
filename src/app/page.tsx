@@ -754,6 +754,7 @@ const handleBuy = (item: any) => {
                      </div>
                    </div>
                </div>
+              </div>
           )}
 
           <div className="max-w-6xl mx-auto mt-12 z-10 relative">
