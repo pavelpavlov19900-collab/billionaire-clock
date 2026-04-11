@@ -554,22 +554,61 @@ const handleBuy = (item: any) => {
         <div className="max-w-7xl mx-auto pt-32 pb-20 px-4">
           
           {isBattleMode ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start relative">
-               <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8">
-                 <select value={selectedHero.name} onChange={(e) => setSelectedHero(data.find(h => h.name === e.target.value))} className="bg-transparent text-3xl font-black outline-none mb-4 text-yellow-500">
-                   {data.map(h => <option key={h.name} value={h.name} className="bg-zinc-900">{h.name}</option>)}
-                 </select>
-                 <div className="text-5xl font-mono font-black text-green-400 tabular-nums">${moneyFormatter.format(heroEarnings)}</div>
-               </div>
-               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex w-16 h-16 bg-red-600 rounded-full items-center justify-center font-black italic border-4 border-black shadow-xl">VS</div>
-               <div className="bg-white/5 border border-red-500/20 rounded-[2.5rem] p-8">
-                 <select value={opponent?.name} onChange={(e) => setOpponent(data.find(h => h.name === e.target.value))} className="bg-transparent text-3xl font-black outline-none mb-4 text-red-500">
-                   {data.map(h => <option key={h.name} value={h.name} className="bg-zinc-900">{h.name}</option>)}
-                 </select>
-                 <div className="text-5xl font-mono font-black text-red-400 tabular-nums">${moneyFormatter.format(opponentEarnings)}</div>
-               </div>
-            </div>
-          ) : (
+  <div className="w-full flex flex-col items-center mb-6 relative">
+    
+    {/* ⚔️ СБЛЪСЪКЪТ (Интерактивни дропдауни) */}
+    <div className="flex items-center justify-between w-full gap-2 md:gap-4 relative z-10">
+      
+      {/* HERO 1 SELECTOR (GREEN) */}
+      <div className="flex-1 bg-zinc-900/80 border border-emerald-500/20 p-4 md:p-6 rounded-3xl backdrop-blur-sm shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+        <select 
+          value={selectedHero.name} 
+          onChange={(e) => setSelectedHero(data.find(h => h.name === e.target.value))} 
+          className="bg-transparent text-emerald-500 font-black text-xs md:text-sm uppercase tracking-tighter w-full outline-none appearance-none cursor-pointer mb-2"
+        >
+          {data.map(h => (
+            <option key={h.name} value={h.name} className="bg-black text-white">{h.name}</option>
+          ))}
+        </select>
+        {/* Динамичната цифра на Hero 1 */}
+        <p className="text-2xl md:text-4xl font-mono font-black text-emerald-400 tabular-nums drop-shadow-[0_0_10px_rgba(52,211,153,0.3)]">
+          ${moneyFormatter.format(heroEarnings)}
+        </p>
+      </div>
+
+      {/* 🔥 THE VS ORB (Остава в центъра) */}
+      <div className="relative flex items-center justify-center shrink-0 mx-2 md:mx-4">
+        <div className="absolute inset-0 bg-red-600 blur-2xl opacity-30 animate-pulse"></div>
+        <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center border-4 border-black z-10 animate-vs-pulse shadow-[0_0_40px_rgba(220,38,38,0.8)]">
+          <span className="text-white font-black italic tracking-tighter text-lg md:text-2xl drop-shadow-lg">VS</span>
+        </div>
+      </div>
+
+      {/* HERO 2 SELECTOR (RED) */}
+      <div className="flex-1 bg-zinc-900/80 border border-red-500/20 p-4 md:p-6 rounded-3xl backdrop-blur-sm text-right shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+        <select 
+          value={opponent?.name} 
+          onChange={(e) => setOpponent(data.find(h => h.name === e.target.value))} 
+          className="bg-transparent text-red-500 font-black text-xs md:text-sm uppercase tracking-tighter w-full outline-none appearance-none cursor-pointer mb-2 text-right"
+        >
+          {data.map(h => (
+            <option key={h.name} value={h.name} className="bg-black text-white">{h.name}</option>
+          ))}
+        </select>
+        {/* Динамичната цифра на Hero 2 */}
+        <p className="text-2xl md:text-4xl font-mono font-black text-red-400 tabular-nums drop-shadow-[0_0_10px_rgba(248,113,113,0.3)]">
+          ${moneyFormatter.format(opponentEarnings)}
+        </p>
+      </div>
+    </div>
+
+    {/* 🏚️ YOUR REALITY (Бруталният контраст под битката) */}
+    <div className="mt-8 bg-zinc-950 border border-white/10 px-8 py-3 rounded-full flex items-center gap-4 animate-bounce-short shadow-2xl">
+       <span className="text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-widest">Your Reality:</span>
+       <span className="text-red-500 font-black font-mono text-sm md:text-base">-$10.00</span>
+    </div>
+  </div>
+) : (
             <div className="flex flex-col items-center text-center relative z-10">
                 <div className="w-full max-w-xl bg-gradient-to-r from-yellow-900/40 via-yellow-700/50 to-yellow-900/40 border border-yellow-500/30 rounded-2xl p-4 mb-10 shadow-[0_0_30px_rgba(234,179,8,0.2)] backdrop-blur-sm relative flex items-center justify-between gap-4">
                     <div className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-l-2xl"></div>
