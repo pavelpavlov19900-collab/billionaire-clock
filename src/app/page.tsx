@@ -92,6 +92,26 @@ export default function BillionaireClock() {
   const [liveFeedNames, setLiveFeedNames] = useState(["@CryptoWhale", "Matrix_Glitch", "@Tate_Escape", "Broke_CEO", "Neo_99"]);
   const [currentFeedIndex, setCurrentFeedIndex] = useState(0);
 
+  // 👇 СЛОЖИ НОВИЯ КОД ТОЧНО ТУК 👇
+  // 🏚️ ТВОЯТА РЕАЛНОСТ (За Battle Mode)
+  const realities = [
+    "Still have to pay rent.",
+    "Card declined for $4.50 coffee.",
+    "Netflix subscription due tomorrow.",
+    "Ignoring calls from the bank.",
+    "Waiting for payday...",
+    "-$12 for avocado toast."
+  ];
+  const [realityIndex, setRealityIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRealityIndex((prev) => (prev + 1) % realities.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+  // 👆 КРАЙ НА НОВИЯ КОД 👆
+
   // 🎲 Генерираме рандом число при зареждане (между 4000 и 6000)
   useEffect(() => {
     setSabotageCount(Math.floor(Math.random() * (6000 - 4000 + 1)) + 4000);
