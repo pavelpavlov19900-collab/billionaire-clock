@@ -25,6 +25,10 @@
   .animate-bounce-short {
     animation: bounceShort 2s infinite;
   }
+  /* Електрически пулс за VS орба */
+  .animate-vs-pulse {
+    animation: vs-glow 2s infinite ease-in-out;
+  }
 }
 
 /* 🎞️ KEYFRAMES */
@@ -41,6 +45,16 @@
 @keyframes bounceShort {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+@keyframes vs-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); 
+    transform: scale(1); 
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.9); 
+    transform: scale(1.1); 
+  }
 }
 
 /* 🖋️ SIGNATURE FONT (The Oracle) */
