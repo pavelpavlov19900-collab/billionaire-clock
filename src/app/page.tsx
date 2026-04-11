@@ -725,7 +725,7 @@ const handleBuy = (item: any) => {
               {/* 🛑 ANTI-SPONSOR BANNER (Upgraded for Max CTR) */}
                <div 
                  className="max-w-2xl w-full bg-gradient-to-r from-red-950 to-black border border-red-900 p-6 md:p-8 rounded-3xl mt-6 flex flex-col md:flex-row items-center justify-between shadow-[0_0_30px_rgba(220,38,38,0.15)] group relative overflow-hidden cursor-pointer hover:shadow-[0_0_40px_rgba(220,38,38,0.3)] transition-all duration-300" 
-                 onClick={() => { trackConversion('click_anti_sponsor'); window.open('https://ryanair.com', '_blank'); }}
+                 onClick={() => { trackConversion('click_anti_sponsor_kiwi'); window.open('https://kiwi.tpo.mx/inRq6rdz', '_blank'); }}
                >
                    {/* Дебелата червена линия отляво */}
                    <div className="absolute top-0 left-0 w-2 h-full bg-red-600"></div>
