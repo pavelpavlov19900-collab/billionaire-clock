@@ -776,9 +776,13 @@ const handleBuy = (item: any) => {
                   <div className="absolute inset-0 bg-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
 
-              {/* 📈 ТОВА Е НОВИЯТ БРОЯЧ: */}
-              <p className="text-zinc-500 text-[10px] mt-3 uppercase tracking-[0.2em] font-bold">
-                System stopped <span className="text-red-500">{sabotageCount.toLocaleString()}</span> times today
+              {/* 📈 АГРЕСИВНИЯТ БРОЯЧ (Червен и пулсиращ) */}
+              <p className="text-center mt-3 animate-pulse">
+                <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-[0.2em]">System stopped </span>
+                <span className="text-red-600 font-black text-xs tabular-nums drop-shadow-[0_0_5px_rgba(220,38,38,0.5)]">
+                  {sabotageCount.toLocaleString()}
+                </span>
+                <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-[0.2em]"> times today</span>
               </p>
             </div>
             </div>
