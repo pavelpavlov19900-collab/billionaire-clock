@@ -537,9 +537,14 @@ const handleBuy = (item: any) => {
 
   return (
     <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+     <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZKHMD53Q69" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`}
+        {`
+          window.dataLayer = window.dataLayer || []; 
+          function gtag(){dataLayer.push(arguments);} 
+          gtag('js', new Date()); 
+          gtag('config', 'G-ZKHMD53Q69');
+        `}
       </Script>
 
       <main className="min-h-screen bg-black text-white font-sans selection:bg-yellow-500 selection:text-black relative overflow-x-hidden">
