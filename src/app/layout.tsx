@@ -8,6 +8,10 @@ export const metadata = {
     icon: '/favicon.png',
     apple: '/favicon.png',
   },
+  // 👇 ЕТО ТУК ДОБАВЯМЕ GOOGLE VERIFICATION 👇
+  verification: {
+    google: '32jQ-vYV1NEN4QLbEoCQiBJTbIMeERAu1MA0HCMkzhw',
+  },
 }
 
 export default function RootLayout({
