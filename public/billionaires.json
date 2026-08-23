@@ -49,1242 +49,1263 @@
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #186",
-        "netWorth": 89095630569.10118,
-        "earningsPerSec": 197.76,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
         "name": "Global Billionaire #149",
-        "netWorth": 89017313263.20131,
-        "earningsPerSec": 197.59,
-        "source": "Energy",
+        "netWorth": 89641377366.99489,
+        "earningsPerSec": 198.98,
+        "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #111",
-        "netWorth": 88793411118.74486,
-        "earningsPerSec": 197.09,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #50",
-        "netWorth": 87745556801.23917,
-        "earningsPerSec": 194.77,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #26",
-        "netWorth": 87138889402.50761,
-        "earningsPerSec": 193.42,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #49",
-        "netWorth": 86887316600.93196,
-        "earningsPerSec": 192.86,
+        "name": "Global Billionaire #126",
+        "netWorth": 89058458389.29623,
+        "earningsPerSec": 197.68,
         "source": "Tech",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #64",
-        "netWorth": 86532060393.03818,
-        "earningsPerSec": 192.07,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #154",
-        "netWorth": 85626292635.0336,
-        "earningsPerSec": 190.06,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #130",
-        "netWorth": 85021254502.30989,
-        "earningsPerSec": 188.72,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #88",
-        "netWorth": 84925565961.37276,
-        "earningsPerSec": 188.51,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #165",
-        "netWorth": 83500915719.93518,
-        "earningsPerSec": 185.35,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #172",
-        "netWorth": 83496906062.27678,
-        "earningsPerSec": 185.34,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #97",
-        "netWorth": 83057050362.8999,
-        "earningsPerSec": 184.36,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #34",
-        "netWorth": 83017144313.60832,
-        "earningsPerSec": 184.27,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #164",
-        "netWorth": 82859818190.87003,
-        "earningsPerSec": 183.92,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #44",
-        "netWorth": 82612387251.00473,
-        "earningsPerSec": 183.37,
+        "name": "Global Billionaire #159",
+        "netWorth": 88305133279.76259,
+        "earningsPerSec": 196.01,
         "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #37",
-        "netWorth": 82408362580.83969,
-        "earningsPerSec": 182.92,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #133",
-        "netWorth": 81834081302.67105,
-        "earningsPerSec": 181.65,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #140",
-        "netWorth": 81183454663.80142,
-        "earningsPerSec": 180.2,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #194",
-        "netWorth": 80891050499.96407,
-        "earningsPerSec": 179.55,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #123",
-        "netWorth": 80652171301.99219,
-        "earningsPerSec": 179.02,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #138",
-        "netWorth": 78475112589.39821,
-        "earningsPerSec": 174.19,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #42",
-        "netWorth": 78122997242.65886,
-        "earningsPerSec": 173.41,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #62",
-        "netWorth": 77176074545.6028,
-        "earningsPerSec": 171.31,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #158",
-        "netWorth": 76113888054.69193,
-        "earningsPerSec": 168.95,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #187",
-        "netWorth": 76089132586.78821,
-        "earningsPerSec": 168.89,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #163",
-        "netWorth": 75937880797.21056,
-        "earningsPerSec": 168.56,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #192",
-        "netWorth": 75163352162.77777,
-        "earningsPerSec": 166.84,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #31",
-        "netWorth": 74056362708.0603,
-        "earningsPerSec": 164.38,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #183",
-        "netWorth": 73845609781.93979,
-        "earningsPerSec": 163.91,
-        "source": "Finance",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #116",
-        "netWorth": 73696396823.56636,
-        "earningsPerSec": 163.58,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #160",
-        "netWorth": 73686979577.12686,
-        "earningsPerSec": 163.56,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #136",
-        "netWorth": 73421758702.1177,
-        "earningsPerSec": 162.97,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #91",
-        "netWorth": 73280449610.13467,
-        "earningsPerSec": 162.66,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #75",
-        "netWorth": 72138105552.51326,
-        "earningsPerSec": 160.12,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #162",
-        "netWorth": 71527126722.04686,
-        "earningsPerSec": 158.77,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #74",
-        "netWorth": 70860981355.61246,
-        "earningsPerSec": 157.29,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #191",
-        "netWorth": 70133107738.45074,
-        "earningsPerSec": 155.67,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #170",
-        "netWorth": 69725373041.51804,
-        "earningsPerSec": 154.77,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #118",
-        "netWorth": 68624826505.17523,
-        "earningsPerSec": 152.33,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #155",
-        "netWorth": 68507160762.11205,
-        "earningsPerSec": 152.06,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #110",
-        "netWorth": 67965035257.31618,
-        "earningsPerSec": 150.86,
+        "netWorth": 87895207099.40736,
+        "earningsPerSec": 195.1,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #72",
-        "netWorth": 67662344340.09098,
-        "earningsPerSec": 150.19,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #71",
-        "netWorth": 67435636641.71863,
-        "earningsPerSec": 149.69,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #78",
-        "netWorth": 67295522393.22183,
-        "earningsPerSec": 149.37,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #195",
-        "netWorth": 66910807804.755936,
-        "earningsPerSec": 148.52,
+        "netWorth": 87716092062.3335,
+        "earningsPerSec": 194.7,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #146",
-        "netWorth": 66859762530.68753,
-        "earningsPerSec": 148.41,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #94",
-        "netWorth": 66455333385.23512,
-        "earningsPerSec": 147.51,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #150",
-        "netWorth": 66368971378.84627,
-        "earningsPerSec": 147.32,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #76",
-        "netWorth": 65607351204.775085,
-        "earningsPerSec": 145.63,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #168",
-        "netWorth": 64856681675.27578,
-        "earningsPerSec": 143.96,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #30",
-        "netWorth": 64466473341.12978,
-        "earningsPerSec": 143.1,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #32",
-        "netWorth": 63718517562.377594,
-        "earningsPerSec": 141.44,
+        "name": "Global Billionaire #142",
+        "netWorth": 87652045321.74335,
+        "earningsPerSec": 194.56,
         "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #46",
-        "netWorth": 63571393374.81603,
-        "earningsPerSec": 141.11,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #137",
-        "netWorth": 63524182357.07411,
-        "earningsPerSec": 141.0,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #115",
-        "netWorth": 63495557515.66648,
-        "earningsPerSec": 140.94,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #184",
-        "netWorth": 63279251159.66164,
-        "earningsPerSec": 140.46,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #73",
-        "netWorth": 62530521312.80196,
-        "earningsPerSec": 138.8,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #112",
-        "netWorth": 62036808796.97333,
-        "earningsPerSec": 137.7,
-        "source": "Tech",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #173",
-        "netWorth": 61682550501.23996,
-        "earningsPerSec": 136.92,
+        "netWorth": 86939486929.87581,
+        "earningsPerSec": 192.98,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #22",
+        "netWorth": 86649408892.82512,
+        "earningsPerSec": 192.33,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #23",
+        "netWorth": 85301620501.54968,
+        "earningsPerSec": 189.34,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #185",
-        "netWorth": 61530051516.70361,
-        "earningsPerSec": 136.58,
+        "name": "Global Billionaire #191",
+        "netWorth": 84948495115.3717,
+        "earningsPerSec": 188.56,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #39",
-        "netWorth": 61327123658.98373,
-        "earningsPerSec": 136.13,
-        "source": "Energy",
+        "name": "Global Billionaire #123",
+        "netWorth": 84033770671.57152,
+        "earningsPerSec": 186.53,
+        "source": "Retail",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #45",
-        "netWorth": 61235760796.74852,
-        "earningsPerSec": 135.92,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #67",
-        "netWorth": 61172257165.53162,
-        "earningsPerSec": 135.78,
+        "netWorth": 83681147429.97389,
+        "earningsPerSec": 185.75,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #193",
-        "netWorth": 60943327494.66098,
-        "earningsPerSec": 135.28,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #96",
-        "netWorth": 60245365752.23342,
-        "earningsPerSec": 133.73,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #124",
-        "netWorth": 59135026443.06235,
-        "earningsPerSec": 131.26,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #198",
-        "netWorth": 58607931500.49034,
-        "earningsPerSec": 130.09,
+        "name": "Global Billionaire #163",
+        "netWorth": 83021877240.54848,
+        "earningsPerSec": 184.28,
         "source": "Tech",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #107",
-        "netWorth": 57038846668.6743,
-        "earningsPerSec": 126.61,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #144",
-        "netWorth": 57030729046.55467,
-        "earningsPerSec": 126.59,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #82",
-        "netWorth": 57012440756.53061,
-        "earningsPerSec": 126.55,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #36",
-        "netWorth": 56067837740.40457,
-        "earningsPerSec": 124.45,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #54",
-        "netWorth": 55879781715.15339,
-        "earningsPerSec": 124.04,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #40",
-        "netWorth": 55575470419.321884,
-        "earningsPerSec": 123.36,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #66",
-        "netWorth": 55459230060.01725,
-        "earningsPerSec": 123.1,
+        "name": "Global Billionaire #83",
+        "netWorth": 82992723371.21094,
+        "earningsPerSec": 184.22,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #92",
-        "netWorth": 54379520849.94665,
-        "earningsPerSec": 120.71,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #70",
-        "netWorth": 53475790772.83119,
-        "earningsPerSec": 118.7,
+        "name": "Global Billionaire #49",
+        "netWorth": 82954713141.63295,
+        "earningsPerSec": 184.13,
         "source": "Tech",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #105",
-        "netWorth": 53367100831.243004,
-        "earningsPerSec": 118.46,
-        "source": "Finance",
+        "name": "Global Billionaire #180",
+        "netWorth": 82796314650.20851,
+        "earningsPerSec": 183.78,
+        "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #177",
-        "netWorth": 51940438342.296165,
-        "earningsPerSec": 115.29,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #122",
-        "netWorth": 51665241757.36592,
-        "earningsPerSec": 114.68,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #85",
-        "netWorth": 51431261902.81066,
-        "earningsPerSec": 114.16,
+        "name": "Global Billionaire #118",
+        "netWorth": 82751482363.37643,
+        "earningsPerSec": 183.68,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #104",
-        "netWorth": 50927298481.4145,
-        "earningsPerSec": 113.04,
-        "source": "Tech",
+        "netWorth": 81676538852.6989,
+        "earningsPerSec": 181.3,
+        "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #152",
-        "netWorth": 49946259798.454285,
-        "earningsPerSec": 110.86,
+        "name": "Global Billionaire #128",
+        "netWorth": 81177333355.05092,
+        "earningsPerSec": 180.19,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #139",
+        "netWorth": 79713788359.57057,
+        "earningsPerSec": 176.94,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #92",
+        "netWorth": 79711093900.65884,
+        "earningsPerSec": 176.93,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #114",
-        "netWorth": 49665254145.23775,
-        "earningsPerSec": 110.24,
+        "name": "Global Billionaire #25",
+        "netWorth": 79609706087.55565,
+        "earningsPerSec": 176.71,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #165",
+        "netWorth": 78712573833.3528,
+        "earningsPerSec": 174.72,
         "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #178",
+        "netWorth": 78284287767.4112,
+        "earningsPerSec": 173.77,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #195",
+        "netWorth": 77796663798.71852,
+        "earningsPerSec": 172.68,
+        "source": "Tech",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #80",
-        "netWorth": 49431974071.36131,
-        "earningsPerSec": 109.72,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #189",
-        "netWorth": 49041502358.028656,
-        "earningsPerSec": 108.86,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #113",
-        "netWorth": 48476018660.00476,
-        "earningsPerSec": 107.6,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #108",
-        "netWorth": 48388997450.119,
-        "earningsPerSec": 107.41,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #120",
-        "netWorth": 48229537058.1928,
-        "earningsPerSec": 107.05,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #43",
-        "netWorth": 47631548588.715645,
-        "earningsPerSec": 105.73,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #134",
-        "netWorth": 47229656392.564255,
-        "earningsPerSec": 104.83,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #125",
-        "netWorth": 47115846870.374565,
-        "earningsPerSec": 104.58,
+        "netWorth": 76893905231.7169,
+        "earningsPerSec": 170.68,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #143",
-        "netWorth": 46672765793.30868,
-        "earningsPerSec": 103.6,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #61",
-        "netWorth": 46330292936.69985,
-        "earningsPerSec": 102.84,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #126",
-        "netWorth": 46075361117.73539,
-        "earningsPerSec": 102.27,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #57",
-        "netWorth": 45887389564.46813,
-        "earningsPerSec": 101.86,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #68",
-        "netWorth": 45566996044.69946,
-        "earningsPerSec": 101.14,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #86",
-        "netWorth": 45042629605.69047,
-        "earningsPerSec": 99.98,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #175",
-        "netWorth": 44880487161.4094,
-        "earningsPerSec": 99.62,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #179",
-        "netWorth": 44645275238.343506,
-        "earningsPerSec": 99.1,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #145",
-        "netWorth": 42688993038.93493,
-        "earningsPerSec": 94.76,
+        "netWorth": 76532179482.00313,
+        "earningsPerSec": 169.88,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #99",
-        "netWorth": 41879915853.3568,
-        "earningsPerSec": 92.96,
+        "name": "Global Billionaire #147",
+        "netWorth": 75931192653.93466,
+        "earningsPerSec": 168.54,
         "source": "Energy",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #69",
-        "netWorth": 41623385395.88547,
-        "earningsPerSec": 92.39,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #127",
-        "netWorth": 41153987623.003044,
-        "earningsPerSec": 91.35,
+        "name": "Global Billionaire #110",
+        "netWorth": 75320113424.31978,
+        "earningsPerSec": 167.19,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #103",
-        "netWorth": 41000238892.71784,
-        "earningsPerSec": 91.01,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #142",
-        "netWorth": 39844129545.7289,
-        "earningsPerSec": 88.44,
-        "source": "Energy",
+        "name": "Global Billionaire #107",
+        "netWorth": 75304383052.58426,
+        "earningsPerSec": 167.15,
+        "source": "Real Estate",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #109",
-        "netWorth": 39229133941.64762,
-        "earningsPerSec": 87.08,
+        "netWorth": 74224065550.94125,
+        "earningsPerSec": 164.75,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #55",
-        "netWorth": 39185124226.46355,
-        "earningsPerSec": 86.98,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #197",
-        "netWorth": 38889246646.35651,
-        "earningsPerSec": 86.32,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #98",
-        "netWorth": 38722634040.333984,
-        "earningsPerSec": 85.95,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #199",
-        "netWorth": 38501723824.170105,
-        "earningsPerSec": 85.46,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #156",
-        "netWorth": 38042858586.089714,
-        "earningsPerSec": 84.44,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #38",
-        "netWorth": 37923211141.247856,
-        "earningsPerSec": 84.18,
+        "name": "Global Billionaire #157",
+        "netWorth": 74081589369.1684,
+        "earningsPerSec": 164.44,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #135",
-        "netWorth": 37252273836.50894,
-        "earningsPerSec": 82.69,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #23",
-        "netWorth": 36588865266.33633,
-        "earningsPerSec": 81.22,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #83",
-        "netWorth": 35833965044.19179,
-        "earningsPerSec": 79.54,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #27",
-        "netWorth": 35216520721.511475,
-        "earningsPerSec": 78.17,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #95",
-        "netWorth": 34748923213.15115,
-        "earningsPerSec": 77.13,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #56",
-        "netWorth": 33895914274.90062,
-        "earningsPerSec": 75.24,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #79",
-        "netWorth": 32607673965.876217,
-        "earningsPerSec": 72.38,
+        "name": "Global Billionaire #34",
+        "netWorth": 73845511035.61888,
+        "earningsPerSec": 163.91,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #48",
-        "netWorth": 30856980765.21937,
-        "earningsPerSec": 68.49,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #139",
-        "netWorth": 30490021537.10899,
-        "earningsPerSec": 67.68,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #128",
-        "netWorth": 30459587019.6903,
-        "earningsPerSec": 67.61,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #131",
-        "netWorth": 30268227958.689735,
-        "earningsPerSec": 67.19,
+        "name": "Global Billionaire #182",
+        "netWorth": 73634854760.03366,
+        "earningsPerSec": 163.45,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #148",
-        "netWorth": 29584614538.951725,
-        "earningsPerSec": 65.67,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #58",
-        "netWorth": 28180461704.061005,
-        "earningsPerSec": 62.55,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #176",
-        "netWorth": 27371365133.68081,
-        "earningsPerSec": 60.76,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #161",
-        "netWorth": 27158900619.82826,
-        "earningsPerSec": 60.28,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #171",
-        "netWorth": 27108111458.826786,
-        "earningsPerSec": 60.17,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #35",
-        "netWorth": 27049237260.01768,
-        "earningsPerSec": 60.04,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #181",
-        "netWorth": 26780585419.36227,
-        "earningsPerSec": 59.44,
+        "netWorth": 73222037413.42586,
+        "earningsPerSec": 162.53,
         "source": "Retail",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #60",
-        "netWorth": 26377758944.353752,
-        "earningsPerSec": 58.55,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #87",
-        "netWorth": 25890390686.55259,
-        "earningsPerSec": 57.47,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #159",
-        "netWorth": 24681097709.70947,
-        "earningsPerSec": 54.78,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #25",
-        "netWorth": 24298114045.96866,
-        "earningsPerSec": 53.93,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #84",
-        "netWorth": 23404030302.495537,
-        "earningsPerSec": 51.95,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #52",
-        "netWorth": 22689357968.97081,
-        "earningsPerSec": 50.36,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #169",
-        "netWorth": 22242408646.633293,
-        "earningsPerSec": 49.37,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #51",
-        "netWorth": 22087009805.855312,
-        "earningsPerSec": 49.03,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #153",
-        "netWorth": 21842840171.7842,
-        "earningsPerSec": 48.48,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #180",
-        "netWorth": 21603850007.23802,
-        "earningsPerSec": 47.95,
+        "name": "Global Billionaire #44",
+        "netWorth": 72529454073.26036,
+        "earningsPerSec": 160.99,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #147",
-        "netWorth": 21103325212.64321,
-        "earningsPerSec": 46.84,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #41",
-        "netWorth": 20848735851.55685,
-        "earningsPerSec": 46.28,
+        "name": "Global Billionaire #24",
+        "netWorth": 71709013249.35504,
+        "earningsPerSec": 159.17,
         "source": "Tech",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #101",
-        "netWorth": 19520815889.49179,
-        "earningsPerSec": 43.33,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #93",
-        "netWorth": 19080752860.772278,
-        "earningsPerSec": 42.35,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #100",
-        "netWorth": 18415927393.436733,
-        "earningsPerSec": 40.88,
+        "netWorth": 71546392616.3655,
+        "earningsPerSec": 158.81,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #117",
-        "netWorth": 18294539370.363564,
-        "earningsPerSec": 40.61,
+        "name": "Global Billionaire #50",
+        "netWorth": 71429678141.62207,
+        "earningsPerSec": 158.55,
         "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #22",
-        "netWorth": 17534794046.189312,
-        "earningsPerSec": 38.92,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #166",
-        "netWorth": 16513603620.58535,
-        "earningsPerSec": 36.66,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #59",
-        "netWorth": 15781790555.3833,
-        "earningsPerSec": 35.03,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #167",
-        "netWorth": 15418469449.274742,
-        "earningsPerSec": 34.22,
-        "source": "Finance",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #90",
-        "netWorth": 15219819930.844442,
-        "earningsPerSec": 33.78,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #65",
-        "netWorth": 14884911475.066082,
-        "earningsPerSec": 33.04,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #102",
-        "netWorth": 14771572444.493788,
-        "earningsPerSec": 32.79,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #178",
-        "netWorth": 14703022639.011011,
-        "earningsPerSec": 32.64,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #81",
-        "netWorth": 14280890851.095993,
-        "earningsPerSec": 31.7,
-        "source": "Finance",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #28",
-        "netWorth": 14181606697.59669,
-        "earningsPerSec": 31.48,
+        "netWorth": 70839069890.01837,
+        "earningsPerSec": 157.24,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #42",
+        "netWorth": 70724234952.0032,
+        "earningsPerSec": 156.99,
         "source": "Real Estate",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #119",
-        "netWorth": 14138915732.067287,
-        "earningsPerSec": 31.38,
-        "source": "Energy",
+        "name": "Global Billionaire #26",
+        "netWorth": 70555738863.64883,
+        "earningsPerSec": 156.61,
+        "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #33",
-        "netWorth": 14100869170.774096,
-        "earningsPerSec": 31.3,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #132",
-        "netWorth": 12671403424.81998,
-        "earningsPerSec": 28.13,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #53",
-        "netWorth": 12659923232.977818,
-        "earningsPerSec": 28.1,
+        "name": "Global Billionaire #135",
+        "netWorth": 70145853501.82996,
+        "earningsPerSec": 155.7,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
         "name": "Global Billionaire #190",
-        "netWorth": 12079728960.992735,
-        "earningsPerSec": 26.81,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #106",
-        "netWorth": 11756194634.833931,
-        "earningsPerSec": 26.1,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #188",
-        "netWorth": 11212995340.92058,
-        "earningsPerSec": 24.89,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #29",
-        "netWorth": 11199723665.223679,
-        "earningsPerSec": 24.86,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #196",
-        "netWorth": 11103610362.691885,
-        "earningsPerSec": 24.65,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #21",
-        "netWorth": 10608244889.509928,
-        "earningsPerSec": 23.55,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #157",
-        "netWorth": 10246676684.402088,
-        "earningsPerSec": 22.74,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #129",
-        "netWorth": 9777657209.907784,
-        "earningsPerSec": 21.7,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #174",
-        "netWorth": 8822387686.3449,
-        "earningsPerSec": 19.58,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #200",
-        "netWorth": 8242085653.23562,
-        "earningsPerSec": 18.29,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #63",
-        "netWorth": 7975833656.474615,
-        "earningsPerSec": 17.7,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #151",
-        "netWorth": 7292794071.134819,
-        "earningsPerSec": 16.19,
-        "source": "Energy",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #89",
-        "netWorth": 6095679253.4122715,
-        "earningsPerSec": 13.53,
-        "source": "Retail",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #24",
-        "netWorth": 3723711677.078673,
-        "earningsPerSec": 8.27,
+        "netWorth": 69843541423.64636,
+        "earningsPerSec": 155.03,
         "source": "Finance",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #121",
-        "netWorth": 3715426448.1662407,
-        "earningsPerSec": 8.25,
+        "name": "Global Billionaire #189",
+        "netWorth": 69124214897.42287,
+        "earningsPerSec": 153.43,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #117",
+        "netWorth": 69091014348.32686,
+        "earningsPerSec": 153.36,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #79",
+        "netWorth": 68918479243.2919,
+        "earningsPerSec": 152.98,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #192",
+        "netWorth": 68645523958.341156,
+        "earningsPerSec": 152.37,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #94",
+        "netWorth": 68518002872.30972,
+        "earningsPerSec": 152.09,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #59",
+        "netWorth": 68119702951.28778,
+        "earningsPerSec": 151.2,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #177",
+        "netWorth": 66854062450.89725,
+        "earningsPerSec": 148.39,
         "source": "Energy",
         "type": "Billionaire"
     },
     {
-        "name": "Global Billionaire #141",
-        "netWorth": 3049340296.214475,
-        "earningsPerSec": 6.77,
+        "name": "Global Billionaire #65",
+        "netWorth": 65649236250.19455,
+        "earningsPerSec": 145.72,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #85",
+        "netWorth": 64715854313.91847,
+        "earningsPerSec": 143.65,
         "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #70",
+        "netWorth": 64618352234.02605,
+        "earningsPerSec": 143.43,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #170",
+        "netWorth": 64045401429.13486,
+        "earningsPerSec": 142.16,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #103",
+        "netWorth": 63954760996.89041,
+        "earningsPerSec": 141.96,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #35",
+        "netWorth": 62321748136.689705,
+        "earningsPerSec": 138.33,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #113",
+        "netWorth": 62285860061.26165,
+        "earningsPerSec": 138.26,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #111",
+        "netWorth": 62280942813.516525,
+        "earningsPerSec": 138.24,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #168",
+        "netWorth": 62132863184.53658,
+        "earningsPerSec": 137.92,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #62",
+        "netWorth": 61724711292.930305,
+        "earningsPerSec": 137.01,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #144",
+        "netWorth": 61207653980.551735,
+        "earningsPerSec": 135.86,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #55",
+        "netWorth": 60458760702.54966,
+        "earningsPerSec": 134.2,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #78",
+        "netWorth": 60455649739.1302,
+        "earningsPerSec": 134.19,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #54",
+        "netWorth": 60267138031.97318,
+        "earningsPerSec": 133.77,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #21",
+        "netWorth": 59570048307.011116,
+        "earningsPerSec": 132.23,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #121",
+        "netWorth": 59518662052.46667,
+        "earningsPerSec": 132.11,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #172",
+        "netWorth": 56032778827.77673,
+        "earningsPerSec": 124.38,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #97",
+        "netWorth": 55665295994.60546,
+        "earningsPerSec": 123.56,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #30",
+        "netWorth": 54957495367.16207,
+        "earningsPerSec": 121.99,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #183",
+        "netWorth": 53824205243.948235,
+        "earningsPerSec": 119.47,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #198",
+        "netWorth": 53478471240.52458,
+        "earningsPerSec": 118.71,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #158",
+        "netWorth": 52729289420.4867,
+        "earningsPerSec": 117.04,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #40",
+        "netWorth": 52636821476.93818,
+        "earningsPerSec": 116.84,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #73",
+        "netWorth": 52040528941.26368,
+        "earningsPerSec": 115.51,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #63",
+        "netWorth": 51563961838.09433,
+        "earningsPerSec": 114.46,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #29",
+        "netWorth": 51513480954.41967,
+        "earningsPerSec": 114.34,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #33",
+        "netWorth": 51468385095.89453,
+        "earningsPerSec": 114.24,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #58",
+        "netWorth": 51454556838.64115,
+        "earningsPerSec": 114.21,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #196",
+        "netWorth": 51323169623.05375,
+        "earningsPerSec": 113.92,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #185",
+        "netWorth": 50798262730.16118,
+        "earningsPerSec": 112.76,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #186",
+        "netWorth": 50471355350.811615,
+        "earningsPerSec": 112.03,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #167",
+        "netWorth": 50142445723.04704,
+        "earningsPerSec": 111.3,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #88",
+        "netWorth": 50022840085.14251,
+        "earningsPerSec": 111.03,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #153",
+        "netWorth": 49721859080.51252,
+        "earningsPerSec": 110.37,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #81",
+        "netWorth": 48318815444.669174,
+        "earningsPerSec": 107.25,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #90",
+        "netWorth": 47625592833.46392,
+        "earningsPerSec": 105.71,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #127",
+        "netWorth": 47207856236.08092,
+        "earningsPerSec": 104.79,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #164",
+        "netWorth": 46842104063.44095,
+        "earningsPerSec": 103.97,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #171",
+        "netWorth": 46617312140.994385,
+        "earningsPerSec": 103.48,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #106",
+        "netWorth": 46440456447.27299,
+        "earningsPerSec": 103.08,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #122",
+        "netWorth": 46175641943.66693,
+        "earningsPerSec": 102.5,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #131",
+        "netWorth": 45932042836.89142,
+        "earningsPerSec": 101.95,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #169",
+        "netWorth": 45097125209.44806,
+        "earningsPerSec": 100.1,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #105",
+        "netWorth": 44819465100.45809,
+        "earningsPerSec": 99.49,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #87",
+        "netWorth": 44227001613.223404,
+        "earningsPerSec": 98.17,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #141",
+        "netWorth": 44125600036.58052,
+        "earningsPerSec": 97.94,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #71",
+        "netWorth": 43783401793.52365,
+        "earningsPerSec": 97.19,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #146",
+        "netWorth": 43602318929.21318,
+        "earningsPerSec": 96.78,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #98",
+        "netWorth": 43405939691.91575,
+        "earningsPerSec": 96.35,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #95",
+        "netWorth": 42816785407.27917,
+        "earningsPerSec": 95.04,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #162",
+        "netWorth": 42341828177.742004,
+        "earningsPerSec": 93.99,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #179",
+        "netWorth": 42200249675.0337,
+        "earningsPerSec": 93.67,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #60",
+        "netWorth": 41781381473.9768,
+        "earningsPerSec": 92.74,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #134",
+        "netWorth": 41775237844.272385,
+        "earningsPerSec": 92.73,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #176",
+        "netWorth": 41606962417.896,
+        "earningsPerSec": 92.35,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #38",
+        "netWorth": 40783479873.56534,
+        "earningsPerSec": 90.53,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #96",
+        "netWorth": 40552123697.11155,
+        "earningsPerSec": 90.01,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #155",
+        "netWorth": 39554609750.93303,
+        "earningsPerSec": 87.8,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #194",
+        "netWorth": 38894226049.00655,
+        "earningsPerSec": 86.33,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #84",
+        "netWorth": 38776133260.95275,
+        "earningsPerSec": 86.07,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #64",
+        "netWorth": 38766279404.372154,
+        "earningsPerSec": 86.05,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #41",
+        "netWorth": 38729958584.07959,
+        "earningsPerSec": 85.97,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #36",
+        "netWorth": 38703599534.6099,
+        "earningsPerSec": 85.91,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #51",
+        "netWorth": 38513802777.1362,
+        "earningsPerSec": 85.49,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #130",
+        "netWorth": 38201500743.63927,
+        "earningsPerSec": 84.8,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #137",
+        "netWorth": 37175513081.68351,
+        "earningsPerSec": 82.52,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #129",
+        "netWorth": 37057185210.97157,
+        "earningsPerSec": 82.26,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #119",
+        "netWorth": 37050741079.35442,
+        "earningsPerSec": 82.24,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #82",
+        "netWorth": 36995679730.958084,
+        "earningsPerSec": 82.12,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #47",
+        "netWorth": 36957245182.14275,
+        "earningsPerSec": 82.03,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #100",
+        "netWorth": 35607454618.19344,
+        "earningsPerSec": 79.04,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #52",
+        "netWorth": 35283995499.80013,
+        "earningsPerSec": 78.32,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #39",
+        "netWorth": 34187021758.691124,
+        "earningsPerSec": 75.88,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #114",
+        "netWorth": 33969128497.737045,
+        "earningsPerSec": 75.4,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #197",
+        "netWorth": 33348456432.742622,
+        "earningsPerSec": 74.02,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #86",
+        "netWorth": 32424748359.117325,
+        "earningsPerSec": 71.97,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #161",
+        "netWorth": 32007309250.654358,
+        "earningsPerSec": 71.05,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #133",
+        "netWorth": 31193127266.435658,
+        "earningsPerSec": 69.24,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #151",
+        "netWorth": 31124529446.877163,
+        "earningsPerSec": 69.09,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #74",
+        "netWorth": 31086172519.149834,
+        "earningsPerSec": 69.0,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #150",
+        "netWorth": 30940998742.115063,
+        "earningsPerSec": 68.68,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #67",
+        "netWorth": 30454228776.861504,
+        "earningsPerSec": 67.6,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #200",
+        "netWorth": 30204956185.477417,
+        "earningsPerSec": 67.05,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #32",
+        "netWorth": 30083618069.478916,
+        "earningsPerSec": 66.78,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #43",
+        "netWorth": 29895419600.5606,
+        "earningsPerSec": 66.36,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #53",
+        "netWorth": 29149451717.385113,
+        "earningsPerSec": 64.7,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #99",
+        "netWorth": 25986166820.749054,
+        "earningsPerSec": 57.68,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #193",
+        "netWorth": 23532564128.189796,
+        "earningsPerSec": 52.23,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #57",
+        "netWorth": 23062769509.290367,
+        "earningsPerSec": 51.19,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #181",
+        "netWorth": 22234477593.407124,
+        "earningsPerSec": 49.35,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #75",
+        "netWorth": 22197700000.499447,
+        "earningsPerSec": 49.27,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #56",
+        "netWorth": 22073675817.28861,
+        "earningsPerSec": 49.0,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #188",
+        "netWorth": 21915524015.503506,
+        "earningsPerSec": 48.65,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #89",
+        "netWorth": 20843859178.76504,
+        "earningsPerSec": 46.27,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #187",
+        "netWorth": 20453080447.022865,
+        "earningsPerSec": 45.4,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #61",
+        "netWorth": 19132216556.64427,
+        "earningsPerSec": 42.47,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #76",
+        "netWorth": 18246352616.41453,
+        "earningsPerSec": 40.5,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #138",
+        "netWorth": 17025440612.661846,
+        "earningsPerSec": 37.79,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #184",
+        "netWorth": 16693961888.465061,
+        "earningsPerSec": 37.06,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #91",
+        "netWorth": 16479423322.010696,
+        "earningsPerSec": 36.58,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #69",
+        "netWorth": 15131206574.203106,
+        "earningsPerSec": 33.59,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #166",
+        "netWorth": 13833444285.078064,
+        "earningsPerSec": 30.71,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #175",
+        "netWorth": 13699042425.526848,
+        "earningsPerSec": 30.41,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #120",
+        "netWorth": 13580818674.729252,
+        "earningsPerSec": 30.15,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #46",
+        "netWorth": 13328236101.418589,
+        "earningsPerSec": 29.58,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #136",
+        "netWorth": 11425911992.05504,
+        "earningsPerSec": 25.36,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #77",
+        "netWorth": 10668752717.621927,
+        "earningsPerSec": 23.68,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #160",
+        "netWorth": 10084449298.669647,
+        "earningsPerSec": 22.38,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #124",
+        "netWorth": 9703644936.373608,
+        "earningsPerSec": 21.54,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #125",
+        "netWorth": 9440660135.470518,
+        "earningsPerSec": 20.96,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #108",
+        "netWorth": 9385086325.260115,
+        "earningsPerSec": 20.83,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #199",
+        "netWorth": 9254145311.213942,
+        "earningsPerSec": 20.54,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #112",
+        "netWorth": 9071380016.326773,
+        "earningsPerSec": 20.14,
+        "source": "Retail",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #48",
+        "netWorth": 9034527904.798395,
+        "earningsPerSec": 20.05,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #31",
+        "netWorth": 8210506327.397672,
+        "earningsPerSec": 18.22,
+        "source": "Energy",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #93",
+        "netWorth": 7955635779.040823,
+        "earningsPerSec": 17.66,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #66",
+        "netWorth": 7581483444.540968,
+        "earningsPerSec": 16.83,
+        "source": "Tech",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #156",
+        "netWorth": 7144872200.303545,
+        "earningsPerSec": 15.86,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #174",
+        "netWorth": 6672131526.0539465,
+        "earningsPerSec": 14.81,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #102",
+        "netWorth": 6310262946.824749,
+        "earningsPerSec": 14.01,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #37",
+        "netWorth": 6309629744.499758,
+        "earningsPerSec": 14.01,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #115",
+        "netWorth": 5911731118.142531,
+        "earningsPerSec": 13.12,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #154",
+        "netWorth": 5719647515.730314,
+        "earningsPerSec": 12.7,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #145",
+        "netWorth": 5578374253.21225,
+        "earningsPerSec": 12.38,
+        "source": "Real Estate",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #132",
+        "netWorth": 5506106251.0753355,
+        "earningsPerSec": 12.22,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #140",
+        "netWorth": 5497828705.758075,
+        "earningsPerSec": 12.2,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #27",
+        "netWorth": 4888051690.6550665,
+        "earningsPerSec": 10.85,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #152",
+        "netWorth": 4814166380.471081,
+        "earningsPerSec": 10.69,
+        "source": "Finance",
+        "type": "Billionaire"
+    },
+    {
+        "name": "Global Billionaire #68",
+        "netWorth": 4029701864.981652,
+        "earningsPerSec": 8.94,
+        "source": "Retail",
         "type": "Billionaire"
     },
     {
@@ -1300,13 +1321,6 @@
         "earningsPerSec": 10.78,
         "source": "Business",
         "type": "Celebrity"
-    },
-    {
-        "name": "Global Billionaire #47",
-        "netWorth": 1400917604.5760863,
-        "earningsPerSec": 3.11,
-        "source": "Finance",
-        "type": "Billionaire"
     },
     {
         "name": "Rihanna",
@@ -1330,20 +1344,6 @@
         "type": "Celebrity"
     },
     {
-        "name": "Global Billionaire #77",
-        "netWorth": 1182662525.4674501,
-        "earningsPerSec": 2.63,
-        "source": "Tech",
-        "type": "Billionaire"
-    },
-    {
-        "name": "Global Billionaire #182",
-        "netWorth": 1169839642.9224486,
-        "earningsPerSec": 2.6,
-        "source": "Real Estate",
-        "type": "Billionaire"
-    },
-    {
         "name": "Tiger Woods",
         "netWorth": 1100000000.0,
         "earningsPerSec": 6.98,
@@ -1351,136 +1351,136 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #135",
-        "netWorth": 897847705.5968521,
-        "earningsPerSec": 4.27,
+        "name": "Top Singer #179",
+        "netWorth": 894372425.2481406,
+        "earningsPerSec": 4.25,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #163",
-        "netWorth": 897583195.4238483,
-        "earningsPerSec": 4.27,
-        "source": "Athlete",
+        "name": "Top Singer #50",
+        "netWorth": 893687455.719967,
+        "earningsPerSec": 4.25,
+        "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #69",
-        "netWorth": 890636733.019733,
-        "earningsPerSec": 4.24,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #53",
-        "netWorth": 878907106.0060064,
-        "earningsPerSec": 4.18,
+        "name": "Top Influencer #37",
+        "netWorth": 889728101.4734958,
+        "earningsPerSec": 4.23,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #38",
-        "netWorth": 877270321.0039932,
+        "name": "Top Athlete #110",
+        "netWorth": 887892038.9684455,
+        "earningsPerSec": 4.22,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #36",
+        "netWorth": 880090488.0400231,
+        "earningsPerSec": 4.19,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #163",
+        "netWorth": 876745421.4333392,
         "earningsPerSec": 4.17,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #26",
-        "netWorth": 872876186.967468,
-        "earningsPerSec": 4.15,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #64",
-        "netWorth": 872615862.2099708,
-        "earningsPerSec": 4.15,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #115",
-        "netWorth": 870443060.4857568,
-        "earningsPerSec": 4.14,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #113",
-        "netWorth": 866133541.9541318,
-        "earningsPerSec": 4.12,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #60",
-        "netWorth": 847615457.4861629,
-        "earningsPerSec": 4.03,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #183",
-        "netWorth": 825330568.2317238,
-        "earningsPerSec": 3.93,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #152",
-        "netWorth": 821672441.2959763,
-        "earningsPerSec": 3.91,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #117",
-        "netWorth": 820845983.4163146,
-        "earningsPerSec": 3.9,
+        "name": "Top Director #70",
+        "netWorth": 873504152.9503037,
+        "earningsPerSec": 4.15,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #120",
+        "netWorth": 873088151.0377954,
+        "earningsPerSec": 4.15,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #172",
+        "netWorth": 873072358.8497871,
+        "earningsPerSec": 4.15,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #31",
+        "netWorth": 865079194.8125887,
+        "earningsPerSec": 4.11,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #176",
+        "netWorth": 854937723.4745089,
+        "earningsPerSec": 4.07,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #97",
+        "netWorth": 848241072.6841034,
+        "earningsPerSec": 4.03,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #91",
+        "netWorth": 847825738.9089799,
+        "earningsPerSec": 4.03,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #90",
-        "netWorth": 817838200.3652054,
-        "earningsPerSec": 3.89,
+        "name": "Top Director #118",
+        "netWorth": 845885337.9315621,
+        "earningsPerSec": 4.02,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #196",
+        "netWorth": 842540507.1831794,
+        "earningsPerSec": 4.01,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #56",
-        "netWorth": 814084656.5904766,
-        "earningsPerSec": 3.87,
+        "name": "Top Athlete #117",
+        "netWorth": 821165882.9012526,
+        "earningsPerSec": 3.91,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #139",
-        "netWorth": 809448018.2426454,
-        "earningsPerSec": 3.85,
-        "source": "Athlete",
+        "name": "Top Director #23",
+        "netWorth": 819996365.8251674,
+        "earningsPerSec": 3.9,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #194",
-        "netWorth": 808359534.275136,
-        "earningsPerSec": 3.84,
-        "source": "Singer",
+        "name": "Top Influencer #131",
+        "netWorth": 815434001.9005134,
+        "earningsPerSec": 3.88,
+        "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #34",
-        "netWorth": 807436554.9457788,
-        "earningsPerSec": 3.84,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #35",
-        "netWorth": 803475730.6351159,
-        "earningsPerSec": 3.82,
-        "source": "Athlete",
+        "name": "Top Director #25",
+        "netWorth": 812388000.1863208,
+        "earningsPerSec": 3.86,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
@@ -1498,94 +1498,80 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #83",
-        "netWorth": 793220762.0556325,
-        "earningsPerSec": 3.77,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #54",
-        "netWorth": 792686993.1200892,
-        "earningsPerSec": 3.77,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #73",
-        "netWorth": 792493329.7512857,
-        "earningsPerSec": 3.77,
+        "name": "Top Singer #87",
+        "netWorth": 797853902.3851703,
+        "earningsPerSec": 3.79,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #109",
-        "netWorth": 789008154.6368774,
-        "earningsPerSec": 3.75,
+        "name": "Top Director #80",
+        "netWorth": 791749440.4632252,
+        "earningsPerSec": 3.77,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #195",
+        "netWorth": 791279151.3208989,
+        "earningsPerSec": 3.76,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #28",
-        "netWorth": 779482241.2028077,
-        "earningsPerSec": 3.71,
-        "source": "Director",
+        "name": "Top Singer #90",
+        "netWorth": 782331844.4081066,
+        "earningsPerSec": 3.72,
+        "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #59",
-        "netWorth": 772268580.6831588,
-        "earningsPerSec": 3.67,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #184",
-        "netWorth": 768160447.1581968,
-        "earningsPerSec": 3.65,
+        "name": "Top Athlete #161",
+        "netWorth": 773336871.255176,
+        "earningsPerSec": 3.68,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #171",
-        "netWorth": 766391670.6553396,
+        "name": "Top Actor #170",
+        "netWorth": 768298591.2138177,
         "earningsPerSec": 3.65,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #61",
-        "netWorth": 763628079.8231685,
+        "name": "Top Influencer #42",
+        "netWorth": 763660833.4671116,
         "earningsPerSec": 3.63,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #37",
-        "netWorth": 761746478.9769859,
-        "earningsPerSec": 3.62,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #121",
-        "netWorth": 754592406.5994883,
+        "name": "Top Influencer #155",
+        "netWorth": 754763926.499147,
         "earningsPerSec": 3.59,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #145",
-        "netWorth": 754025630.6005409,
-        "earningsPerSec": 3.59,
-        "source": "Athlete",
+        "name": "Top Director #127",
+        "netWorth": 753338759.8042657,
+        "earningsPerSec": 3.58,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #188",
-        "netWorth": 753044277.2297274,
+        "name": "Top Singer #68",
+        "netWorth": 752802987.4776093,
         "earningsPerSec": 3.58,
-        "source": "Director",
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #193",
+        "netWorth": 751940139.3897243,
+        "earningsPerSec": 3.58,
+        "source": "Athlete",
         "type": "Celebrity"
     },
     {
@@ -1596,129 +1582,206 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #67",
-        "netWorth": 733227178.2722603,
-        "earningsPerSec": 3.49,
-        "source": "Director",
+        "name": "Top Actor #77",
+        "netWorth": 742688519.3035749,
+        "earningsPerSec": 3.53,
+        "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #150",
-        "netWorth": 732533410.3129016,
-        "earningsPerSec": 3.48,
+        "name": "Top Singer #47",
+        "netWorth": 728691462.133862,
+        "earningsPerSec": 3.47,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #71",
+        "netWorth": 727131390.8082744,
+        "earningsPerSec": 3.46,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #70",
-        "netWorth": 727369555.64915,
+        "name": "Top Athlete #84",
+        "netWorth": 726557857.055983,
         "earningsPerSec": 3.46,
-        "source": "Director",
+        "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #47",
-        "netWorth": 725479503.7324615,
+        "name": "Top Influencer #133",
+        "netWorth": 726100826.8674033,
         "earningsPerSec": 3.45,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #137",
-        "netWorth": 723286496.109042,
+        "name": "Top Influencer #186",
+        "netWorth": 723688588.8610897,
         "earningsPerSec": 3.44,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #119",
-        "netWorth": 722241856.7617986,
-        "earningsPerSec": 3.44,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #190",
-        "netWorth": 719055728.7068499,
+        "name": "Top Actor #51",
+        "netWorth": 718875377.2137959,
         "earningsPerSec": 3.42,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #63",
+        "netWorth": 717622524.590343,
+        "earningsPerSec": 3.41,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #43",
+        "netWorth": 716750646.2500421,
+        "earningsPerSec": 3.41,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #173",
-        "netWorth": 717556475.9014385,
+        "name": "Top Singer #79",
+        "netWorth": 715972999.7422098,
         "earningsPerSec": 3.41,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #45",
-        "netWorth": 712166060.5681411,
+        "name": "Top Influencer #78",
+        "netWorth": 714159054.7993469,
+        "earningsPerSec": 3.4,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #146",
+        "netWorth": 711905688.7865217,
         "earningsPerSec": 3.39,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #107",
+        "netWorth": 709132079.9854178,
+        "earningsPerSec": 3.37,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #144",
-        "netWorth": 707622168.5799059,
+        "name": "Top Singer #61",
+        "netWorth": 708103441.026736,
         "earningsPerSec": 3.37,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #197",
-        "netWorth": 699593996.5026307,
-        "earningsPerSec": 3.33,
+        "name": "Top Influencer #106",
+        "netWorth": 703428417.8268739,
+        "earningsPerSec": 3.35,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #147",
-        "netWorth": 687557534.1256518,
-        "earningsPerSec": 3.27,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #97",
-        "netWorth": 681613015.4782746,
-        "earningsPerSec": 3.24,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #175",
-        "netWorth": 681458178.3153241,
-        "earningsPerSec": 3.24,
+        "name": "Top Athlete #59",
+        "netWorth": 703327742.1471807,
+        "earningsPerSec": 3.35,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #159",
-        "netWorth": 672798237.2389724,
-        "earningsPerSec": 3.2,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #178",
-        "netWorth": 672580046.2211646,
-        "earningsPerSec": 3.2,
+        "name": "Top Singer #112",
+        "netWorth": 701771251.3201272,
+        "earningsPerSec": 3.34,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #98",
-        "netWorth": 668333879.9184192,
-        "earningsPerSec": 3.18,
+        "name": "Top Influencer #32",
+        "netWorth": 698159764.0489544,
+        "earningsPerSec": 3.32,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #84",
-        "netWorth": 659524894.3289936,
-        "earningsPerSec": 3.14,
+        "name": "Top Athlete #119",
+        "netWorth": 693602169.0349109,
+        "earningsPerSec": 3.3,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #22",
+        "netWorth": 689255110.329616,
+        "earningsPerSec": 3.28,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #33",
+        "netWorth": 686560510.3332072,
+        "earningsPerSec": 3.27,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #159",
+        "netWorth": 685205055.6278516,
+        "earningsPerSec": 3.26,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #142",
+        "netWorth": 684484646.4906982,
+        "earningsPerSec": 3.26,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #24",
+        "netWorth": 683357495.4493798,
+        "earningsPerSec": 3.25,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #40",
+        "netWorth": 678992136.7057738,
+        "earningsPerSec": 3.23,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #108",
+        "netWorth": 678219730.6496768,
+        "earningsPerSec": 3.23,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #58",
+        "netWorth": 677885938.0521877,
+        "earningsPerSec": 3.22,
         "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #49",
+        "netWorth": 675859033.772486,
+        "earningsPerSec": 3.21,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #104",
+        "netWorth": 664607960.3260878,
+        "earningsPerSec": 3.16,
+        "source": "Actor",
         "type": "Celebrity"
     },
     {
@@ -1729,45 +1792,45 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #102",
-        "netWorth": 647515036.4046441,
-        "earningsPerSec": 3.08,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #169",
-        "netWorth": 645144698.830383,
+        "name": "Top Influencer #69",
+        "netWorth": 645717077.2454501,
         "earningsPerSec": 3.07,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #94",
-        "netWorth": 632466908.1686983,
-        "earningsPerSec": 3.01,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #21",
-        "netWorth": 623882142.3454756,
-        "earningsPerSec": 2.97,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #68",
-        "netWorth": 616997619.5519509,
-        "earningsPerSec": 2.93,
+        "name": "Top Influencer #158",
+        "netWorth": 644395766.705985,
+        "earningsPerSec": 3.07,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #166",
+        "netWorth": 641297503.8142226,
+        "earningsPerSec": 3.05,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #52",
-        "netWorth": 600024557.0362018,
-        "earningsPerSec": 2.85,
-        "source": "Director",
+        "name": "Top Influencer #180",
+        "netWorth": 631288224.4498403,
+        "earningsPerSec": 3.0,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #153",
+        "netWorth": 613358673.2240982,
+        "earningsPerSec": 2.92,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #175",
+        "netWorth": 601070601.9791511,
+        "earningsPerSec": 2.86,
+        "source": "Athlete",
         "type": "Celebrity"
     },
     {
@@ -1778,163 +1841,86 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #192",
-        "netWorth": 598233903.7004478,
-        "earningsPerSec": 2.85,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #63",
-        "netWorth": 597537050.3006287,
-        "earningsPerSec": 2.84,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #72",
-        "netWorth": 596614884.5569261,
-        "earningsPerSec": 2.84,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #50",
-        "netWorth": 582380607.7196512,
-        "earningsPerSec": 2.77,
+        "name": "Top Director #167",
+        "netWorth": 586648271.854228,
+        "earningsPerSec": 2.79,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #91",
-        "netWorth": 578225286.2612561,
-        "earningsPerSec": 2.75,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #116",
-        "netWorth": 575292976.6140887,
-        "earningsPerSec": 2.74,
+        "name": "Top Singer #198",
+        "netWorth": 571106168.5669756,
+        "earningsPerSec": 2.72,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #78",
-        "netWorth": 574724525.691877,
-        "earningsPerSec": 2.73,
+        "name": "Top Singer #26",
+        "netWorth": 568393290.715237,
+        "earningsPerSec": 2.7,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #130",
-        "netWorth": 574478175.0281746,
-        "earningsPerSec": 2.73,
+        "name": "Top Influencer #128",
+        "netWorth": 562377851.3577412,
+        "earningsPerSec": 2.67,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #108",
-        "netWorth": 570241819.9766132,
-        "earningsPerSec": 2.71,
+        "name": "Top Athlete #54",
+        "netWorth": 560617284.0951877,
+        "earningsPerSec": 2.67,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #105",
-        "netWorth": 570005630.5453931,
-        "earningsPerSec": 2.71,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #199",
-        "netWorth": 566235434.424864,
-        "earningsPerSec": 2.69,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #107",
-        "netWorth": 565019966.8689889,
-        "earningsPerSec": 2.69,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #42",
-        "netWorth": 559035882.526345,
-        "earningsPerSec": 2.66,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #149",
-        "netWorth": 558875822.7309059,
+        "name": "Top Singer #191",
+        "netWorth": 560120933.2526668,
         "earningsPerSec": 2.66,
         "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #40",
-        "netWorth": 555581940.6027341,
-        "earningsPerSec": 2.64,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #164",
-        "netWorth": 553282122.0243222,
-        "earningsPerSec": 2.63,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #27",
-        "netWorth": 546850213.5860604,
-        "earningsPerSec": 2.6,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #110",
-        "netWorth": 542998296.7021484,
-        "earningsPerSec": 2.58,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #136",
-        "netWorth": 542347309.9321914,
-        "earningsPerSec": 2.58,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #46",
-        "netWorth": 540990243.9309353,
-        "earningsPerSec": 2.57,
-        "source": "Actor",
         "type": "Celebrity"
     },
     {
         "name": "Top Director #39",
-        "netWorth": 534521434.0055254,
-        "earningsPerSec": 2.54,
+        "netWorth": 547309356.4591386,
+        "earningsPerSec": 2.6,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #177",
-        "netWorth": 534501322.67727625,
-        "earningsPerSec": 2.54,
-        "source": "Actor",
+        "name": "Top Director #34",
+        "netWorth": 542838188.6286027,
+        "earningsPerSec": 2.58,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #41",
-        "netWorth": 503944482.6613596,
-        "earningsPerSec": 2.4,
+        "name": "Top Singer #103",
+        "netWorth": 535311764.2260731,
+        "earningsPerSec": 2.55,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #101",
+        "netWorth": 532148558.74360764,
+        "earningsPerSec": 2.53,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #64",
+        "netWorth": 514218535.40694785,
+        "earningsPerSec": 2.45,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #151",
+        "netWorth": 506601504.95199686,
+        "earningsPerSec": 2.41,
         "source": "Singer",
         "type": "Celebrity"
     },
@@ -1946,409 +1932,374 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #66",
-        "netWorth": 497580793.0093714,
-        "earningsPerSec": 2.37,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #103",
-        "netWorth": 493122502.9038315,
+        "name": "Top Actor #28",
+        "netWorth": 493116597.51388747,
         "earningsPerSec": 2.35,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #174",
-        "netWorth": 483127348.1086921,
-        "earningsPerSec": 2.3,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #127",
-        "netWorth": 482983626.10352117,
-        "earningsPerSec": 2.3,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #142",
-        "netWorth": 481408774.93542576,
-        "earningsPerSec": 2.29,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #131",
-        "netWorth": 474746451.6403865,
-        "earningsPerSec": 2.26,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #124",
-        "netWorth": 470698148.62660456,
-        "earningsPerSec": 2.24,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #140",
-        "netWorth": 467591568.6920149,
-        "earningsPerSec": 2.22,
+        "name": "Top Influencer #187",
+        "netWorth": 490044480.96793574,
+        "earningsPerSec": 2.33,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #179",
-        "netWorth": 465835061.1286329,
-        "earningsPerSec": 2.22,
-        "source": "Director",
+        "name": "Top Actor #53",
+        "netWorth": 488840978.66823334,
+        "earningsPerSec": 2.33,
+        "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #101",
-        "netWorth": 461051455.3141264,
-        "earningsPerSec": 2.19,
+        "name": "Top Actor #197",
+        "netWorth": 485486136.49472684,
+        "earningsPerSec": 2.31,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #111",
+        "netWorth": 484693039.5144186,
+        "earningsPerSec": 2.31,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #130",
+        "netWorth": 480377220.3849718,
+        "earningsPerSec": 2.28,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #147",
+        "netWorth": 477283673.7779048,
+        "earningsPerSec": 2.27,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #74",
+        "netWorth": 475139413.77898246,
+        "earningsPerSec": 2.26,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #44",
+        "netWorth": 473870079.50492835,
+        "earningsPerSec": 2.25,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #72",
+        "netWorth": 470531707.85958976,
+        "earningsPerSec": 2.24,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #100",
+        "netWorth": 462608044.30110633,
+        "earningsPerSec": 2.2,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #83",
+        "netWorth": 457034900.50580484,
+        "earningsPerSec": 2.17,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #184",
+        "netWorth": 456442736.4099229,
+        "earningsPerSec": 2.17,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #152",
+        "netWorth": 454612911.75287104,
+        "earningsPerSec": 2.16,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
         "name": "Top Director #138",
-        "netWorth": 453497727.23744977,
+        "netWorth": 453801427.6018468,
         "earningsPerSec": 2.16,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #170",
-        "netWorth": 451574327.4997646,
-        "earningsPerSec": 2.15,
-        "source": "Singer",
+        "name": "Top Actor #94",
+        "netWorth": 448715990.1911606,
+        "earningsPerSec": 2.13,
+        "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #100",
-        "netWorth": 429569737.40744984,
-        "earningsPerSec": 2.04,
-        "source": "Athlete",
+        "name": "Top Director #192",
+        "netWorth": 445162306.3208239,
+        "earningsPerSec": 2.12,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #23",
-        "netWorth": 428223147.76747376,
-        "earningsPerSec": 2.04,
+        "name": "Top Influencer #164",
+        "netWorth": 445128895.8535069,
+        "earningsPerSec": 2.12,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #93",
-        "netWorth": 423161477.6816755,
+        "name": "Top Singer #178",
+        "netWorth": 443680378.12601864,
+        "earningsPerSec": 2.11,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #169",
+        "netWorth": 434954415.8770486,
+        "earningsPerSec": 2.07,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #115",
+        "netWorth": 422744697.0762746,
         "earningsPerSec": 2.01,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #123",
-        "netWorth": 412762979.71738094,
-        "earningsPerSec": 1.96,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #155",
-        "netWorth": 412214573.19686747,
-        "earningsPerSec": 1.96,
+        "name": "Top Singer #29",
+        "netWorth": 417941112.806585,
+        "earningsPerSec": 1.99,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #200",
-        "netWorth": 408903633.2874155,
-        "earningsPerSec": 1.94,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #162",
-        "netWorth": 401610473.2271887,
-        "earningsPerSec": 1.91,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #181",
-        "netWorth": 401319196.41692054,
-        "earningsPerSec": 1.91,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #87",
-        "netWorth": 392985935.59314877,
-        "earningsPerSec": 1.87,
+        "name": "Top Athlete #109",
+        "netWorth": 415637447.1551553,
+        "earningsPerSec": 1.98,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #141",
-        "netWorth": 388723738.914221,
+        "name": "Top Actor #171",
+        "netWorth": 415120452.6145285,
+        "earningsPerSec": 1.97,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #200",
+        "netWorth": 389682435.1799364,
         "earningsPerSec": 1.85,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #189",
-        "netWorth": 385320937.7259672,
-        "earningsPerSec": 1.83,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #198",
-        "netWorth": 382911226.4578347,
-        "earningsPerSec": 1.82,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #154",
-        "netWorth": 381013432.6401015,
-        "earningsPerSec": 1.81,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #166",
-        "netWorth": 379618328.5669238,
-        "earningsPerSec": 1.81,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #128",
-        "netWorth": 372684068.7225976,
-        "earningsPerSec": 1.77,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #99",
-        "netWorth": 370023034.52560073,
-        "earningsPerSec": 1.76,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #118",
-        "netWorth": 365336281.4164837,
-        "earningsPerSec": 1.74,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #193",
-        "netWorth": 362233283.98265433,
-        "earningsPerSec": 1.72,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #168",
-        "netWorth": 361748766.8200875,
-        "earningsPerSec": 1.72,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #160",
-        "netWorth": 357235360.049604,
-        "earningsPerSec": 1.7,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #86",
-        "netWorth": 350256881.2322739,
-        "earningsPerSec": 1.67,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #125",
-        "netWorth": 345622564.5254854,
-        "earningsPerSec": 1.64,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #74",
-        "netWorth": 338816589.9319668,
-        "earningsPerSec": 1.61,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #112",
-        "netWorth": 334881049.2111477,
-        "earningsPerSec": 1.59,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #95",
-        "netWorth": 332302770.59902906,
-        "earningsPerSec": 1.58,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #122",
-        "netWorth": 325967364.77664953,
-        "earningsPerSec": 1.55,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #51",
-        "netWorth": 324946350.5481418,
-        "earningsPerSec": 1.55,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #195",
-        "netWorth": 324355294.8871755,
-        "earningsPerSec": 1.54,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #49",
-        "netWorth": 321017080.40968883,
-        "earningsPerSec": 1.53,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #120",
-        "netWorth": 308392783.768672,
-        "earningsPerSec": 1.47,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #75",
-        "netWorth": 307944901.2683214,
-        "earningsPerSec": 1.46,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #176",
-        "netWorth": 306618030.1911561,
-        "earningsPerSec": 1.46,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #111",
-        "netWorth": 298623569.21180415,
-        "earningsPerSec": 1.42,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #82",
-        "netWorth": 294911112.4850442,
-        "earningsPerSec": 1.4,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #62",
-        "netWorth": 288485734.90057266,
-        "earningsPerSec": 1.37,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #180",
-        "netWorth": 279837734.13899916,
-        "earningsPerSec": 1.33,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #186",
-        "netWorth": 278450786.87446,
-        "earningsPerSec": 1.32,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #29",
-        "netWorth": 277938475.31561923,
-        "earningsPerSec": 1.32,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #89",
-        "netWorth": 272234438.6921877,
-        "earningsPerSec": 1.29,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #133",
-        "netWorth": 268052996.00152254,
-        "earningsPerSec": 1.27,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #143",
-        "netWorth": 265978088.3861267,
-        "earningsPerSec": 1.27,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
         "name": "Top Athlete #81",
-        "netWorth": 265122948.33021644,
-        "earningsPerSec": 1.26,
+        "netWorth": 386780312.1577048,
+        "earningsPerSec": 1.84,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #58",
-        "netWorth": 263311871.6256228,
-        "earningsPerSec": 1.25,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #191",
-        "netWorth": 257472911.0995865,
-        "earningsPerSec": 1.22,
+        "name": "Top Influencer #181",
+        "netWorth": 385997215.12207496,
+        "earningsPerSec": 1.84,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #167",
-        "netWorth": 254002995.54337248,
-        "earningsPerSec": 1.21,
+        "name": "Top Director #55",
+        "netWorth": 383990450.8568955,
+        "earningsPerSec": 1.83,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #157",
+        "netWorth": 381288169.0948676,
+        "earningsPerSec": 1.81,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #182",
+        "netWorth": 380110031.71135634,
+        "earningsPerSec": 1.81,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #177",
+        "netWorth": 374630272.013322,
+        "earningsPerSec": 1.78,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #105",
+        "netWorth": 370754415.73220617,
+        "earningsPerSec": 1.76,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #65",
+        "netWorth": 368901180.0754323,
+        "earningsPerSec": 1.75,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #67",
+        "netWorth": 365194692.00989914,
+        "earningsPerSec": 1.74,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #124",
+        "netWorth": 362619683.9242504,
+        "earningsPerSec": 1.72,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #88",
+        "netWorth": 362101748.6729678,
+        "earningsPerSec": 1.72,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #71",
-        "netWorth": 252543247.5552431,
-        "earningsPerSec": 1.2,
+        "name": "Top Actor #102",
+        "netWorth": 357327192.8824901,
+        "earningsPerSec": 1.7,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #141",
+        "netWorth": 353584582.342161,
+        "earningsPerSec": 1.68,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #48",
+        "netWorth": 333711064.3098908,
+        "earningsPerSec": 1.59,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #46",
+        "netWorth": 327717453.48349816,
+        "earningsPerSec": 1.56,
         "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #41",
+        "netWorth": 324813583.0361693,
+        "earningsPerSec": 1.54,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #116",
+        "netWorth": 318377699.4342789,
+        "earningsPerSec": 1.51,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #76",
+        "netWorth": 315411712.1114623,
+        "earningsPerSec": 1.5,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #93",
+        "netWorth": 312175843.5668021,
+        "earningsPerSec": 1.48,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #27",
+        "netWorth": 305603333.26060617,
+        "earningsPerSec": 1.45,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #73",
+        "netWorth": 296928377.4052648,
+        "earningsPerSec": 1.41,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #35",
+        "netWorth": 291880226.9000059,
+        "earningsPerSec": 1.39,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #174",
+        "netWorth": 289609560.2363414,
+        "earningsPerSec": 1.38,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #145",
+        "netWorth": 284162302.28380525,
+        "earningsPerSec": 1.35,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #86",
+        "netWorth": 281421598.8549589,
+        "earningsPerSec": 1.34,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #135",
+        "netWorth": 268461207.2252784,
+        "earningsPerSec": 1.28,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #148",
+        "netWorth": 251219392.73735282,
+        "earningsPerSec": 1.19,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #75",
+        "netWorth": 250744156.83550406,
+        "earningsPerSec": 1.19,
+        "source": "Athlete",
         "type": "Celebrity"
     },
     {
@@ -2359,304 +2310,353 @@
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #25",
-        "netWorth": 243982746.5051217,
-        "earningsPerSec": 1.16,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #157",
-        "netWorth": 243971021.7109201,
-        "earningsPerSec": 1.16,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #185",
-        "netWorth": 229275101.87120602,
-        "earningsPerSec": 1.09,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #129",
-        "netWorth": 227986425.03285617,
-        "earningsPerSec": 1.08,
+        "name": "Top Director #114",
+        "netWorth": 239680458.13101068,
+        "earningsPerSec": 1.14,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #22",
-        "netWorth": 224197893.98341277,
-        "earningsPerSec": 1.07,
+        "name": "Top Influencer #189",
+        "netWorth": 231733339.85416618,
+        "earningsPerSec": 1.1,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #165",
+        "netWorth": 229820890.0280253,
+        "earningsPerSec": 1.09,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #161",
-        "netWorth": 223275973.45094958,
+        "name": "Top Singer #98",
+        "netWorth": 222407615.80230048,
         "earningsPerSec": 1.06,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #32",
-        "netWorth": 221305788.1999627,
-        "earningsPerSec": 1.05,
+        "name": "Top Influencer #137",
+        "netWorth": 218439437.96546456,
+        "earningsPerSec": 1.04,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #45",
+        "netWorth": 214792691.87588155,
+        "earningsPerSec": 1.02,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #48",
-        "netWorth": 216677735.14836776,
-        "earningsPerSec": 1.03,
+        "name": "Top Athlete #21",
+        "netWorth": 211706293.4497656,
+        "earningsPerSec": 1.01,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #134",
-        "netWorth": 203503875.9789775,
-        "earningsPerSec": 0.97,
+        "name": "Top Influencer #139",
+        "netWorth": 201275391.38862637,
+        "earningsPerSec": 0.96,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #173",
+        "netWorth": 194724699.1309968,
+        "earningsPerSec": 0.93,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #160",
+        "netWorth": 192356030.78764185,
+        "earningsPerSec": 0.91,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #144",
+        "netWorth": 185708050.2132118,
+        "earningsPerSec": 0.88,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #96",
+        "netWorth": 184753695.99774328,
+        "earningsPerSec": 0.88,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #113",
+        "netWorth": 182452365.47617006,
+        "earningsPerSec": 0.87,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #57",
+        "netWorth": 177612171.54823142,
+        "earningsPerSec": 0.84,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #121",
+        "netWorth": 176904354.7232421,
+        "earningsPerSec": 0.84,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #24",
-        "netWorth": 202124817.0499617,
-        "earningsPerSec": 0.96,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #77",
-        "netWorth": 201443813.45646235,
-        "earningsPerSec": 0.96,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #158",
-        "netWorth": 197486968.59116435,
-        "earningsPerSec": 0.94,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #79",
-        "netWorth": 178823494.68221152,
-        "earningsPerSec": 0.85,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #126",
-        "netWorth": 172948782.45719343,
-        "earningsPerSec": 0.82,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #43",
-        "netWorth": 170731206.010724,
-        "earningsPerSec": 0.81,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #85",
-        "netWorth": 169086039.7656034,
-        "earningsPerSec": 0.8,
+        "name": "Top Director #95",
+        "netWorth": 162125301.86261794,
+        "earningsPerSec": 0.77,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #76",
-        "netWorth": 156333496.01180312,
-        "earningsPerSec": 0.74,
+        "name": "Top Influencer #89",
+        "netWorth": 158766062.0419753,
+        "earningsPerSec": 0.76,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #60",
+        "netWorth": 157251236.05281848,
+        "earningsPerSec": 0.75,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #190",
+        "netWorth": 147760279.5867862,
+        "earningsPerSec": 0.7,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #132",
+        "netWorth": 147166074.9167434,
+        "earningsPerSec": 0.7,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #168",
+        "netWorth": 146043494.66008794,
+        "earningsPerSec": 0.69,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #114",
-        "netWorth": 136655816.14955977,
-        "earningsPerSec": 0.65,
+        "name": "Top Actor #99",
+        "netWorth": 124240593.4372923,
+        "earningsPerSec": 0.59,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #65",
-        "netWorth": 118883672.70986517,
+        "name": "Top Actor #194",
+        "netWorth": 122063072.22744721,
+        "earningsPerSec": 0.58,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #125",
+        "netWorth": 119588885.18772854,
         "earningsPerSec": 0.57,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #57",
-        "netWorth": 115524579.01358502,
-        "earningsPerSec": 0.55,
-        "source": "Singer",
+        "name": "Top Director #134",
+        "netWorth": 112449430.83557759,
+        "earningsPerSec": 0.53,
+        "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #165",
-        "netWorth": 106872491.28090501,
+        "name": "Top Athlete #150",
+        "netWorth": 111013463.69035959,
+        "earningsPerSec": 0.53,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #149",
+        "netWorth": 108206389.5188124,
         "earningsPerSec": 0.51,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #148",
-        "netWorth": 102372209.88482133,
-        "earningsPerSec": 0.49,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #88",
-        "netWorth": 88578172.35417832,
-        "earningsPerSec": 0.42,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #196",
-        "netWorth": 88158318.64812645,
-        "earningsPerSec": 0.42,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Athlete #30",
-        "netWorth": 87160161.81621261,
-        "earningsPerSec": 0.41,
-        "source": "Athlete",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Singer #104",
-        "netWorth": 81038188.71330589,
-        "earningsPerSec": 0.39,
+        "name": "Top Singer #123",
+        "netWorth": 107722137.01354128,
+        "earningsPerSec": 0.51,
         "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #36",
-        "netWorth": 80239209.23531646,
-        "earningsPerSec": 0.38,
-        "source": "Actor",
+        "name": "Top Influencer #126",
+        "netWorth": 96287755.06999502,
+        "earningsPerSec": 0.46,
+        "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #106",
-        "netWorth": 77543831.44072829,
+        "name": "Top Director #85",
+        "netWorth": 94285425.29649457,
+        "earningsPerSec": 0.45,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #52",
+        "netWorth": 87759475.22225381,
+        "earningsPerSec": 0.42,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #156",
+        "netWorth": 77895676.97658439,
         "earningsPerSec": 0.37,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #151",
-        "netWorth": 76132513.9816291,
+        "name": "Top Director #122",
+        "netWorth": 77695096.66357563,
+        "earningsPerSec": 0.37,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #199",
+        "netWorth": 77091790.43024892,
+        "earningsPerSec": 0.37,
+        "source": "Influencer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #143",
+        "netWorth": 76362510.99191405,
         "earningsPerSec": 0.36,
-        "source": "Director",
+        "source": "Singer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #146",
-        "netWorth": 73976673.77994001,
+        "name": "Top Actor #185",
+        "netWorth": 73446287.30931208,
         "earningsPerSec": 0.35,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Actor #62",
+        "netWorth": 67711663.295171,
+        "earningsPerSec": 0.32,
+        "source": "Actor",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Athlete #162",
+        "netWorth": 63200235.90871938,
+        "earningsPerSec": 0.3,
         "source": "Athlete",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #96",
-        "netWorth": 67399605.10446489,
-        "earningsPerSec": 0.32,
+        "name": "Top Actor #66",
+        "netWorth": 57607492.41881019,
+        "earningsPerSec": 0.27,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #156",
-        "netWorth": 66667400.66396584,
-        "earningsPerSec": 0.32,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #132",
-        "netWorth": 64853373.43161769,
-        "earningsPerSec": 0.31,
+        "name": "Top Actor #136",
+        "netWorth": 50321993.94436783,
+        "earningsPerSec": 0.24,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Actor #55",
-        "netWorth": 61883494.115664415,
-        "earningsPerSec": 0.29,
+        "name": "Top Actor #154",
+        "netWorth": 35688744.16255592,
+        "earningsPerSec": 0.17,
         "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #33",
-        "netWorth": 53606246.930623166,
-        "earningsPerSec": 0.25,
-        "source": "Singer",
+        "name": "Top Influencer #129",
+        "netWorth": 34560677.42284412,
+        "earningsPerSec": 0.16,
+        "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Singer #31",
-        "netWorth": 43373753.57029893,
-        "earningsPerSec": 0.21,
-        "source": "Singer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Actor #172",
-        "netWorth": 30287430.171536386,
-        "earningsPerSec": 0.14,
-        "source": "Actor",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Director #44",
-        "netWorth": 30104888.00390569,
-        "earningsPerSec": 0.14,
-        "source": "Director",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #153",
-        "netWorth": 25597853.900716178,
+        "name": "Top Actor #183",
+        "netWorth": 24862275.079928476,
         "earningsPerSec": 0.12,
-        "source": "Influencer",
+        "source": "Actor",
         "type": "Celebrity"
     },
     {
-        "name": "Top Influencer #187",
-        "netWorth": 22350300.801571433,
-        "earningsPerSec": 0.11,
-        "source": "Influencer",
-        "type": "Celebrity"
-    },
-    {
-        "name": "Top Influencer #80",
-        "netWorth": 21738675.75631338,
+        "name": "Top Athlete #188",
+        "netWorth": 21651588.90493522,
         "earningsPerSec": 0.1,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Influencer #30",
+        "netWorth": 17084653.907236435,
+        "earningsPerSec": 0.08,
         "source": "Influencer",
         "type": "Celebrity"
     },
     {
-        "name": "Top Director #182",
-        "netWorth": 19070808.517057918,
-        "earningsPerSec": 0.09,
+        "name": "Top Athlete #56",
+        "netWorth": 16972000.136175416,
+        "earningsPerSec": 0.08,
+        "source": "Athlete",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Director #92",
+        "netWorth": 16073720.214642283,
+        "earningsPerSec": 0.08,
         "source": "Director",
         "type": "Celebrity"
     },
     {
-        "name": "Top Athlete #92",
-        "netWorth": 11451721.133099806,
-        "earningsPerSec": 0.05,
-        "source": "Athlete",
+        "name": "Top Director #140",
+        "netWorth": 14074920.436066275,
+        "earningsPerSec": 0.07,
+        "source": "Director",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #38",
+        "netWorth": 13712597.766509084,
+        "earningsPerSec": 0.07,
+        "source": "Singer",
+        "type": "Celebrity"
+    },
+    {
+        "name": "Top Singer #82",
+        "netWorth": 12541553.788852401,
+        "earningsPerSec": 0.06,
+        "source": "Singer",
         "type": "Celebrity"
     }
 ]
